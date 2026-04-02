@@ -1,7 +1,0 @@
-"2","Warning in gzfile(file, ""wb"") :"
-"2","
- "
-"2"," cannot open compressed file 'C:/Users/evalderrama/OneDrive - Oral Roberts University/ORU/Admin/.templates/Quarto/MAT.211/Lecture-Notes-quarto-book/lec-book-mat211/.Rproj.user/shared/notebooks/17B83DD2-Histo_hwk_grades_MAT211/1/C49ED86096c47e64/cddemqjmypg37_t/eec3d71a41734c2694bf8fb3834a21a6.snapshot', probable reason 'No such file or directory'
-"
-"2","Error in gzfile(file, ""wb"") : cannot open the connection
-"

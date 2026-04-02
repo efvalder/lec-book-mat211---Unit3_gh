@@ -11,3 +11,6 @@ Unit3/
 .Rproj.user/
 .RData
 .Rhistory
+
+/.quarto/
+**/*.quarto_ipynb

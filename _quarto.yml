@@ -4,7 +4,7 @@ project:
   # post-render: "Rscript something_after.R"  # (optional)
 
 execute: 
-  setup: _setup.R
+  freeze: auto   # cache R output; only re-run chunks that changed
 book:
   title: "Lectures Notes on Differential Equations (Unit 3)"
   author: "E. Valderrama-Araya, Ph.D."

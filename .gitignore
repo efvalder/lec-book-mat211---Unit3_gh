@@ -1,6 +1,11 @@
 *_files/
 *.html
 *.qmd
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
 _site/
 _book/
 _freeze/

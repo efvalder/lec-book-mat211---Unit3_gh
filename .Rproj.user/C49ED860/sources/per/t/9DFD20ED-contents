@@ -1,0 +1,198 @@
+# L19: Series Solutions I (7.2)
+
+<!-- --- -->
+<!-- title: "7.2. Series Solutions I" -->
+<!-- subtitle: "`MAT211`. Diffy Q. Lecture 19." -->
+<!-- author: "E. Valderrama-Araya, Ph.D.  |  <evalderrama@oru.edu>" -->
+<!-- format: -->
+<!--   pdf -->
+<!-- --- -->
+
+
+
+## Singular and Ordinary Points{.scrollable}
+
+::: {.callout-note}
+### Definition
+For $$P_0(x)y''+P_1(x)y'+P_2(x)y=0$$ where $P_0,P_1,P_2$ are polynomial. The points $x_0$ for which $P_0(x_0)=0$ are called `singular points` and points $x_0$ for which $P_0(x_0)\neq 0$ are called `ordinary points`.
+:::
+
+
+### Example
+::: {.callout-tip}
+## Example
+
+
+a) Legendre's Equation^[In physical settings, Legendre's differential equation arises naturally whenever one solves Laplace's equation (and related partial differential equations) by separation of variables in spherical coordinates.] $$(1-x^2)y''-2xy'+\alpha(\alpha+1)y=0$$
+b) Besse'ls Equation^[The Bessel function is a generalization of the sine function. It can be interpreted as the vibration of a string with variable thickness, variable tension (or both conditions simultaneously); vibrations in a medium with variable properties; vibrations of the disc membrane, etc. Bessel's equation arises when finding separable solutions to Laplace's equation and the Helmholtz equation in cylindrical or spherical coordinates.]
+$$x^2y''+xy'+(x^2-v^2)y=0$$
+:::
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+::: {.fragment}
+
+a) $x_0=\pm 1$
+b) $x_0=0$
+:::
+
+:::
+
+## Theorem {.scrollable}
+
+::: {.callout-note}
+
+::: {#thm-singpoint}
+
+## Unique Solution for not singular point. 
+
+Consider $$P_0(x)y''+P_1(x)y'+P_2(x)y=0$$ $$ y(x_0)=a_0,\quad y'(x_0)=a_1$$ If $x_0$ is `not singular point`, then the equation has a unique solution on the largest open interval that contains $x_0$ but not singular points equals to $$y=\sum_{n=0}^\infty a_n(x-x_0)^n$$
+
+:::
+:::
+
+### Example 1
+::: {.callout-tip}
+## Example 
+
+Find the power series solution for
+$$L_y:=y''+y=0,\quad\text{in terms of}(x-x_0)$$
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+:::{.fragment}
+
+$$y=\sum_{n=0}^\infty a_n(x-x_0)^n$$
+$$y'=\sum_{n=1}^\infty na_n(x-x_0)^{n-1}$$
+$$y''=\sum_{n=2}^\infty n(n-1)a_n(x-x_0)^{n-2}$$
+:::
+
+::: {.fragment}
+
+$$\Rightarrow$$
+$$L_y:=\sum_{n=2}^\infty n(n-1)a_n(x-x_0)^{n-2}+\sum_{n=0}^\infty a_n(x-x_0)^n=0$$
+Shifting index for $y''$:
+$$=\sum_{n=2-2}^{\infty-2} (n+2)(n+2-1)a_{n+2}(x-x_0)^{n+2-2}+\sum_{n=0}^\infty a_n(x-x_0)^n$$
+$$=0$$
+:::
+
+::: {.fragment}
+$$\sum_{n=0}^\infty \left[(n+2)(n+1)a_{n+2}+a_n\right](x-x_0)^n=0$$
+
+$$\Leftrightarrow$$
+
+$$(n+2)(n+1)a_{n+2}+a_n=0,\qquad \forall n\geq 0$$
+
+$$\Leftrightarrow \boxed{a_{n+2}=-\frac{a_n}{(n+2)(n+1)}}$$
+(2$^{nd}$ order recurrence relation)^[second-order relation because depends of the previous previous term]
+$$a_0,a_1,a_2,a_3,\cdots$$ sequence depends upon both $a_0,a_1$.
+
+:::
+
+::: {.fragment}
+
+$\boxed{\text{Case 1 (even index)}:}$
+
+
+$$ a_2=-\frac{a_0}{(0+2)(0+1)}=-\frac{a_0}{2\cdot 1}$$
+$$a_4=-\frac{a_2}{(2+2)(2+1)}=-\frac{a_2}{4\cdot 3}=\frac{a_0}{4\cdot3\cdot 2\cdot 1}$$
+$$a_6=-\frac{a_4}{(4+2)(4+1)}=-\frac{a_4}{6\cdot 5}=-\frac{a_0}{6!}$$
+Now instead of a recurrence relation, we can state an explicit equation for the even index:
+
+$$\boxed{a_{2m}=(-1)^m\frac{a_0}{(2m)!},\qquad m=0,1,2,3,\cdots}$$^[adding $m=0$ it is possible, because only add a true statement, $a_0=a_0$]
+
+:::
+
+:::{.fragment}
+
+$\boxed{\text{Case 2 (odd index)}:}$
+
+
+$$a_3=-\frac{a_1}{(1+2)(1+1)}=-\frac{a_1}{3\cdot 2}$$
+$$a_5=-\frac{a_3}{(3+2)(3+1)}=\frac{a_1}{5\cdot 4\cdot 3\cdot 2}$$
+$$a_7=-\frac{a_5}{(5+2)(5+1)}=-\frac{a_1}{7!}$$
+
+$$\boxed{a_{2m+1}=(-1)^m\frac{a_1}{(2m+1)!},\qquad m=0,1,2,3,\cdots}$$
+:::
+
+:::{.fragment}
+
+Final Solution: 
+
+$$y=\sum_{m=0}^\infty (-1)^m a_0 \frac{(x-x_0)^{2m}}{(2m)!}+\sum_{m=0}^\infty (-1)^m a_1 \frac{(x-x_0)^{2m+1}}{(2m+1)!}$$
+$$y=a_0\sum_{m=0}^\infty (-1)^m  \frac{(x-x_0)^{2m}}{(2m)!}+a_1\sum_{m=0}^\infty (-1)^m  \frac{(x-x_0)^{2m+1}}{(2m+1)!}$$
+:::
+
+:::{.fragment}
+
+Expanding cosine and sine function using taylor series:
+
+$$\boxed{y=a_0\cos(x-x_0)+a_1\sin(x-x_0)}$$
+
+Note: Check the Taylor series for cosine and sine functions^[https://en.wikipedia.org/wiki/Taylor_series]
+
+:::
+:::
+:::
+
+### Example 2
+::: {.callout-tip}
+## Example 
+
+Find the power series in $x$ for the general solution of:
+$$L_y:=(1+2x^2)y''+6xy'+2y=0$$
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+$$y=\sum_{n=0}^\infty a_nx^n$$
+$$y'=\sum_{n=1}^\infty na_nx^{n-1}$$
+$$y''=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}$$
+$$L_y=(1+2x^2)\sum_{n=2}^\infty n(n-1)a_nx^{n-2}+6x\sum_{n=1}^\infty na_nx^{n-1}+2\sum_{n=0}^\infty a_nx^n=0$$
+$$=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}+\sum_{n=0}^\infty[2n(n-1)+6n+2]a_nx^n$$
+$$=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}+2\sum_{n=0}^\infty(n+1)^2a_nx^n$$
+$$=\sum_{n=0}^\infty (n+2)(n+1)a_{n+2}x^{n}+2\sum_{n=0}^\infty(n+1)^2a_nx^n$$
+$$=\sum_{n=0}^\infty \left[(n+2)(n+1)a_{n+2}+2(n+1)^2a_n\right]x^n=0$$
+$$\Leftrightarrow (n+2)(n+1)a_{n+2}+2(n+1)^2a_n=0,\quad\forall n\geq 0$$
+
+$$\Rightarrow \boxed{a_{n+2}=-2\left(\frac{n+1}{n+2}\right)a_n}$$
+$\boxed{\text{Case 1: Even terms: }}$
+
+$$a_2=-2\frac{1}{2}a_0=-\frac{1}{1}a_0$$
+$$a_4=-2\frac{3}{4}a_2=\frac{3\cdot 1}{2\cdot 1}a_0$$
+
+$$a_6=-2\frac{5}{6}a_4=-\frac{5\cdot 3\cdot 1}{3\cdot 2\cdot 1}a_0$$
+$$a_{2m}=(-1)^m\frac{\Pi_{j=1}^m (2j-1)}{m!}a_0$$
+
+$\boxed{\text{Case 2: Odd terms: }}$
+
+$$a_3=-2\frac{(1+1)}{(1+2)}a_1=-\frac{4}{3}a_1$$
+$$a_5=-2\frac{(3+1)}{(3+2)}a_3=-2\frac{4}{5}a_3=2\frac{4}{5}\frac{4}{3}a_1=4^2\frac{2\cdot 1}{5\cdot 3}a_1$$
+
+$$a_7=-2\frac{(5+1)}{(5+2)}a_5=-2\frac{6}{7}a_5=-4^3\frac{3\cdot 2\cdot 1}{7\cdot 5\cdot 3}a_1$$
+
+$$a_{2m+1}=\frac{(-1)^m4^mm!}{\Pi_{j=1}^m(2j+1)}a_1$$
+
+**Solution:**
+
+$$\boxed{y=a_0\sum_{m=0}^\infty (-1)^m\frac{\Pi_{j=1}^m(2j-1)}{m!}x^{2m}+a_1\sum_{m=0}^\infty\frac{(-1)^m4^mm!}{\Pi_{j=1}^m(2j+1)}x^{2m+1}}$$
+
+**Note:** Please observe that the solution is the addition of even and odd powers of $x$, with different `factors`.
+
+:::
+:::
+
+## References {.smaller}
+
+1.  [LibreTexts, 7.2: Series Solutions Near an Ordinary Point I .](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.2%3A_Series_Solutions_Near_an_Ordinary_Point_I)
+
+2. [LibreTexts, 7.2: Series Solutions Near an Ordinary Point I (Exercises) ](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.2%3A_Series_Solutions_Near_an_Ordinary_Point_I/7.2E%3A_Series_Solutions_Near_an_Ordinary_Point_I_(Exercises))
+3. [Wiki: Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials)
+4. [Wiki: Bessel function](https://en.wikipedia.org/wiki/Bessel_function)
+5. [Wiki: Bessel polynomials](https://en.wikipedia.org/wiki/Bessel_polynomials)
+6. [LibreTexts, 10.2: Bessel’s Equation, Niels Walet](https://math.libretexts.org/Bookshelves/Differential_Equations/Partial_Differential_Equations_(Walet)/10%3A_Bessel_Functions_and_Two-Dimensional_Problems/10.02%3A_Bessel%E2%80%99s_Equation)
+7. [Youtube: Cymatics: Chladni Plate - Sound, Vibration and Sand](https://youtu.be/tFAcYruShow)
+8. [Youtube: I recreated the Rings of Power with a vibrating square](https://youtu.be/rjueHI002Fg)
+9. [Hyperphysics: Legendre Polynomials, solutions of the Schrodinger equation in spherical polar coordinates ](http://hyperphysics.phy-astr.gsu.edu/hbase/Math/legend.html)

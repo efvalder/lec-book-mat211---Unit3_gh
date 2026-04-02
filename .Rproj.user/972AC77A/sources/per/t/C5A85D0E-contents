@@ -1,0 +1,250 @@
+# L26: Periodic forcing functions (8.5)
+
+<!-- --- -->
+<!-- title: "8.5 Periodic forcing functions" -->
+<!-- subtitle: "`MAT211`. Diffy Q. Lecture 26." -->
+<!-- author: "E. Valderrama-Araya, Ph.D.  |  <evalderrama@oru.edu>" -->
+<!-- format: -->
+<!--   revealjs: -->
+<!--     fig-width: 6 -->
+<!--     fig-height: 4 -->
+<!--   # pdf: -->
+<!--   #   fig-width: 4 -->
+<!--   #   fig-height: 3 -->
+<!-- # bibliography: references.bib -->
+<!-- --- -->
+
+```{r,echo=FALSE, include=FALSE}
+library(rim)
+```
+
+##  Definition of a Periodic function{.scrollable}
+
+::: callout-note
+
+## Definition
+
+A function $f(t)$ defined for $t\geq 0$ is periodic with period $T>0$ if $$f(t+T)=f(t),\qquad \forall t \geq 0$$
+
+::: {.callout-caution collapse="true"}
+## Example:
+ 
+```{r,echo=FALSE}
+b <- 7
+a <- 0
+h <- 1
+y7 <- function(t) ifelse(t<1,4*t,
+                         ifelse(t<2,-4*(t-2),
+                                ifelse(t<3,4*(t-2),
+                                       ifelse(t<4,-4*(t-4),
+                                              ifelse(t<5,4*(t-4),-4*(t-6))))))
+plot(0,0,xlim = c(0,b),ylim = c(0,b),cex=2,pch = 16,col="blue", ylab="",xlab="",axes = FALSE,main=NULL)
+par(mar=c(3,3,0,2)+0.1)
+curve(y7, from =0, to =6, col="blue", lwd=2, n=1000,xlim = c(0,b),ylim = c(0,b),add = TRUE)
+mtext(side=2,at=2*h,text="f(t)",line=-1)
+mtext(side=1,at=b*1.02,text="t",line=-3)
+mtext(side=1,at=2,text="T",line=-2)
+arrows(-1,0,b,0, angle = 15, length = 0.1, lwd=3)
+arrows(0,-1,0,b, angle = 15, length = 0.1, lwd=3)
+```
+:::
+:::
+
+## Theorem: Laplace of a periodic function
+
+::: callout-note
+## Theorem
+
+:::{#thm-pwc}
+
+Let $f(t)$ be piecewise continuous, periodic T, and of exponential order for $t\geq 0$, then
+
+$$\boxed{\mathscr{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^T e^{-st}f(t)\,dt}$${#eq-pwc}
+
+::: {.callout-caution collapse="true"}
+## Proof:
+
+$$\mathscr{L}\{f(t)\}=\int_0^\infty e^{-st} f(t)\,dt$$
+
+$$=\int_0^T e^{-st} f(t)\,dt+\int_T^\infty e^{-st} f(t)\,dt$$
+
+Change of variables: $$v=t-T\rightarrow v(T)=0,\quad dv=dt$$
+
+$$=\int_0^T e^{-st} f(t)\,dt+\int_{v=0}^\infty e^{-s(v+T)} f(v+T)\,dv$$
+and because the period is $T$, then $f(v+T)=f(v)$
+
+$$=\int_0^T e^{-st} f(t)\,dt+e^{-sT}\int_0^\infty e^{-sv} f(v)\,dv$$
+$$\mathscr{L}\{f(t)\}=\int_0^T e^{-st} f(t)\,dt+e^{-sT}\mathscr{L}\{f(t)\}$$
+$$\Rightarrow \mathscr{L}\{f(t)\}\left(1-e^{-sT}\right)=\int_0^T e^{-st} f(t)\,dt$$
+
+$$\Rightarrow \mathscr{L}\{f(t)\}=\frac{1}{\left(1-e^{-sT}\right)}\int_0^T e^{-st} f(t)\,dt$$
+
+$$\hspace{2in}\square$$
+
+:::
+:::
+:::
+
+### Example 1 {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+Let $f(t+2)=f(t)$
+
+and the periodic function defined by: 
+
+<!-- $$f(t) = +1,\qquad 0\leq t < 1$$ $$f(t) = -1,\qquad 1\leq t < 2$$ -->
+
+$$
+f(t) = 
+\begin{cases} 
++1 & 0\leq t < 1 \\
+-1 & 1\leq t < 2
+\end{cases}
+$$
+
+Calculate $\mathscr{L}\{f(t)\}$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+```{r,echo=FALSE}
+b <- 4
+a <- 0
+h <- 2
+plot(0,1,xlim = c(0,b),ylim = c(-1,h),cex=2,pch = 16,col="blue", ylab="",xlab="",axes = FALSE,main=NULL)
+par(mar=c(3,3,0,2)+0.1)
+mtext(side=2,at=.9*h,text="f(t)",line=-1)
+mtext(side=1,at=4,text="t",line=-5)#text(1.02*b,0,"t")
+mtext(side=1,at=2,text="T",line=-5)
+arrows(-1,0,b,0, angle = 15, length = 0.1, lwd=3)
+arrows(0,-1,0,h, angle = 15, length = 0.1, lwd=3)
+segments(x0 = 0, x1 = 0.97, y0 = 1, y1 = 1,lwd = 2,lty=1, col = "blue")
+segments(x0 = 1, x1 = 1.97, y0 = -1, y1 = -1,lwd = 2,lty=1, col = "blue") 
+segments(x0 = 2, x1 = 2.97, y0 = 1, y1 = 1,lwd = 2,lty=1, col = "blue") 
+segments(x0 = 3, x1 = 3.97, y0 = -1, y1 = -1,lwd = 2,lty=1, col = "blue") 
+points(c(1,2,3,4),c(1,-1,1,-1), pch = 1, ylab="",xlab="", cex=1.9, bg="white", col="red",lwd=3, xaxt = "n", yaxt = "n")
+points(c(0,1,2,3),c(1,-1,1,-1), pch = 21, ylab="",xlab="", cex=1.9, col="blue",bg="blue",lwd=3, xaxt = "n", yaxt = "n")
+```
+$$\mathscr{L}\{f(t)\}=\frac{1}{\left(1-e^{-sT}\right)}\int_0^T e^{-st} f(t)\,dt$$
+
+$$=\frac{1}{\left(1-e^{-2s}\right)}\left(\int_0^1 e^{-st} (1)\,dt+\int_1^2 e^{-st} (-1)\,dt\right)$$
+$$=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{e^{-st}}{-s}\Big|_0^1-\frac{e^{-st}}{-s}\Big|_1^2\right)$$
+$$=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{-1}{s}\right)\left(e^{-s}-e^{0}-(e^{-2s}-e^{-s})\right)$$
+
+$$=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{-1}{s}\right)\left(2e^{-s}-1-e^{-2s}\right)$$
+
+$$=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)$$
+
+
+:::
+:::
+
+### Example 2 {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+$$y''-3y'+2y= f(t),\qquad y(0)=y'(0)=0$$
+Where: 
+
+$$
+f(t) = 
+\begin{cases} 
++1 & 0\leq t < 1 \\
+-1 & 1\leq t < 2
+\end{cases}
+$$
+$$f(t+2)=f(t)$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+Same periodic function of last example, therefore we know the Laplace Transformation of the RHS, for the LHS, we use properties:
+
+$$s^2Y-sy(0)-y'(0)-3(sY-y(0))+2Y= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)$$
+
+$$s^2Y-3sY+2Y= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)$$
+
+$$Y(s^2-3s+2)= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)$$
+
+$$Y(s-1)(s-2)= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)$$
+
+$$Y= \frac{\left(1-2e^{-s}+e^{-2s}\right)}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\frac{1}{(s-1)(s-2)}$$
+$$Y= \frac{(1-e^{-s})(1-e^{-s})}{(1-e^{-s})(1+e^{-s})}\left(\frac{1}{s}\right)\frac{1}{(s-1)(s-2)}$$
+$$Y= \frac{(1-e^{-s})}{(1+e^{-s})}\left(\frac{1}{s(s-1)(s-2)}\right)$$
+
+
+Partial fractions for the right side factor!
+
+$$Y=\frac{A}{s}+\frac{B}{(s-1)}+\frac{C}{(s-2)}$$
+
+$$1=A(s-1)(s-2)+Bs(s-2)+Cs(s-1)$$
+$\boxed{s=0}\Rightarrow$
+
+$$1=A(-1)(-2)\rightarrow \boxed{A=\frac{1}{2}}$$
+$\boxed{s=1}\Rightarrow$
+
+$$1=B(1)(-1)\rightarrow \boxed{B=-1}$$
+$\boxed{s=2}\Rightarrow$
+
+$$1=C(2)(1)\rightarrow \boxed{C=\frac{1}{2}}$$
+$$Y=\frac{(1-e^{-s})}{(1+e^{-s})}\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)$$
+$$Y(1+e^{-s})=(1-e^{-s})\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)$$
+$$Y+Ye^{-s}=\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)-e^{-s}\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)$$
+
+
+We know that:
+
+$$\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}F(s)$$
+
+$$\Rightarrow\boxed{\mathscr{L}^{-1}\{e^{-as}F(s)\}=u(t-a)f(t-a)}$$
+Then applying ILT to:
+
+$$Y+e^{-s}Y=\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)-e^{-s}\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)$$
+
+we obtain:
+
+$$\boxed{y(t)+u(t-1)y(t-1)=\frac{1}{2} - e^{t}+\frac{1}{2}e^{2t}-\left(\frac{1}{2}u(t-1)-u(t-1)e^{t-1}+\frac{1}{2}u(t-1)e^{2(t-1)}\right)}$$
+
+
+:::
+:::
+
+## References {.smaller}
+
+1.  [LibreTexts, 8.5: Constant Coefficient Equations with Piecewise Continuous Forcing Functions from F.Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms/8.5%3A_Constant_Coefficient_Equations_with_Piecewise_Continuous_Forcing_Functions)
+
+2. [Wikipedia: Inverse Laplace transform](https://en.wikipedia.org/wiki/Inverse_Laplace_transform)
+
+<!-- 5.  [Type Package, Title Inversion of Laplace-Transformed Functions](https://cran.r-project.org/web/packages/invLT/invLT.pdf) -->
+
+<!-- 6.  [invlap: Inverse Laplacian](https://www.rdocumentation.org/packages/pracma/versions/1.9.9/topics/invlap) -->
+
+
+
+<!-- Let's work a bit on the left side: -->
+
+<!-- Numerator: $$1-2e^{-s}+e^{-2s}=(1-e^{-s})(1-e^{-s})$$ -->
+<!-- and the denominator: $$(1-e^{-2s})=(1-e^{-s})(1+e^{-s})$$ -->
+
+<!-- Then simplifying $$\frac{(1-e^{-s})}{(1+e^{-s})}=A(s-1)(s-2)+Bs(s-2)+Cs(s-1)$$ -->
+
+<!-- $\boxed{s=1}\Rightarrow$ -->
+
+<!-- $$\frac{1-e^{-1}}{1+e^{-1}}=B(1)(-1)$$ -->
+
+<!-- $\boxed{s=2}\Rightarrow$ -->
+
+<!-- $$\frac{1-e^{-2}}{1+e^{-2}}=C(2)(1)$$ -->
+
+<!-- $\boxed{s=0}\Rightarrow$ -->
+
+<!-- $$0=A(-1)(-2)\rightarrow A=0$$ -->
+
+<!-- $$Y=\frac{e^{-1}-1}{1+e^{-1}}\left(\frac{1}{s-1}\right)+\frac{1}{2}\left(\frac{1-e^{-2}}{1+e^{-2}}\right)\left(\frac{1}{s-2}\right)$$ -->
+<!-- ILT: -->
+
+<!-- $$\boxed{y(t)=\left(\frac{1-e}{1+e}\right)e^{t}+\frac{1}{2}\left(\frac{e^2-1}{e^2+1}\right)e^{2t}}$$ -->
+

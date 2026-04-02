@@ -1,0 +1,278 @@
+# L13: Non Homogeneous Linear Equations (5.3)
+
+```{r,echo=FALSE, include=FALSE}
+#library(rim)
+```
+
+## Non Homogeneous Linear Equations
+
+$$y'' + p(x)y'+q(x)y=f(x)$$
+
+::: {.fragment}
+$f(x)\neq 0$
+:::
+
+::: {.fragment}
+**Examples:**
+
+1. Forced Harmonic Oscillator with damping: $$\boxed{m x'' + b x' + k x = F(t)}$$
+2. Electrical circuits:  $$\boxed{Lq''+Rq'+(1/C) q = V(t) }$$
+:::
+
+
+
+## Theorem Existence & Uniqueness
+
+::: {.callout-note}
+## Theorem
+::: {#thm-Exi-Uniq}
+## Existence & Uniqueness
+Suppose $p,q,f$ are continuous on $(a,b)$.
+Let $x_0\in(a,b),\,k_0,k_1\in\mathbb{R}$
+
+Then the initial value problem $$y''+p(x)y'+q(x)y=f(x),\qquad y(x_0)=k_  0,\quad y'(x_0)=k_1$$
+has a unique solution on $(a,b)$
+:::
+:::
+
+
+## The Complementary Equation {.scrollable}
+
+::: {.callout-note}
+## Definition
+
+$$y''+p(x)y'+q(x)y=f(x)$$ has a `complementary equation`
+
+$$y''+p(x)y'+q(x)y=0$$
+
+:::
+
+## General Sol for Non-Homogeneous{.scrollable}
+
+::: {.callout-note}
+## Theorem
+
+::: {#thm-Gral-Sol-Comp-Eq}
+## General Solution and complementary equation
+
+Suppose $p,q,f$ are continuous on $(a,b)$.
+
+Let $y_p$ be a particular solution to
+
+$$y'' + p(x)y'+q(x)y=f(x)$${#eq-GS2OLNH}
+
+Let $\{y_1,y_2\}$ be a fundamental set of solutions to the complementary equation
+$$y'' + p(x)y'+q(x)y=0$${#eq-comp}
+Then the general solution to @eq-GS2OLNH is
+
+$$y=c_1y_1+c_2y_2+y_p$$
+:::
+
+:::
+
+
+::: {.callout-caution collapse="true"}
+### Proof 
+
+:::{.proof}
+:::{.fragment}
+$$y'=c_1y_1'+c_2y_2'+y_p'$$
+$$y''=c_1y_1''+c_2y_2''+y_p''$$
+:::
+
+:::{.fragment}
+$\Rightarrow$ plug into the 2OLNH (@eq-2OLNH):
+
+\begin{align}
+(c_1y_1''+c_2y_2''+y_p'') +&\\ p(x)(c_1y_1'+c_2y_2'+y_p')+\\
+q(x)(c_1y_1+c_2y_2+y_p)&\\
+&=f(x)
+\end{align}
+:::
+
+:::{.fragment}
+\begin{align}
+c_1(y_1''+p(x)y_1'+q(x)y_1)&\\ c_2(y_2''+p(x)y_2'+q(x)y_2)+\\
+y_p''+p(x)y_p'+q(x)y_p&\\
+&=f(x)
+\end{align}
+$$\square$$
+:::
+:::
+:::
+
+::: {.callout-tip}
+### Example {.scrollable}
+
+Solve $$y''+y=1,\qquad y(0)=2,\quad y'(0)=7$$
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+::: {.fragment}
+**Complementary Equation:**
+$$\Rightarrow y''+y=0$$
+$$r^2+1=0\Rightarrow r_{1,2}=0\pm 1i$$
+$$y_i=c_1\cos x +c_2\sin x$$
+:::
+
+::: {.fragment}
+
+**Particular Solution:**
+(By inspection$\rightarrow$ techniques to follow)
+$$y=1$$
+:::
+
+::: {.fragment}
+**General Solution:**
+$$y=c_1\cos x +c_2\sin x+1$$
+:::
+
+:::{.fragment}
+**Initial Conditions:**
+$$y(0)=2\Rightarrow c_1+1=2\Rightarrow c_1=1$$
+$$y'=-\sin x +c_2\cos x\Rightarrow y'(0)=7\Rightarrow c_2=7$$
+:::
+
+:::{.fragment}
+**Final Solution:**
+
+$$\boxed{y=\cos x+ 7\sin x +1}$$
+:::
+:::
+:::
+
+
+::: {.callout-tip}
+### Example 2 {.scrollable}
+
+1. Find the general solution of $$y'' − 2y' + y = −3 − x + x^2$$
+2. Solve the initial value problem $$y'' − 2y' + y = −3 − x + x^2,\qquad y(0) = −2,\quad y'(0) = 1$$
+
+::: {.callout-caution collapse="true"}
+## Solution 1
+
+Let's find first the solution for the homogeneous, where the characteristic equation is:
+
+$$r^2-2r+1=0$$
+Then $$r_{1,2}=\frac{+2\pm\sqrt{4-4}}{2}=1=m\rightarrow \boxed{m=-p/2=1}$$
+
+Therefore:
+
+$$y=c_1e^{x}+c_2xe^{x}+y_p$$
+Now the goal is a particular for the non homogeneous:
+
+$$y'' − 2y' + y = −3 − x + x^2$$
+**Guess:**
+
+Let's choose $y_p$ as a polynomial of order 2, so the LHS have the same order of RHS:
+
+$$\boxed{y_p=Ax^2+Bx+C}\rightarrow y'_p=2Ax+B\rightarrow y''_p=2A$$
+and see what are the conditions the constants need to satisfy:
+
+$$2A-2(2Ax+B)+(Ax^2+Bx+C)=−3 − x + x^2$$
+Grouping:
+
+$$(2A-2B+C) + (-4A+B)x +Ax^2=−3 − x + x^2$$
+Therefore:
+
+\begin{align}
+2A-2B+C&=-3\\
+-4A+B&=-1\\
+A&=1\\
+\end{align}
+
+$$\Rightarrow \boxed{A=1}\rightarrow \boxed{B=3}\rightarrow \boxed{C=1}$$
+
+Then a particular soln for the non-homogeneous:
+
+$$\boxed{y_p= x^2+3x+1}$$
+
+Then the general solution for the non-homogeneous is:
+
+$$\boxed{\boxed{y=c_1e^{x}+c_2xe^{x}+x^2+3x+1}}$$
+:::
+
+
+::: {.callout-caution collapse="true"}
+## Solution 2
+
+$$y(0) = −2,\quad y'(0) = 1$$
+$$y=c_1e^{x}+c_2xe^{x}+x^2+3x+1$$
+i.c.1:
+$$-2=c_1+0+0+0+1\Rightarrow \boxed{c_1=-3}$$
+i.c.2:
+
+$$y=-3e^{x}+c_2xe^{x}+x^2+3x+1$$
+$$\Rightarrow$$ 
+$$y'=-3e^{x}+c_2e^{x}+c_2xe^{x}+2x+3$$
+
+$$1=-3+c_2+c_2\cdot 0+2\cdot 0+3$$
+Then $$1=-3+c_2+3\rightarrow \boxed{c_2=1}$$
+
+Finally, the unique solution for this initial conditions is:
+
+$$\boxed{y=-3e^{x}+xe^{x}+x^2+3x+1}$$
+
+:::
+:::
+
+
+## Particular solution as a combination of particulars{.scrollable}
+
+::: {.callout-note}
+## Theorem
+
+::: {#thm-part-solns}
+## Particular Solutions
+
+If $y_{p_1}$ is a particular solution of
+
+$$y'' +p(x)y' + q(x)y =f_1(x)$$
+and $y_{p_2}$ is a particular solution of
+
+$$y'' +p(x)y' + q(x)y =f_2(x)$$
+Then $\boxed{y_p=y_{p_1}+y_{p_2}}$ is a particular solution of
+
+$$y''+p(x)y'+q(x)y=f_1(x)+f_2(x)$$
+:::
+
+
+::: {.callout-caution collapse="true"}
+### Proof 
+
+:::{.proof}
+
+$$y''+p(x)y'+q(x)y\stackrel{?}{=}$$
+$$(y_{p_1}''+y_{p_2}'')+p(x)(y_{p_1}'+y_{p_2}')+q(x)(y_{p_1}+y_{p_2})\stackrel{?}{=}$$
+$$(y_{p_1}''+p(x)y_{p_1}'+q(x)y_{p_1})+(y_{p_2}''+p(x)y_{p_2}'+q(x)y_{p_2})\stackrel{?}{=}$$
+$$=f_1(x)+f_2(x)$$
+$$\square$$
+:::
+:::
+:::
+
+::: {.callout-tip}
+## More examples (if times allows)
+
+Find the general solution:
+
+1. $$y''+6y'+5y=4x$$
+$\qquad y_p=ax+b$^[later we will show how and why.]
+
+## One more example
+
+2. $$.$$
+
+:::
+
+## References {.smaller}
+
+1. <https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs>
+2. <https://quarto.org/docs/presentations/revealjs/advanced.html>
+3. <https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard>
+4. [LibreTexts, 5.3: Nonhomgeneous Linear Equations from William F. Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/5%3A_Linear_Second_Order_Equations/5.3%3A_Nonhomgeneous_Linear_Equations)
+5. [LibreTexts, 17.2: Nonhomogeneous Linear Equations  from Gilbert Strang & Edwin “Jed” Herman OpenStax.](https://math.libretexts.org/Bookshelves/Calculus/Book%3A_Calculus_(OpenStax)/17%3A_Second-Order_Differential_Equations/17.02%3A_Nonhomogeneous_Linear_Equations)
+6. [Chatgpt: Physics Examples of NonHomogeneous Linear Equations](https://d2l.oru.edu/d2l/le/856640/discussions/threads/2447119/View)
+7. [LibreText 23.6: Forced Damped Oscillator from Peter Dourmashkin MIT](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Dourmashkin)/23%3A_Simple_Harmonic_Motion/23.06%3A_Forced_Damped_Oscillator)
+7. [Undetermined coefficients 1 | Second order differential equations | Khan Academy](https://youtu.be/znE4Nq9NJCQ)

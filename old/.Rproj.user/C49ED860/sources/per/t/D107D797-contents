@@ -1,0 +1,160 @@
+# L20: Series Solutions II (7.3)
+
+<!-- --- -->
+<!-- title: "7.3. Series Solutions II" -->
+<!-- subtitle: "`MAT211`. Diffy Q. Lecture 20." -->
+<!-- author: "E. Valderrama-Araya, Ph.D.  |  <evalderrama@oru.edu>" -->
+<!-- format: -->
+<!--   revealjs: -->
+<!--     width: 2000 -->
+<!-- --- -->
+
+```{r,echo=FALSE, include=FALSE}
+#library(rim)
+```
+
+## Theorem {.scrollable}
+
+::: {.callout-note}
+::: {#thm-rec-rel}
+
+The coefficients $\{a_n\}$ in any solution $y=\sum_{n=0}^\infty a_n(x-x_0)^n$ of
+
+$$(1+\alpha(x-x_0)^2)y''+\beta(x-x_0)y'+\gamma y=0$$
+Satisfy the recurrence relation $$a_{n+2}=-\frac{p(n)}{(n+2)(n+1)}a_n,\qquad n\geq 0$$
+
+
+where $$p(n)=\alpha n(n-1)+\beta n +\gamma$$
+
+Moreover, the coefficients of the even and odd powers of $(x-x_0)$ can be computed separately as
+
+$$a_{2m+2}=-\frac{p(2m)}{(2m+2)(2m+1)}a_{2m},\qquad m\geq 0$$
+$$a_{2m+3}=-\frac{p(2m+1)}{(2m+3)(2m+2)}a_{2m+1},\qquad m\geq 0$$
+where $a_0$ and $a_1$ are arbitrary.
+
+**Note:** After we observe first 3-5 coefficients, we may provide a conjecture of what is the explicit equation.
+
+:::
+:::
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+Find the power series in $x-1$ for the general solution of: $$(3x^2-6x+4)y''-12(x-1)y'-12y=0$$ 
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+First we need to write $P_0(x)=3x^2-6x+4$ in terms of $(x-1)$, to do this we set $x$ as $(x-1)+1$, and observe the factorization^[also we could attempt long division]:
+
+$$P_0(x)=3x^2-6x+4$$
+
+$$=3((x-1)+1)^2-6((x-1)+1)+4$$
+
+$$=3((x-1)^2+2(x-1)+1)-6(x-1)-6+4$$
+
+$$=3(x-1)^2+6(x-1)+3-6(x-1)-6+4$$
+
+$$=3(x-1)^2+1$$
+
+Therefore the diffyq, can be written as:
+
+$$(1+3(x-1)^2)y''-12(x-1)y'-12y=0$$ 
+
+From the equation we read:
+
+$$\alpha = 3,\quad \beta= -12,\quad \gamma=-12$$
+
+Then we can calculate $p(n)$:
+
+$$p(n)=\alpha n(n-1)+\beta n +\gamma$$
+$$=3n(n-1)-12n -12$$
+$$=3n^2-15n-12$$
+
+Then we can obtain the recurrence relation:
+
+$$a_{n+2}=-\frac{p(n)}{(n+2)(n+1)}a_n,\qquad n\geq 0$$
+$$\boxed{a_{n+2}=-\frac{3n^2-15n-12}{(n+2)(n+1)}a_n},\qquad n\geq 0$$
+
+$$\cdots$$
+:::
+:::
+
+## Coefficients given initial conditions {.scrollable}
+
+- Consider a differential equation which cant be obtain an explicit equation for $a_n$ coefficient, that means for example, the diffeq doesn't have the form of the previous theorem. 
+
+- In this case we can calculate recursively each of the coefficients.
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+Find the coefficients $a_0,\cdots,a_5$ in the series solution $y=\sum_{n=0}^\infty a_n x^n$ of
+$$(1+x+2x^2)y''+(1+7x)y'+2y=0,\qquad y(0)=-1,\quad y'(0)=-2$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+$$\boxed{y'=\sum_{n=1}^\infty na_nx^{n-1}}\qquad \boxed{y''=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}}$$
+$$\sum_{n=2}n(n-1)a_nx^{n-2}+\sum_{n=2}n(n-1)a_nx^{n-1}+2\sum_{n=2}n(n-1)a_nx^{n}+\sum_{n=1} na_nx^{n-1}+7\sum_{n=1} na_nx^{n}+2\sum_{n=0}a_nx^n=0$$
+
+Shifting!:
+
+$$\sum_{n=0}(n+2)(n+1)a_{n+2}x^{n}+\sum_{n=1}(n+1)(n)a_{n+1}x^{n}+2\sum_{n=2}n(n-1)a_nx^{n}+\sum_{n=0} (n+1)a_{n+1}x^{n}+7\sum_{n=1} na_nx^{n}+2\sum_{n=0}a_nx^n=0$$
+
+Adding zeroes:
+
+$$\sum_{n=0}(n+2)(n+1)a_{n+2}x^{n}+\sum_{n=0}(n+1)(n)a_{n+1}x^{n}+2\sum_{n=0}n(n-1)a_nx^{n}+\sum_{n=0} (n+1)a_{n+1}x^{n}+7\sum_{n=0} na_nx^{n}+2\sum_{n=0}a_nx^n=0$$
+ Big sum!:
+ 
+ $$\sum_{n=0}^\infty \left((n+2)(n+1)a_{n+2} + [(n+1)(n)+(n+1)]a_{n+1}+[2n(n-1)+7n+2]a_n\right)x^n=0$$
+
+$$(n+2)(n+1)a_{n+2} + (n+1)(n+1)a_{n+1}+[2n^2+5n+2]a_n=0$$
+
+$$(n+2)(n+1)a_{n+2} + (n+1)(n+1)a_{n+1}+(n+2)(2n+1)a_n=0$$
+Finally:
+
+$$\boxed{a_{n+2}=-\left(\frac{n+1}{n+2}\right)a_{n+1}-\left(\frac{2n+1}{n+1}\right)a_{n}}$$
+
+$$a_0=y(0)=-1,\qquad a_1=y'(0)=-2,\qquad$$
+
+Using the recurrence relation:
+
+$$a_{0+2}=-\left(\frac{0+1}{0+2}\right)a_{0+1}-\left(\frac{0+1}{0+1}\right)a_{0}$$
+$$a_{2}=-\left(\frac{1}{2}\right)a_{1}-\left(\frac{1}{1}\right)a_{0}$$
+
+$$a_{2}=-\left(\frac{1}{2}\right)(-2)-\left(\frac{1}{1}\right)(-1)$$
+
+$$\therefore\boxed{a_{2}=2}$$
+
+$$a_{1+2}=-\left(\frac{1+1}{1+2}\right)a_{1+1}-\left(\frac{2\cdot 1+1}{1+1}\right)a_{1}$$
+
+$$a_{3}=-\left(\frac{2}{3}\right)a_{2}-\left(\frac{3}{2}\right)a_{1}$$
+
+$$a_{3}=-\left(\frac{2}{3}\right)\cdot 2-\left(\frac{3}{2}\right)\cdot (-2)$$
+
+$$a_{3}=-\frac{4}{3}+3$$
+$$\boxed{a_{3}=\frac{5}{3}}$$
+
+$$a_{4}=-\frac{3}{4}a_3-\frac{5}{3}a_2$$
+$$a_4=-\frac{3}{4}\frac{5}{3}-\frac{5}{3}2$$
+$$a_4=-\frac{5}{3}\left(\frac{3}{4}+2\right)$$
+
+$$\boxed{a_4=-\frac{55}{12}}$$
+$$\cdots$$
+
+Finally:
+
+$$\boxed{y=-1-2x+2x^2+\frac{5}{3}x^3-\frac{55}{12}x^4+\cdots} $$
+:::
+:::
+
+## References {.smaller}
+
+1.  [LibreTexts, 7.3: Series Solutions Near an Ordinary Point II .](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.3%3A_Series_Solutions_Near_an_Ordinary_Point_II)
+
+2. [LibreTexts, 7.3: Series Solutions Near an Ordinary Point II (Exercises) ](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.3%3A_Series_Solutions_Near_an_Ordinary_Point_II/7.4.1%3A_Series_Solutions_Near_an_Ordinary_Point_II_(Exercises))

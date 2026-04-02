@@ -1,0 +1,2859 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Proof}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\newtheorem{refremark}{Remark}[chapter]
+\newtheorem{refsolution}{Solution}[chapter]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Lectures Notes on Differential Equations (Unit 3)},
+  pdfauthor={E. Valderrama-Araya, Ph.D.},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Lectures Notes on Differential Equations (Unit 3)}
+\author{E. Valderrama-Araya, Ph.D.}
+\date{2026-03-04}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Preface to Unit 3:}\label{preface-to-unit-3}
+\addcontentsline{toc}{chapter}{Preface to Unit 3:}
+
+\markboth{Preface to Unit 3:}{Preface to Unit 3:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Fourier_series_and_transform.gif}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/mediabag/Laplace,_Pierre-Simo.jpg}}
+
+\textbf{Advanced Techniques in Solving Differential Equations (part II)}
+
+Unit 3 of our differential equations course ventures into the
+exploration of advanced techniques crucial for solving differential
+equations that are not easily tackled by the methods discussed in
+previous units. This unit is designed to equip students with the
+mathematical tools needed to address complex problems in engineering,
+physics, and applied mathematics. Each lecture delves into a specific
+topic, gradually building the foundation necessary for understanding and
+applying these advanced methods.
+
+\section*{L18: Power Series (7.1)}\label{l18-power-series-7.1}
+\addcontentsline{toc}{section}{L18: Power Series (7.1)}
+
+\markright{L18: Power Series (7.1)}
+
+This lecture introduces the concept of power series and their role in
+solving differential equations. We will cover the basics of power
+series, including their definition, convergence, and how they can be
+used as a tool to find solutions to differential equations near a point
+where the solution is analytic.
+
+\section*{L19: Series Solutions I
+(7.2)}\label{l19-series-solutions-i-7.2}
+\addcontentsline{toc}{section}{L19: Series Solutions I (7.2)}
+
+\markright{L19: Series Solutions I (7.2)}
+
+In the first part of series solutions, we focus on finding solutions to
+differential equations using power series methods. This lecture covers
+the technique of substituting a power series into a differential
+equation and determining the coefficients of the series to satisfy the
+equation.
+
+\section*{L20: Series Solutions II
+(7.3)}\label{l20-series-solutions-ii-7.3}
+\addcontentsline{toc}{section}{L20: Series Solutions II (7.3)}
+
+\markright{L20: Series Solutions II (7.3)}
+
+Continuing from the previous lecture, we delve deeper into series
+solutions of differential equations. This session emphasizes solving
+more complex differential equations, including those with variable
+coefficients, using the power series approach.
+
+\section*{L21: Intro to Laplace Transform, Part I
+(8.1)}\label{l21-intro-to-laplace-transform-part-i-8.1}
+\addcontentsline{toc}{section}{L21: Intro to Laplace Transform, Part I
+(8.1)}
+
+\markright{L21: Intro to Laplace Transform, Part I (8.1)}
+
+The first part of our introduction to the Laplace Transform begins with
+the basic definitions and properties. We explore how the Laplace
+Transform can be used to transform a differential equation into an
+algebraic equation, simplifying the process of finding solutions.
+
+\section*{L22: Intro to Laplace Transform, Part II
+(8.1)}\label{l22-intro-to-laplace-transform-part-ii-8.1}
+\addcontentsline{toc}{section}{L22: Intro to Laplace Transform, Part II
+(8.1)}
+
+\markright{L22: Intro to Laplace Transform, Part II (8.1)}
+
+Building on the foundations laid in the previous lecture, we continue to
+explore the Laplace Transform, focusing on its application to initial
+value problems. This lecture provides further insight into how the
+transform can be utilized to solve differential equations more
+efficiently.
+
+\section*{L23: Inverse Laplace Transform
+(8.2)}\label{l23-inverse-laplace-transform-8.2}
+\addcontentsline{toc}{section}{L23: Inverse Laplace Transform (8.2)}
+
+\markright{L23: Inverse Laplace Transform (8.2)}
+
+This lecture introduces the concept of the Inverse Laplace Transform and
+its importance in solving differential equations. We discuss methods for
+finding the inverse transform and how it can be used to convert
+solutions back from the Laplace domain to the time domain.
+
+\section*{L24: Laplace Transform and the Derivative
+(8.3)}\label{l24-laplace-transform-and-the-derivative-8.3}
+\addcontentsline{toc}{section}{L24: Laplace Transform and the Derivative
+(8.3)}
+
+\markright{L24: Laplace Transform and the Derivative (8.3)}
+
+We explore the relationship between the Laplace Transform and
+derivatives, demonstrating how the transform simplifies the process of
+dealing with differential equations involving derivatives. This lecture
+shows how to apply the transform to solve higher-order differential
+equations.
+
+\section*{L25: Solving ODEs with Piecewise Continuous Forcing Functions
+(8.4)}\label{l25-solving-odes-with-piecewise-continuous-forcing-functions-8.4}
+\addcontentsline{toc}{section}{L25: Solving ODEs with Piecewise
+Continuous Forcing Functions (8.4)}
+
+\markright{L25: Solving ODEs with Piecewise Continuous Forcing Functions
+(8.4)}
+
+This session focuses on solving ordinary differential equations (ODEs)
+that are subjected to piecewise continuous forcing functions. We discuss
+the handling of discontinuities and how the Laplace Transform can be
+used to manage such cases effectively.
+
+\section*{L26: Periodic Forcing Functions
+(8.5)}\label{l26-periodic-forcing-functions-8.5}
+\addcontentsline{toc}{section}{L26: Periodic Forcing Functions (8.5)}
+
+\markright{L26: Periodic Forcing Functions (8.5)}
+
+We examine the application of the Laplace Transform in solving ODEs with
+periodic forcing functions. This lecture highlights the technique of
+using the Laplace Transform to simplify and solve differential equations
+driven by periodic inputs.
+
+\section*{L27: Convolution Integral
+(8.6)}\label{l27-convolution-integral-8.6}
+\addcontentsline{toc}{section}{L27: Convolution Integral (8.6)}
+
+\markright{L27: Convolution Integral (8.6)}
+
+The Convolution Integral is introduced as a powerful tool in the context
+of the Laplace Transform. This lecture explains the concept of
+convolution, its properties, and how it can be used to find the solution
+to linear systems with arbitrary inputs.
+
+\section*{L28: Impulse Forcing Functions
+(8.7)}\label{l28-impulse-forcing-functions-8.7}
+\addcontentsline{toc}{section}{L28: Impulse Forcing Functions (8.7)}
+
+\markright{L28: Impulse Forcing Functions (8.7)}
+
+In the final lecture of this unit, we focus on the response of systems
+to impulse forcing functions. We discuss the Dirac delta function and
+how it is used in conjunction with the Laplace Transform to solve
+differential equations that model physical systems subjected to sudden
+forces.
+
+Each lecture in this unit is designed to build upon the last, ensuring
+students develop a comprehensive understanding of advanced methods in
+solving differential equations. Through detailed explanations, examples,
+and exercises, students will gain the skills necessary to tackle complex
+problems using these sophisticated mathematical tools.
+
+\bookmarksetup{startatroot}
+
+\chapter{L18: Power Series (7.1)}\label{l18-power-series-7.1-1}
+
+\section{Power Series definition}\label{power-series-definition}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+An infinite series of the form \[\sum_{n=0}^\infty a_n(x-x_0)^n\] where
+\(x_0,a_0,a_1,a_2,\cdots\in\mathbb{R}\) is a \texttt{power\ series}
+
+A power series \texttt{converges} \(\Leftrightarrow\)
+\[\lim_{N\rightarrow \infty} \sum_{n=0}^N a_n(x-x_0)^n \quad\exists\]
+
+\end{tcolorbox}
+
+\subsection{Example 1. Converge this
+limit?}\label{example-1.-converge-this-limit}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\lim_{n\rightarrow \infty}\left( 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\cdots+\frac{x^n}{n!}\right)=\]
+
+\begin{quote}
+\textbf{Solution}
+
+\[\sum_{n=0}^\infty \frac{x^n}{n!}=1+x+\frac{x^2}{2}+\frac{x^3}{6}+\cdots=e^x\]
+As \(n\) goes to infinite the limit do exist, then we say that the
+infinite series do converge.
+
+\begin{quote}
+\textbf{Note}
+
+\emph{Note:} Taylor Series\footnotemark{}
+
+\(f(x)\) around \(a\) can be written as:
+
+\[f(x)\approx \sum_0^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n\]
+\end{quote}
+\end{quote}
+
+\end{tcolorbox}
+
+\footnotetext{Check Taylor series:
+\url{https://en.wikipedia.org/wiki/Taylor_series}}
+
+\subsection{Example 2. Some important power
+series}\label{example-2.-some-important-power-series}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\(\cos x\), \(e^x\), \(\frac{1}{1-x}\), center at \(x=0\)
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\cos x \approx 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots\]
+
+\[\sin x \approx x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\]
+
+center \(a=0\) \[e^x \approx 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\]
+
+\[\sum_{n=0}^\infty x^n = 1+x+x^2+x^3+\cdots=\frac{1}{1-x};\quad |x|<1\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Proof geometric infinite
+sum}\label{proof-geometric-infinite-sum}
+
+Easy peasy !
+
+\[\text{if }|x|<1 \Rightarrow \boxed{\frac{1}{1-x}=\sum_{n=0}^\infty x^n}\]
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Proof:}, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\sum_{n=0}^\infty x^n = \lim_{N\rightarrow\infty} \sum_{n=0}^N x^n= \lim_{N\rightarrow\infty} S_N\]
+
+\[S_N=1+x+x^2+x^3+\cdots +x^N\]
+
+Let's multiply by \(x\)
+
+\[xS_N=x+x^2+x^3+\cdots +x^N+x^{N+1}\]
+
+Now this is similar to \(S_N\), but is missing a one and have an extra
+\(x^{N+1}\), then is we add one and subtract \(x^{N+1}\) we obtain
+\(S_N\)
+
+\[S_N=1+xS_N-x^{N+1}\]
+
+Solving for \(S_N\):
+
+\[S_N(1-x)=1-x^{N+1}\]
+
+\[S_N=\frac{1}{1-x}-\frac{x^{N+1}}{1-x}\]
+
+Now if \(|x|<1\) the last fraction will go to zero when
+\(N\rightarrow \infty\).
+
+\[\therefore \boxed{\sum_{n=0}^\infty x^n =\frac{1}{1-x};\quad |x|<1}\]
+
+\end{tcolorbox}
+
+\section{Theorem Power Series
+convergence}\label{theorem-power-series-convergence}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Power Series
+convergence]\protect\hypertarget{thm-Pow}{}\label{thm-Pow}
+
+For any power series \[\sum_{n=0}^\infty a_n(x-x_0)^n\] exactly
+\texttt{one} of these statements is true.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  The power series converges only for \(x=x_0\)
+\item
+  The power series converges \(\forall x\in \mathbb{R}\)
+\item
+  \(\exists R>0\) such that the power series converges for \(|x-x_0|<R\)
+  and diverges for \(|x-x_0|>R\)
+\end{enumerate}
+
+Such an \texttt{R} is called the \texttt{radius\ of\ convergence}
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\section{Radius of convergence}\label{radius-of-convergence}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Radius of
+convergence]\protect\hypertarget{thm-radPow}{}\label{thm-radPow}
+
+Suppose \(a_n\neq 0\)
+\[\forall n\geq N\quad\text{ and}\quad \lim_{n\rightarrow\infty} \left|\frac{a_{n+1}}{a_n}\right|=L\]
+Then the radius of convergence of \(\sum_{n=0}^\infty a_n(x-x_0)^n\) is
+\[R=\frac{1}{L}\]
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Example 3.}\label{example-3.}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\sum_{n=0}^\infty \frac{x^n}{n!}\Rightarrow \boxed{x_0=0,\quad a_n=\frac{1}{n!}}\Rightarrow\]
+Please observe that: \[(n+1)!=n!(n+1)\]
+
+\[ \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right|=\left|\frac{n!}{n!(n+1)}\right|=\left|\frac{1}{n+1}\right|\]
+
+which goes to zero as \(n\rightarrow \infty\)
+
+Then if L goes to zero, then R goes to infinity:
+
+\[\boxed{\Rightarrow R=\frac{1}{L}=\infty}\]
+
+\end{tcolorbox}
+
+\subsection{Example 4.}\label{example-4.}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\sum_{n=0}^\infty x^n\Rightarrow \boxed{x_0=0,\quad a_n=1}\Rightarrow\]
+
+\[ \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{1}{1}\right|=1\]
+
+which goes to 1 as \(n\rightarrow \infty\)
+
+\[\boxed{\Rightarrow R=\frac{1}{1}=1}\]
+
+\end{tcolorbox}
+
+\subsection{Example 5.}\label{example-5.}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\sum_{n=0}^\infty 2^nn^2(x-1)^n\Rightarrow \boxed{x_0=1,\quad a_n=2^n n^2}\Rightarrow\]
+
+\[ \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{2^{n+1} (n+1)^2}{2^n n^2}\right|=2\]
+
+which goes to 2 as \(n\rightarrow \infty\)
+
+\[\boxed{\Rightarrow R=\frac{1}{L}=\frac{1}{2}}\]
+
+\end{tcolorbox}
+
+\section{Taylor Series definition}\label{taylor-series-definition}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+The \texttt{Taylor\ Series} of \(f\) about \(x_0\) is:
+
+\[\boxed{\sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}\]
+
+If \(x_0=0\) (Maclaurin Series)
+\[f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n\] if converges.
+
+\end{tcolorbox}
+
+\section{Radius of convergence for the
+derivative}\label{radius-of-convergence-for-the-derivative}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Radius of convergence for the
+derivative]\protect\hypertarget{thm-RadConDiff}{}\label{thm-RadConDiff}
+
+\[\text{If: }f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n\] has a radius of
+convergence \(R\).
+
+\[\text{Then: }f'(x)=\sum_{n=0}^\infty na_n(x-x_0)^{n-1}\] has a radius
+of convergence \(R\).
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\section{Linear Combination of Power
+Series}\label{linear-combination-of-power-series}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Linear Combination of Power
+Series]\protect\hypertarget{thm-LinCombPow}{}\label{thm-LinCombPow}
+
+\[\text{If: }f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n\] with a radius of
+convergence \(R_1\), \[\text{and }g(x)=\sum_{n=0}^\infty b_n(x-x_0)^n\]
+with a radius of convergence \(R_2\).
+
+Then
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \[cf(x)=\sum_{n=0}^\infty ca_n(x-x_0)^{n}\] has a radius of
+  convergence \(R_1\).
+\item
+  \[f(x)+g(x)=\sum_{n=0}^\infty (a_n+b_n)(x-x_0)^n\] has a radius of
+  convergence \(R=min\{R_1,R_2\}\)
+\end{enumerate}
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Example 6. ``diffeq as a power
+series''}\label{example-6.-diffeq-as-a-power-series}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Suppose \(y=\sum_{n=0}^\infty a_nx^n\). Express \[(2-x)y''+2y\] as a
+power series.
+
+\begin{quote}
+\textbf{Solution:}
+
+I will provide detailed step, so none get behind
+
+\[y':\] \[y'=\sum_{n=1}^\infty na_nx^{n-1}\] (Shift)
+
+\[=\sum_{n=0}^\infty (n+1)a_{n+1}x^{n}\] \[y'':\]
+
+\[y''=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}\] (Shift)
+
+\[y''=\sum_{n=0}^\infty (n+2)((n+2)-1)a_{n+2}x^{(n+2)-2}\]
+\[y''=\sum_{n=0}^\infty (n+2)(n+1)a_{n+2}x^{n}\]
+
+\section{\texorpdfstring{\[\Rightarrow \boxed{2y''=\sum_{n=0}^\infty 2(n+2)(n+1)a_{n+2}x^{n}}\]}{\textbackslash Rightarrow \textbackslash boxed\{2y\textquotesingle\textquotesingle=\textbackslash sum\_\{n=0\}\^{}\textbackslash infty 2(n+2)(n+1)a\_\{n+2\}x\^{}\{n\}\}}}\label{rightarrow-boxed2ysum_n0infty-2n2n1a_n2xn}
+
+(multiply by \(x\) then shift)
+
+\[\Rightarrow xy''=x\sum_{n=2}^\infty n(n-1)a_nx^{n-2}\]
+\[=\sum_{n=2}^\infty n(n-1)a_nx^{n-1}\] (Now we shift only in 1, so we
+can have \(x^n\) as common factor)
+
+\[=\sum_{n=1}^\infty (n+1)(n)a_{n+1}x^{n}\] Also I observe that I could
+start at \(n=0\) because that will add only a zero.
+
+\[\Rightarrow \sum_{n=1}^\infty (n+1)(n)a_{n+1}x^{n}=\sum_{n=0}^\infty (n+1)(n)a_{n+1}x^{n}\]
+\[\Rightarrow \boxed{xy''=\sum_{n=0}^\infty (n+1)(n)a_{n+1}x^{n}}\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Which is what I want, so everybody have \(x^n\) as a factor.
+
+Putting everything together:
+
+\[(2-x)y''+2y=\]
+\[\sum_{n=0}^\infty\left[ 2(n+2)(n+1)a_{n+2}-(n+1)na_{n+1}+2a_n\right]x^n\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7\%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.1\%3A_Review_of_Power_Series}{LibreTexts,
+  7.1: Review of Power Series, from William F. Trench.}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L19: Series Solutions I
+(7.2)}\label{l19-series-solutions-i-7.2-1}
+
+\section{Singular and Ordinary
+Points}\label{singular-and-ordinary-points}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+For \[P_0(x)y''+P_1(x)y'+P_2(x)y=0\] where \(P_0,P_1,P_2\) are
+polynomial. The points \(x_0\) for which \(P_0(x_0)=0\) are called
+\texttt{singular\ points} and points \(x_0\) for which
+\(P_0(x_0)\neq 0\) are called \texttt{ordinary\ points}.
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-6}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Legendre's Equation\footnotemark{}
+  \[(1-x^2)y''-2xy'+\alpha(\alpha+1)y=0\]
+\item
+  Besse'ls Equation\footnotemark{} \[x^2y''+xy'+(x^2-v^2)y=0\]
+\end{enumerate}
+
+\end{tcolorbox}
+
+\footnotetext{In physical settings, Legendre's differential equation
+arises naturally whenever one solves Laplace's equation (and related
+partial differential equations) by separation of variables in spherical
+coordinates.}
+
+\footnotetext{The Bessel function is a generalization of the sine
+function. It can be interpreted as the vibration of a string with
+variable thickness, variable tension (or both conditions
+simultaneously); vibrations in a medium with variable properties;
+vibrations of the disc membrane, etc. Bessel's equation arises when
+finding separable solutions to Laplace's equation and the Helmholtz
+equation in cylindrical or spherical coordinates.}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Solution:}, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \(x_0=\pm 1\)
+\item
+  \(x_0=0\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+\section{Theorem}\label{theorem-4}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Unique Solution for not singular
+point.]\protect\hypertarget{thm-singpoint}{}\label{thm-singpoint}
+
+Consider \[P_0(x)y''+P_1(x)y'+P_2(x)y=0\]
+\[ y(x_0)=a_0,\quad y'(x_0)=a_1\] If \(x_0\) is
+\texttt{not\ singular\ point}, then the equation has a unique solution
+on the largest open interval that contains \(x_0\) but not singular
+points equals to \[y=\sum_{n=0}^\infty a_n(x-x_0)^n\]
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Example 1}\label{example-1-1}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Find the power series solution for
+\[L_y:=y''+y=0,\quad\text{in terms of}(x-x_0)\]
+
+\begin{quote}
+\textbf{Solution}
+
+\[y=\sum_{n=0}^\infty a_n(x-x_0)^n\]
+\[y'=\sum_{n=1}^\infty na_n(x-x_0)^{n-1}\]
+\[y''=\sum_{n=2}^\infty n(n-1)a_n(x-x_0)^{n-2}\]
+
+\[\Rightarrow\]
+\[L_y:=\sum_{n=2}^\infty n(n-1)a_n(x-x_0)^{n-2}+\sum_{n=0}^\infty a_n(x-x_0)^n=0\]
+Shifting index for \(y''\):
+\[=\sum_{n=2-2}^{\infty-2} (n+2)(n+2-1)a_{n+2}(x-x_0)^{n+2-2}+\sum_{n=0}^\infty a_n(x-x_0)^n\]
+\[=0\]
+
+\[\sum_{n=0}^\infty \left[(n+2)(n+1)a_{n+2}+a_n\right](x-x_0)^n=0\]
+
+\[\Leftrightarrow\]
+
+\[(n+2)(n+1)a_{n+2}+a_n=0,\qquad \forall n\geq 0\]
+
+\[\Leftrightarrow \boxed{a_{n+2}=-\frac{a_n}{(n+2)(n+1)}}\] (2\(^{nd}\)
+order recurrence relation)\footnotemark{} \[a_0,a_1,a_2,a_3,\cdots\]
+sequence depends upon both \(a_0,a_1\).
+
+\(\boxed{\text{Case 1 (even index)}:}\)
+
+\[ a_2=-\frac{a_0}{(0+2)(0+1)}=-\frac{a_0}{2\cdot 1}\]
+\[a_4=-\frac{a_2}{(2+2)(2+1)}=-\frac{a_2}{4\cdot 3}=\frac{a_0}{4\cdot3\cdot 2\cdot 1}\]
+\[a_6=-\frac{a_4}{(4+2)(4+1)}=-\frac{a_4}{6\cdot 5}=-\frac{a_0}{6!}\]
+Now instead of a recurrence relation, we can state an explicit equation
+for the even index:
+
+\[\boxed{a_{2m}=(-1)^m\frac{a_0}{(2m)!},\qquad m=0,1,2,3,\cdots}\]\footnotemark{}
+
+\(\boxed{\text{Case 2 (odd index)}:}\)
+
+\[a_3=-\frac{a_1}{(1+2)(1+1)}=-\frac{a_1}{3\cdot 2}\]
+\[a_5=-\frac{a_3}{(3+2)(3+1)}=\frac{a_1}{5\cdot 4\cdot 3\cdot 2}\]
+\[a_7=-\frac{a_5}{(5+2)(5+1)}=-\frac{a_1}{7!}\]
+
+\[\boxed{a_{2m+1}=(-1)^m\frac{a_1}{(2m+1)!},\qquad m=0,1,2,3,\cdots}\]
+
+Final Solution:
+
+\[y=\sum_{m=0}^\infty (-1)^m a_0 \frac{(x-x_0)^{2m}}{(2m)!}+\sum_{m=0}^\infty (-1)^m a_1 \frac{(x-x_0)^{2m+1}}{(2m+1)!}\]
+\[y=a_0\sum_{m=0}^\infty (-1)^m  \frac{(x-x_0)^{2m}}{(2m)!}+a_1\sum_{m=0}^\infty (-1)^m  \frac{(x-x_0)^{2m+1}}{(2m+1)!}\]
+
+Expanding cosine and sine function using taylor series:
+
+\[\boxed{y=a_0\cos(x-x_0)+a_1\sin(x-x_0)}\]
+
+Note: Check the Taylor series for cosine and sine
+functions\footnotemark{}
+\end{quote}
+
+\end{tcolorbox}
+
+\footnotetext{second-order relation because depends of the previous
+previous term}
+
+\footnotetext{adding \(m=0\) it is possible, because only add a true
+statement, \(a_0=a_0\)}
+
+\footnotetext{https://en.wikipedia.org/wiki/Taylor\_series}
+
+\subsection{Example 2}\label{example-2-1}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Find the power series in \(x\) for the general solution of:
+\[L_y:=(1+2x^2)y''+6xy'+2y=0\]
+
+\begin{quote}
+\textbf{Solution}
+
+\[y=\sum_{n=0}^\infty a_nx^n\] \[y'=\sum_{n=1}^\infty na_nx^{n-1}\]
+\[y''=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}\]
+\[L_y=(1+2x^2)\sum_{n=2}^\infty n(n-1)a_nx^{n-2}+6x\sum_{n=1}^\infty na_nx^{n-1}+2\sum_{n=0}^\infty a_nx^n=0\]
+\[=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}+\sum_{n=0}^\infty[2n(n-1)+6n+2]a_nx^n\]
+\[=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}+2\sum_{n=0}^\infty(n+1)^2a_nx^n\]
+\[=\sum_{n=0}^\infty (n+2)(n+1)a_{n+2}x^{n}+2\sum_{n=0}^\infty(n+1)^2a_nx^n\]
+\[=\sum_{n=0}^\infty \left[(n+2)(n+1)a_{n+2}+2(n+1)^2a_n\right]x^n=0\]
+\[\Leftrightarrow (n+2)(n+1)a_{n+2}+2(n+1)^2a_n=0,\quad\forall n\geq 0\]
+
+\[\Rightarrow \boxed{a_{n+2}=-2\left(\frac{n+1}{n+2}\right)a_n}\]
+\(\boxed{\text{Case 1: Even terms: }}\)
+
+\[a_2=-2\frac{1}{2}a_0=-\frac{1}{1}a_0\]
+\[a_4=-2\frac{3}{4}a_2=\frac{3\cdot 1}{2\cdot 1}a_0\]
+
+\[a_6=-2\frac{5}{6}a_4=-\frac{5\cdot 3\cdot 1}{3\cdot 2\cdot 1}a_0\]
+\[a_{2m}=(-1)^m\frac{\Pi_{j=1}^m (2j-1)}{m!}a_0\]
+
+\(\boxed{\text{Case 2: Odd terms: }}\)
+
+\[a_3=-2\frac{(1+1)}{(1+2)}a_1=-\frac{4}{3}a_1\]
+\[a_5=-2\frac{(3+1)}{(3+2)}a_3=-2\frac{4}{5}a_3=2\frac{4}{5}\frac{4}{3}a_1=4^2\frac{2\cdot 1}{5\cdot 3}a_1\]
+
+\[a_7=-2\frac{(5+1)}{(5+2)}a_5=-2\frac{6}{7}a_5=-4^3\frac{3\cdot 2\cdot 1}{7\cdot 5\cdot 3}a_1\]
+
+\[a_{2m+1}=\frac{(-1)^m4^mm!}{\Pi_{j=1}^m(2j+1)}a_1\]
+
+\textbf{Solution:}
+
+\[\boxed{y=a_0\sum_{m=0}^\infty (-1)^m\frac{\Pi_{j=1}^m(2j-1)}{m!}x^{2m}+a_1\sum_{m=0}^\infty\frac{(-1)^m4^mm!}{\Pi_{j=1}^m(2j+1)}x^{2m+1}}\]
+
+\textbf{Note:} Please observe that the solution is the addition of even
+and odd powers of \(x\), with different \texttt{factors}.
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7\%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.2\%3A_Series_Solutions_Near_an_Ordinary_Point_I}{LibreTexts,
+  7.2: Series Solutions Near an Ordinary Point I .}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7\%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.2\%3A_Series_Solutions_Near_an_Ordinary_Point_I/7.2E\%3A_Series_Solutions_Near_an_Ordinary_Point_I_(Exercises)}{LibreTexts,
+  7.2: Series Solutions Near an Ordinary Point I (Exercises)}
+\item
+  \href{https://en.wikipedia.org/wiki/Legendre_polynomials}{Wiki:
+  Legendre polynomials}
+\item
+  \href{https://en.wikipedia.org/wiki/Bessel_function}{Wiki: Bessel
+  function}
+\item
+  \href{https://en.wikipedia.org/wiki/Bessel_polynomials}{Wiki: Bessel
+  polynomials}
+\item
+  \href{https://math.libretexts.org/Bookshelves/Differential_Equations/Partial_Differential_Equations_(Walet)/10\%3A_Bessel_Functions_and_Two-Dimensional_Problems/10.02\%3A_Bessel\%E2\%80\%99s_Equation}{LibreTexts,
+  10.2: Bessel's Equation, Niels Walet}
+\item
+  \href{https://youtu.be/tFAcYruShow}{Youtube: Cymatics: Chladni Plate -
+  Sound, Vibration and Sand}
+\item
+  \href{https://youtu.be/rjueHI002Fg}{Youtube: I recreated the Rings of
+  Power with a vibrating square}
+\item
+  \href{http://hyperphysics.phy-astr.gsu.edu/hbase/Math/legend.html}{Hyperphysics:
+  Legendre Polynomials, solutions of the Schrodinger equation in
+  spherical polar coordinates}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L20: Series Solutions II
+(7.3)}\label{l20-series-solutions-ii-7.3-1}
+
+\section{Theorem}\label{theorem-5}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[]\protect\hypertarget{thm-rec-rel}{}\label{thm-rec-rel}
+
+The coefficients \(\{a_n\}\) in any solution
+\(y=\sum_{n=0}^\infty a_n(x-x_0)^n\) of
+
+\[(1+\alpha(x-x_0)^2)y''+\beta(x-x_0)y'+\gamma y=0\] Satisfy the
+recurrence relation
+\[a_{n+2}=-\frac{p(n)}{(n+2)(n+1)}a_n,\qquad n\geq 0\]
+
+where \[p(n)=\alpha n(n-1)+\beta n +\gamma\]
+
+Moreover, the coefficients of the even and odd powers of \((x-x_0)\) can
+be computed separately as
+
+\[a_{2m+2}=-\frac{p(2m)}{(2m+2)(2m+1)}a_{2m},\qquad m\geq 0\]
+\[a_{2m+3}=-\frac{p(2m+1)}{(2m+3)(2m+2)}a_{2m+1},\qquad m\geq 0\] where
+\(a_0\) and \(a_1\) are arbitrary.
+
+\textbf{Note:} After we observe first 3-5 coefficients, we may provide a
+conjecture of what is the explicit equation.
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-10}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Find the power series in \(x-1\) for the general solution of:
+\[(3x^2-6x+4)y''-12(x-1)y'-12y=0\]
+
+\begin{quote}
+\textbf{Solution:}
+
+First we need to write \(P_0(x)=3x^2-6x+4\) in terms of \((x-1)\), to do
+this we set \(x\) as \((x-1)+1\), and observe the
+factorization\footnotemark{}:
+
+\[P_0(x)=3x^2-6x+4\]
+
+\[=3((x-1)+1)^2-6((x-1)+1)+4\]
+
+\[=3((x-1)^2+2(x-1)+1)-6(x-1)-6+4\]
+
+\[=3(x-1)^2+6(x-1)+3-6(x-1)-6+4\]
+
+\[=3(x-1)^2+1\]
+
+Therefore the diffyq, can be written as:
+
+\[(1+3(x-1)^2)y''-12(x-1)y'-12y=0\]
+
+From the equation we read:
+
+\[\alpha = 3,\quad \beta= -12,\quad \gamma=-12\]
+
+Then we can calculate \(p(n)\):
+
+\[p(n)=\alpha n(n-1)+\beta n +\gamma\] \[=3n(n-1)-12n -12\]
+\[=3n^2-15n-12\]
+
+Then we can obtain the recurrence relation:
+
+\[a_{n+2}=-\frac{p(n)}{(n+2)(n+1)}a_n,\qquad n\geq 0\]
+\[\boxed{a_{n+2}=-\frac{3n^2-15n-12}{(n+2)(n+1)}a_n},\qquad n\geq 0\]
+
+\[\cdots\]
+\end{quote}
+
+\end{tcolorbox}
+
+\footnotetext{also we could attempt long division}
+
+\section{Coefficients given initial
+conditions}\label{coefficients-given-initial-conditions}
+
+\begin{itemize}
+\item
+  Consider a differential equation which cant be obtain an explicit
+  equation for \(a_n\) coefficient, that means for example, the diffeq
+  doesn't have the form of the previous theorem.
+\item
+  In this case we can calculate recursively each of the coefficients.
+\end{itemize}
+
+\subsection{Example}\label{example-12}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Find the coefficients \(a_0,\cdots,a_5\) in the series solution
+\(y=\sum_{n=0}^\infty a_n x^n\) of
+\[(1+x+2x^2)y''+(1+7x)y'+2y=0,\qquad y(0)=-1,\quad y'(0)=-2\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\boxed{y'=\sum_{n=1}^\infty na_nx^{n-1}}\qquad \boxed{y''=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}}\]
+\[\sum_{n=2}n(n-1)a_nx^{n-2}+\sum_{n=2}n(n-1)a_nx^{n-1}+2\sum_{n=2}n(n-1)a_nx^{n}+\sum_{n=1} na_nx^{n-1}+7\sum_{n=1} na_nx^{n}+2\sum_{n=0}a_nx^n=0\]
+
+Shifting!:
+
+\[\sum_{n=0}(n+2)(n+1)a_{n+2}x^{n}+\sum_{n=1}(n+1)(n)a_{n+1}x^{n}+2\sum_{n=2}n(n-1)a_nx^{n}+\sum_{n=0} (n+1)a_{n+1}x^{n}+7\sum_{n=1} na_nx^{n}+2\sum_{n=0}a_nx^n=0\]
+
+Adding zeroes:
+
+\[\sum_{n=0}(n+2)(n+1)a_{n+2}x^{n}+\sum_{n=0}(n+1)(n)a_{n+1}x^{n}+2\sum_{n=0}n(n-1)a_nx^{n}+\sum_{n=0} (n+1)a_{n+1}x^{n}+7\sum_{n=0} na_nx^{n}+2\sum_{n=0}a_nx^n=0\]
+Big sum!:
+
+\[\sum_{n=0}^\infty \left((n+2)(n+1)a_{n+2} + [(n+1)(n)+(n+1)]a_{n+1}+[2n(n-1)+7n+2]a_n\right)x^n=0\]
+
+\[(n+2)(n+1)a_{n+2} + (n+1)(n+1)a_{n+1}+[2n^2+5n+2]a_n=0\]
+
+\[(n+2)(n+1)a_{n+2} + (n+1)(n+1)a_{n+1}+(n+2)(2n+1)a_n=0\] Finally:
+
+\[\boxed{a_{n+2}=-\left(\frac{n+1}{n+2}\right)a_{n+1}-\left(\frac{2n+1}{n+1}\right)a_{n}}\]
+
+\[a_0=y(0)=-1,\qquad a_1=y'(0)=-2,\qquad\]
+
+Using the recurrence relation:
+
+\[a_{0+2}=-\left(\frac{0+1}{0+2}\right)a_{0+1}-\left(\frac{0+1}{0+1}\right)a_{0}\]
+\[a_{2}=-\left(\frac{1}{2}\right)a_{1}-\left(\frac{1}{1}\right)a_{0}\]
+
+\[a_{2}=-\left(\frac{1}{2}\right)(-2)-\left(\frac{1}{1}\right)(-1)\]
+
+\[\therefore\boxed{a_{2}=2}\]
+
+\[a_{1+2}=-\left(\frac{1+1}{1+2}\right)a_{1+1}-\left(\frac{2\cdot 1+1}{1+1}\right)a_{1}\]
+
+\[a_{3}=-\left(\frac{2}{3}\right)a_{2}-\left(\frac{3}{2}\right)a_{1}\]
+
+\[a_{3}=-\left(\frac{2}{3}\right)\cdot 2-\left(\frac{3}{2}\right)\cdot (-2)\]
+
+\[a_{3}=-\frac{4}{3}+3\] \[\boxed{a_{3}=\frac{5}{3}}\]
+
+\[a_{4}=-\frac{3}{4}a_3-\frac{5}{3}a_2\]
+\[a_4=-\frac{3}{4}\frac{5}{3}-\frac{5}{3}2\]
+\[a_4=-\frac{5}{3}\left(\frac{3}{4}+2\right)\]
+
+\[\boxed{a_4=-\frac{55}{12}}\] \[\cdots\]
+
+Finally:
+
+\[\boxed{y=-1-2x+2x^2+\frac{5}{3}x^3-\frac{55}{12}x^4+\cdots} \]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7\%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.3\%3A_Series_Solutions_Near_an_Ordinary_Point_II}{LibreTexts,
+  7.3: Series Solutions Near an Ordinary Point II .}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7\%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.3\%3A_Series_Solutions_Near_an_Ordinary_Point_II/7.4.1\%3A_Series_Solutions_Near_an_Ordinary_Point_II_(Exercises)}{LibreTexts,
+  7.3: Series Solutions Near an Ordinary Point II (Exercises)}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L21: Intro to Laplace Transform, part I
+(8.1)}\label{l21-intro-to-laplace-transform-part-i-8.1-1}
+
+\section{Intro to chapter 8}\label{intro-to-chapter-8}
+
+\texttt{Laplace\ Transform}: \(\mathscr{L}\)
+
+This chapter explores the Laplace transform technique, a fundamental
+problem-solving approach in mathematics that simplifies complex problems
+into manageable ones. By converting initial value problems with constant
+coefficients into algebraic equations, the method provides a new
+solution pathway. While sometimes offering an alternative to traditional
+methods, Laplace transforms prove particularly efficient for physical
+problems involving discontinuous forcing functions, outperforming
+previous strategies.
+
+\section{Linearity}\label{linearity}
+
+\begin{itemize}
+\tightlist
+\item
+  Recall the derivative operator
+\end{itemize}
+
+\begin{align}
+\frac{d}{dx} f(x)&=f'(x)\\
+\frac{d}{dx} (c_1f(x)+c_2g(x))&=c_1f'(x)+c_2g'(x)\\
+&=c_1\frac{d}{dx}f(x)+c_2\frac{d}{dx}g(x)\\
+\end{align} \(\frac{d}{dx}\) is a linear operator\footnote{un dia vi una
+  vaca vestida de uniforme\ldots{}}.
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{More about Linear Operators:}, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+In the context of differential equations and Laplace transforms, a
+linear operator is a mathematical tool that maps one function to another
+in a way that is consistent with two key properties of linearity:
+additivity and homogeneity. These properties allow for the
+simplification and solution of differential equations using the powerful
+techniques of linear algebra. When discussing Laplace transforms, linear
+operators play a crucial role.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Additivity}: This property means that if you apply the linear
+  operator to the sum of two functions, it's the same as applying the
+  operator to each function individually and then adding the results.
+  Mathematically, for a linear operator \(L\), and any two functions
+  \(f\) and \(g\), this is written as \(L(f + g) = L(f) + L(g)\).
+\item
+  \textbf{Homogeneity} (or scalar multiplication): This property states
+  that if you multiply a function by a scalar (a constant number) before
+  applying the linear operator, it's the same as applying the operator
+  to the function first and then multiplying the result by the scalar.
+  Formally, for any function \(f\) and any scalar \(c\), this is
+  expressed as \(L(c \cdot f) = c \cdot L(f)\).
+\end{enumerate}
+
+These properties are essential when working with differential equations
+in the Laplace domain because the Laplace transform itself is a linear
+operator. The Laplace transform converts differential equations, which
+can be difficult to solve in their original form, into algebraic
+equations, which are often much simpler to work with. This conversion
+leverages the linearity of the Laplace transform to simplify the process
+of solving complex differential equations, particularly those that
+describe systems in engineering and physics.
+
+For example, consider a linear differential equation with constant
+coefficients. The application of the Laplace transform linearly maps
+this differential equation into an algebraic equation in the Laplace
+domain. The solution of this algebraic equation can then be found using
+techniques from linear algebra. Finally, applying the inverse Laplace
+transform (which is also a linear operator) to the solution in the
+Laplace domain converts it back to the original domain, giving the
+solution to the original differential equation.
+
+In summary, linear operators, exemplified by the Laplace transform in
+this context, are foundational to solving differential equations by
+transforming them into a form where linear algebraic methods can be
+applied, thereby greatly simplifying the process of finding solutions.
+
+\end{tcolorbox}
+
+\begin{itemize}
+\tightlist
+\item
+  The inverse operator to the derivative is the integral operator:
+\end{itemize}
+
+\(\int dx\quad\), which is also a linear operator.
+
+\section{Definition}\label{definition-3}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+The Laplace Transform operator \(\mathscr{L}\) is defined by:
+
+\[\mathscr{L}\{f(t)\}=F(s)\]
+
+where \[\boxed{F(s)=\int_0^\infty e^{-st} f(t)\,dt}\]
+
+\end{tcolorbox}
+
+\section{Properties}\label{properties}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Laplace Transform Properties}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\mathscr{L}\{y(t)\}=Y(s)\)
+\item
+  \(\mathscr{L}\{c_1f(t)+c_2g(t)\}=c_1\mathscr{L}\{f(t)\}+c_2\mathscr{L}\{g(t)\}=c_1F(s)+c_2G(s)\)
+\item
+  \(\mathscr{L}\{y'(t)\}=sY(s)-y(0)\)
+\item
+  \(\mathscr{L}\{e^{at}\}=\frac{1}{s-a},\qquad s>a.\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+\section{Method}\label{method}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Solving an IVP using the Laplace Transform}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Take the Laplace Transform
+\item
+  Solve for \(Y(s)=\mathscr{L}\{y(t)\}\)
+\item
+  Take the inverse Laplace Transform
+\end{enumerate}
+
+\[\mathscr{L}^{-1}\{Y(s)\}=\mathscr{L}^{-1}\mathscr{L}\{y(t)\}=y(t)\]
+
+\end{tcolorbox}
+
+\section{Example}\label{example-14}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[y'-4y=e^{3t},\qquad y(0)=1\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\subsection*{1. Laplace Transform:}\label{laplace-transform}
+\addcontentsline{toc}{subsection}{1. Laplace Transform:}
+
+\[\mathscr{L}\{y'-4y\}=\mathscr{L}\{e^{3t}\}\]
+\[\mathscr{L}\{y'\}-4\mathscr{L}\{y\}=\mathscr{L}\{e^{3t}\}\]
+\[\boxed{sY(s)-y(0)-4Y(s)=\frac{1}{s-3}}\]
+
+\subsection*{\texorpdfstring{2. Solve for
+\(Y(s)\):}{2. Solve for Y(s):}}\label{solve-for-ys}
+\addcontentsline{toc}{subsection}{2. Solve for \(Y(s)\):}
+
+\[(s-4) Y(s)=\frac{1}{s-3}+1\]
+\[Y(s)=\frac{1}{(s-3)(s-4)}+\frac{1}{(s-4)}\]
+\[\text{Partial fractions}\cdots\]
+\[\boxed{Y(s)=\frac{-1}{(s-3)}+\frac{2}{(s-4)}}\]
+
+\subsection*{3. Inverse Laplace Transform
+:}\label{inverse-laplace-transform}
+\addcontentsline{toc}{subsection}{3. Inverse Laplace Transform :}
+
+\[y(t)=\mathscr{L}^{-1}\{Y(s)\}\]
+
+\[y(t)=\mathscr{L}^{-1}\left\{\frac{-1}{(s-3)}+\frac{2}{(s-4)}\right\}\]
+
+\section{\texorpdfstring{\[\boxed{\boxed{y(t)=-e^{3t}+2e^{4t}}}\]}{\textbackslash boxed\{\textbackslash boxed\{y(t)=-e\^{}\{3t\}+2e\^{}\{4t\}\}\}}}\label{boxedboxedyt-e3t2e4t}
+
+\subsection*{Let's check:}\label{lets-check}
+\addcontentsline{toc}{subsection}{Let's check:}
+
+\[y'-4y=e^{3t}\]
+
+\[\mu(t)=e^{\int -4\,dt}=e^{-4t}\]
+
+\[y(t)=\frac{1}{\mu(t)}\int \mu(t)Q(t)\,dt\]
+
+\[=e^{4t}\int e^{-t}\,dt\]
+
+\[y(t)=e^{4t}(-e^{-t}+C)\]
+
+\[y(0)=(-1+C)=1\Rightarrow \boxed{C=2}\]
+
+\subsection*{We get the same!}\label{we-get-the-same}
+\addcontentsline{toc}{subsection}{We get the same!}
+
+\[y(t)=e^{4t}(-e^{-t}+2)\]
+
+\[\boxed{y(t)=-e^{3t}+2e^{4t}}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references-3}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{-1}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms}{LibreTexts,
+  8: Laplace Transforms, by William F.Trench.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.1\%3A_Introduction_to_the_Laplace_Transform}{LibreTexts,
+  8.1: Introduction to the Laplace Transform, by William F.Trench.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.1\%3A_Introduction_to_the_Laplace_Transform/8.1.1\%3A_Introduction_to_the_Laplace_Transform_(Exercises)}{LibreTexts,
+  8.1.1: Introduction to the Laplace Transform (Exercises), by William
+  F.Trench.}
+\item
+  \href{https://undergroundmathematics.org/glossary/linear-operator}{Simple
+  definition for Linear Operator}
+\item
+  \href{https://www.khanacademy.org/math/algebra-home/alg-rational-expr-eq-func/alg-partial-fraction/v/partial-fraction-expansion-1}{Khan:
+  Partial fractions}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L22: Intro to Laplace Transform, part II
+(8.1)}\label{l22-intro-to-laplace-transform-part-ii-8.1-1}
+
+\section{Definition and basic Properties of
+LT}\label{definition-and-basic-properties-of-lt}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{f(t)\}=F(s)=\int_0^\infty e^{-st} f(t)\,dt\]
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-16}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{e^{at}\}=\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\mathscr{L}\{e^{at}\}=\int_0^\infty e^{-st}e^{at}\,dt\]
+
+\[\mathscr{L}\{e^{at}\}=\int_0^\infty e^{(a-s)t}\,dt\]
+
+\[\mathscr{L}\{e^{at}\}=\left[\frac{e^{(a-s)t}}{(a-s)}\right]_0^\infty\]
+
+\[(\text{If }s>a)\Rightarrow \lim_{t\rightarrow \infty} e^{(a-s)t}= 0\]
+
+\[\Rightarrow\mathscr{L}\{e^{at}\}=\left[\frac{e^{(a-s)t}}{(a-s)}\right]_0^\infty=0-\frac{1}{(a-s)}=\frac{1}{s-a},\qquad s>a\]
+
+\[\therefore \boxed{\mathscr{L}\{e^{at}\}=\frac{1}{s-a},\qquad s>a}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{\texorpdfstring{Plots
+\(f(t)\rightarrow F(s)\)}{Plots f(t)\textbackslash rightarrow F(s)}}\label{plots-ftrightarrow-fs}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\NormalTok{t }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{3}\NormalTok{,}\AttributeTok{length.out=}\DecValTok{100}\NormalTok{)}
+\NormalTok{s }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{3}\NormalTok{,}\AttributeTok{length.out=}\DecValTok{100}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(t,}\FunctionTok{exp}\NormalTok{(}\DecValTok{2}\SpecialCharTok{*}\NormalTok{t),}\AttributeTok{type =} \StringTok{"l"}\NormalTok{,}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{100}\NormalTok{), }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(s,}\DecValTok{1}\SpecialCharTok{/}\NormalTok{(s}\DecValTok{{-}2}\NormalTok{), }\AttributeTok{type =} \StringTok{"l"}\NormalTok{,}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{30}\NormalTok{), }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}\SpecialCharTok{+}\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\DecValTok{2}\NormalTok{, }\AttributeTok{lty =}\DecValTok{3}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+integer(0)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mtext}\NormalTok{(}\StringTok{"Laplace Transformation"}\NormalTok{, }\AttributeTok{side =} \DecValTok{3}\NormalTok{, }\AttributeTok{line =} \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{, }\AttributeTok{outer =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L22_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+
+\subsection{Maxima do have laplace
+function:}\label{maxima-do-have-laplace-function}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{define}\NormalTok{(}\ConstantTok{f}\NormalTok{(}\ConstantTok{t}\NormalTok{),}\VariableTok{\%e}\NormalTok{\^{}(}\DecValTok{2}\NormalTok{*}\ConstantTok{t}\NormalTok{));}
+\ConstantTok{ys}\NormalTok{: }\FunctionTok{laplace}\NormalTok{(}\ConstantTok{f}\NormalTok{(}\ConstantTok{t}\NormalTok{),}\ConstantTok{t}\NormalTok{,}\ConstantTok{s}\NormalTok{);}
+\FunctionTok{plot2d}\NormalTok{(}\ConstantTok{ys}\NormalTok{,[}\ConstantTok{s}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{3}\NormalTok{],[}\ConstantTok{y}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{50}\NormalTok{]);}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Brief table of Laplace
+Transforms}\label{brief-table-of-laplace-transforms}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\[f(t)\]
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\[F(s)\]
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(1\) & & \(\frac{1}{s}\) & \(s>0\) \\
+\(e^{at}\) & & \(\frac{1}{s-a}\) & \(s>a\) \\
+\(t^n\) & & \(\frac{n!}{s^{n+1}}\) & \(s>0,\quad n\in \mathbb{N}\) \\
+\(\sin kt\) & & \(\frac{k}{s^2+k^2}\) & \(s>0\) \\
+\(\cos kt\) & & \(\frac{s}{s^2+k^2}\) & \(s>0\) \\
+\(e^{at}t^n\) & & \(\frac{n!}{(s-a)^{n+1}}\) &
+\(s>0,\quad n\in \mathbb{N}\) \\
+\(e^{at}\sin kt\) & & \(\frac{k}{(s-a)^2+k^2}\) & \(s>a\) \\
+\(e^{at}\cos kt\) & & \(\frac{s-a}{(s-a)^2+k^2}\) & \(s>a\) \\
+\end{longtable}
+
+\section{Theorem for Translation}\label{theorem-for-translation}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Translation]\protect\hypertarget{thm-transl}{}\label{thm-transl}
+
+\[\boxed{\mathscr{L}\{e^{at}f(t)\}=F(s-a)}\] where
+\(F(s)=\mathscr{L}\{f(t)\}\)
+
+\end{theorem}
+
+\section{proof}\label{proof-1}
+
+\[\mathscr{L}\{e^{at}f(t)\}=\int_0^\infty e^{-st}e^{at}f(t)\,dt\]
+\[=\int_0^\infty e^{-(s-a)t}f(t)\,dt\]
+
+\[=F(s-a)\]
+
+\[\square\]
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-18}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{e^{-2t}t^3\}=\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\mathscr{L}\{e^{-2t}t^3\}=\mathscr{L}\{t^3\}\Big|_{s\rightarrow s-(-2)}\]
+Evaluate and then Shift:
+
+\[=\frac{3!}{s^4}\Big|_{s\rightarrow s+2}\] \[=\frac{3!}{(s+2)^4}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{\(f(t)\) be of exponential
+order.}{f(t) be of exponential order.}}\label{ft-be-of-exponential-order.}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+A function \(f(t)\) is said to be \texttt{of\ exponential\ order} if
+\(\exists M,C,T>0\) such that
+\[|f(t)|\leq Me^{ct},\qquad \forall t\geq T\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L22_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{\(f(t)\) be a piecewise
+continuous.}{f(t) be a piecewise continuous.}}\label{ft-be-a-piecewise-continuous.}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+A function \(f(t)\) is a \texttt{piecewise\ continuous} for \(t\geq 0\)
+if all of the following are true.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  There are a finite number of discontinuities at
+  \(0=t_0<t_1<\cdots<t_k\)
+\item
+  \(f(t)\) is continuous on
+  \(\{(0,t_1),(t_1,t_2),\cdots,(t_k,\infty)\}\)
+\item
+  \(|f(t)|<M\quad\forall t\) for some \(M\).
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L22_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+
+\end{tcolorbox}
+
+\section{Theorem Existance of
+Laplace}\label{theorem-existance-of-laplace}
+
+\begin{theorem}[Existance of Laplace
+Transform]\protect\hypertarget{thm-ExistLaplace}{}\label{thm-ExistLaplace}
+
+If \(f(t)\) is \texttt{piecewise\ continuous} for \(t\geq 0\) and
+\texttt{of\ exponential\ order} for some positive constant \(C\) and for
+\(t\geq T\), then \[\mathscr{L}\{f(t)\}\] exists for \(s>C\).
+
+\end{theorem}
+
+\section{References}\label{references-4}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{-1}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms}{LibreTexts,
+  8: Laplace Transforms, by William F.Trench.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.1\%3A_Introduction_to_the_Laplace_Transform}{LibreTexts,
+  8.1: Introduction to the Laplace Transform, by William F.Trench.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.1\%3A_Introduction_to_the_Laplace_Transform/8.1.1\%3A_Introduction_to_the_Laplace_Transform_(Exercises)}{LibreTexts,
+  8.1.1: Introduction to the Laplace Transform (Exercises), by William
+  F.Trench.}
+\item
+  \href{https://undergroundmathematics.org/glossary/linear-operator}{Simple
+  definition for Linear Operator}
+\item
+  \href{https://www.khanacademy.org/math/algebra-home/alg-rational-expr-eq-func/alg-partial-fraction/v/partial-fraction-expansion-1}{Khan:
+  Partial fractions}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L23: Inverse Laplace Transform
+(8.2)}\label{l23-inverse-laplace-transform-8.2-1}
+
+\section{Definition for the inverse of
+Laplace}\label{definition-for-the-inverse-of-laplace}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+If \(\mathscr{L}\{f(t)\}=F(s)\) then \(f(t)\) is the
+\texttt{inverse\ Laplace\ transform} of \(F(s)\)
+
+\[\mathscr{L}^{-1}\{F(s)\}=f(t)\]
+
+\begin{quote}
+\textbf{Question:}
+
+\emph{Q:} Is the inverse Laplace Transform unique?\\
+\emph{A:} No, because the definition start with integration at \(t=0\),
+then doesn't matter what happen before.
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Theorem}\label{theorem-6}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[]\protect\hypertarget{thm-LL}{}\label{thm-LL}
+
+Suppose \(f\) and \(g\) are continuous functions of exponential order
+for \(t\geq 0\)
+
+\[\boxed{\text{If }F(s)=G(s)} \Rightarrow \boxed{f(t)\equiv g(t)},  \quad t\geq 0\]
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Proposition}\label{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\textbf{Proposition:}
+
+The Inverse Laplace Transform is Linear:
+
+\[\mathscr{L}^{-1}\{\alpha F(s)+\beta G(s)\}=\alpha\mathscr{L}^{-1}\{F(s)\}+\beta\mathscr{L}^{-1}\{G(s)\}\]
+
+\begin{quote}
+\textbf{Question:}
+
+\emph{Q:} Give any \(F(s)\) does \(f(t)=\mathscr{L}^{-1}\{F(s)\}\)
+exists?\\
+\emph{A:} No!, for example there is not \(f(t)\) which produce \(s\)
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Theorem (when do not exist)}\label{theorem-when-do-not-exist}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[]\protect\hypertarget{thm-LL}{}\label{thm-LL}
+
+\[\boxed{\text{If }\lim_{s\rightarrow\infty}F(s)\neq 0} \Rightarrow \boxed{\mathscr{L}^{-1}\{F(s)\}\text{ does not exist}}\]
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\textbf{For example:}
+
+\[\lim_{s\rightarrow\infty} s \neq 0\]
+
+\[\Rightarrow \mathscr{L}^{-1}\{s\}\text{ does not exist. }\]
+\[\square\]
+
+\section{\texorpdfstring{Using the Translation Th\(^m\) in
+reverse}{Using the Translation Th\^{}m in reverse}}\label{using-the-translation-thm-in-reverse}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{e^{at}f(t)\}=F(s-a)\]
+\[\mathscr{L}^{-1}\{F(s-a)\}=e^{at}\mathscr{L}^{-1}\{F(s)\}\]
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-20}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}^{-1}\left\{\frac{5}{(s-4)^4}\right\}=\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\mathscr{L}^{-1}\left\{\frac{5}{(s-4)^4}\right\}=e^{4t}\mathscr{L}^{-1}\left\{\frac{5}{s^4}\right\}\]
+If numerator is a \(3!\) we recognize it as the laplace of \(t^3\),
+therefore:
+
+\[=e^{4t}\frac{5}{3!}\mathscr{L}^{-1}\left\{\frac{3!}{s^4}\right\}\]
+\[=\frac{5e^{4t}}{6}t^3\]
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{One more example}\label{one-more-example}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}^{-1}\left\{\frac{s-1}{s^2+2s+2}\right\}=?\]
+
+Completing the square:
+
+\[=\mathscr{L}^{-1}\left\{\frac{s-1}{(s+1)^2+1}\right\}\] The
+denominator look displaced, but what to do with the numerator?
+
+\[=\mathscr{L}^{-1}\left\{\frac{s+1-2}{(s+1)^2+1}\right\}\]
+\[=\mathscr{L}^{-1}\left\{\frac{(s+1)}{(s+1)^2+1}\right\}-\mathscr{L}^{-1}\left\{\frac{2}{(s+1)^2+1}\right\}\]
+\[=e^{-t}\mathscr{L}^{-1}\left\{\frac{s}{s^2+1}\right\}-2e^{-t}\mathscr{L}^{-1}\left\{\frac{1}{s^2+1}\right\}\]
+\[=e^{-t}\left(\cos t-2\sin t\right)\]
+
+\end{tcolorbox}
+
+\section{References}\label{references-5}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.2\%3A_The_Inverse_Laplace_Transform}{LibreTexts,
+  8.2: The Inverse Laplace Transform F.Trench.}
+\item
+  \href{https://youtu.be/BbqbvSig6Mc?feature=shared}{Khan academy:
+  Inverse Laplace}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L24: Laplace Transform and the derivative
+(8.3)}\label{l24-laplace-transform-and-the-derivative-8.3-1}
+
+\section{Theorem: Laplace of the
+derivative}\label{theorem-laplace-of-the-derivative}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[Laplace Transform of the
+derivative]\protect\hypertarget{thm-LTD}{}\label{thm-LTD}
+
+If \(y(t)\) is \texttt{continuous} and of \texttt{exponential\ order}
+for \(t\geq 0\) and if \(y'(t)\) is \texttt{piecewise\ continuous} for
+\(t\geq 0\), then
+
+\[\mathscr{L}\{y'(t)\}=sY(s)-y(0)\] where \(\mathscr{L}\{y(t)\}=Y(s)\)
+
+\end{theorem}
+
+\begin{quote}
+\textbf{Proof:}
+
+\[\mathscr{L}\{y'(t)\}=\int_0^\infty e^{-st} y'(t)\,dt\]
+
+Integration by parts:\footnotemark{}
+
+\[u=e^{-st}\rightarrow du=-se^{-st}\,dt\]
+\[dv=y'(t)dt\rightarrow v=y(t)\]
+
+\[\mathscr{L}\{y'(t)\}=\left[e^{-st}y(t)\right]\Big|_0^\infty-\int_0^\infty y(t)(-se^{-st})\,dt\]
+
+\[\mathscr{L}\{y'(t)\}=\left[e^{-st}y(t)\right]\Big|_0^\infty+s\int_0^\infty y(t)e^{-st}\,dt\]
+
+\[\mathscr{L}\{y'(t)\}=(0-y(0))+sY(s)\]
+\[\mathscr{L}\{y'(t)\}=sY(s)-y(0)\]
+
+\[\hspace{2in}\square\]
+\end{quote}
+
+\end{tcolorbox}
+
+\footnotetext{un dia vi una vaca vestida de uniforme\ldots{}}
+
+\subsection{Example}\label{example-23}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\left\{f''(t)\right\}=\mathscr{L}\{\frac{d}{dt}\left(f'(t)\right)\}=s\mathscr{L}\{f'(t)\}-f'(0)\]
+
+\[\mathscr{L}\{f''(t)\}=s(sF(s)-f(0))-f'(0)\]
+\[\mathscr{L}\{f''(t)\}=s^2F(s)-sf(0)-f'(0)\]
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{General for \(n^{th}\) derivative
+(\(\equiv f^{(n)}\))}{General for n\^{}\{th\} derivative (\textbackslash equiv f\^{}\{(n)\})}}\label{general-for-nth-derivative-equiv-fn}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{In general}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{f^{(n)}(t)\}=\]
+\[= s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots- f^{(n-1)}(0)\]
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-25}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Solve:
+
+\[y''' -y''-4y'+4y=e^{-t},\qquad y(0)=y'(0)=y''(0)=0\]
+
+\begin{quote}
+\textbf{Solution:}
+
+Applying Laplace to the equation:
+
+\[(s^3F(s)-s^2y(0)-s^1y'(0)-s^0y''(0))+\cdots\]
+\[\cdots-(s^2F(s)-s^1y(0)-s^0y'(0))+\cdots\]
+\[\cdots-4(sF(s)-s^0y(0))+4(F(s))=\frac{1}{s+1}\]
+
+\[\Rightarrow\]
+
+\[s^3F(s)-s^2F(s)-4sF(s)+4F(s)=\frac{1}{s+1}\]
+
+\[F(s)(s^3-s^2-4s+4)=\frac{1}{s+1}\] The last constant term is 4, so
+possible factors for long division are:
+\((s-1),(s+1),(s-2),(s+2),(s-4),(s+4)\)
+
+Let's try with the first \((s-1)\)
+
+\[(s^3-s^2-4s+4):(s-1)=s^2+\cdots\]
+
+\[-4s+4:(s-1)=-4\]
+
+\[\therefore s^3-s^2-4s+4=(s-1)(s^2-4)\]
+
+\[=(s-1)(s+2)(s-2)\] \[\Rightarrow Y(s)(s-1)(s+2)(s-2)=\frac{1}{s+1}\]
+
+\[\Rightarrow Y(s)=\frac{1}{(s+1)(s-1)(s+2)(s-2)}\] Partial Fractions!
+
+\[\frac{1}{(s+1)(s-1)(s+2)(s-2)}=\frac{A}{s+1}+\frac{B}{s-1}+\frac{C}{s+2}+\frac{D}{s-2}\]
+
+\begin{equation}\phantomsection\label{eq-pf}{1=A(s-1)(s+2)(s-2)+B(s+1)(s+2)(s-2)+C(s+1)(s-1)(s-2)+D(s+1)(s-1)(s+2)}\end{equation}
+
+We could expand and then set a system of equations by looking the
+coefficients of the polynomial equation, or evaluate the equation for
+convenient values of \(s\):
+
+If \(s=1\) Equation~\ref{eq-pf} becomes:
+
+\[1=0+B(1+1)(1+2)(1-2)+0+0\] \[1=-6B\Rightarrow \boxed{B=-\frac{1}{6}}\]
+
+If \(s=-2\) Equation~\ref{eq-pf} becomes:
+
+\[1=0+0+C(-2+1)(-2-1)(-2-2)\]
+\[1=-12C\Rightarrow\boxed{C=-\frac{1}{12}}\] If \(s=2\)
+Equation~\ref{eq-pf} becomes:
+
+\[1=0+0+0+D(2+1)(2-1)(2+2)\]
+
+\[1=12D\Rightarrow\boxed{D=\frac{1}{12}}\] If \(s=-1\)
+Equation~\ref{eq-pf} becomes:
+
+\[1=A(-1-1)(-1+2)(-1-2)+0+0+0\] \[1=6A\Rightarrow\boxed{A=\frac{1}{6}}\]
+\[\therefore Y(s)=\frac{1}{6(s+1)}-\frac{1}{6(s-1)}-\frac{1}{12(s+2)}+\frac{1}{12(s-2)}\]
+
+Finally we can invert!\footnotemark{}
+
+\[y(t)=\frac{1}{6}\cdot e^{-t}-\frac{1}{6}\cdot e^{t}-\frac{1}{12}\cdot e^{-2t}+\frac{1}{12}\cdot e^{2t}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\footnotetext{\[\mathscr{L}\{e^{at}\}=\frac{1}{s-a}\]}
+
+\section{The derivative of the Laplace
+Transform}\label{the-derivative-of-the-laplace-transform}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+If \(f(t)\) is a \texttt{piecewise\ continuous} for \(t\geq 0\) and
+\texttt{of\ exponential\ order} for some \(C>0\), and if
+\(F(s)=\mathscr{L}\{f(t)\}\) then
+
+\[\boxed{\frac{d}{ds}F(s)=-\mathscr{L}\{t\cdot f(t)\}},\qquad s>C\]
+
+\begin{quote}
+\textbf{Proof:}
+
+\[\frac{d}{ds}F(s)=\frac{d}{ds}\int_0^\infty e^{-st}f(t)\,dt\]
+
+\[\hspace{1in}=\int_0^\infty \frac{d}{ds}e^{-st}f(t)\,dt\]
+
+\[\hspace{1.5in}=\int_0^\infty -te^{-st}f(t)\,dt\]
+
+\[\hspace{1.5in}=-\int_0^\infty e^{-st}(t\cdot f(t))\,dt\]
+\[\hspace{2in}= -\mathscr{L}\{t\cdot f(t)\}\] \[\hspace{3in}\square\]
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-27}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{t\cos kt\}=?\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\mathscr{L}\{t\cos kt\}=-\frac{d}{ds}\mathscr{L}\{\cos kt\}\]
+\[=-\frac{d}{ds}\left(\frac{s}{s^2+k^2}\right)\]
+
+\[=\frac{(s-k)(s+k)}{(s^2+k^2)^2}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{In general}\label{in-general-1}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\boxed{\mathscr{L}\{t^n f(t)\}=(-1)^n\frac{d^{(n)}}{ds^{(n)}}\mathscr{L}\{f(t)\}}=(-1)^nF^{(n)}(s)\]
+
+\end{tcolorbox}
+
+\section{References}\label{references-6}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.3\%3A_Solution_of_Initial_Value_Problems}{LibreTexts,
+  8.3: Laplace Transforms and Derivatives, by William F.Trench.}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L25: Solving odes with piecewise continuous forcing functions
+(8.4)}\label{l25-solving-odes-with-piecewise-continuous-forcing-functions-8.4-1}
+
+\section{}\label{section}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+The \texttt{unit\ step\ function} is defined to be
+
+\[u(t)= 0\qquad ,\quad t< 0 \] \[\qquad=1\qquad ,\quad  t\geq 0\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L25_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+
+\end{tcolorbox}
+
+\subsection{Example}\label{example-29}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Sketch: \[u(t-2)\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L25_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{Example 2}\label{example-2-2}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Sketch \[f(t)=t+u(t-2)(1-t)\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L25_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{Example 3}\label{example-3-1}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Sketch\footnotemark{} \[f(t)=(1-u(t-\pi))t+u(t-2\pi)\sin t\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L25_files/figure-pdf/unnamed-chunk-5-1.pdf}}
+\end{quote}
+
+\end{tcolorbox}
+
+\footnotetext{work by each interval}
+
+\section{Theorem: Laplace of the product between displace unit function
+and a displaced
+function}\label{theorem-laplace-of-the-product-between-displace-unit-function-and-a-displaced-function}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[]\protect\hypertarget{thm-Lpp}{}\label{thm-Lpp}
+
+If \(F(s)=\mathscr{L}\{f(t)\}\) exists for \(s>C\) and if \(a>0\), then
+
+\begin{equation}\phantomsection\label{eq-utf}{\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}=e^{-as}F(s)},\qquad s>C}\end{equation}
+
+\begin{quote}
+\textbf{Proof:}
+
+\[\mathscr{L}\{u(t-a)f(t-a)\}=\int_0^\infty e^{-st} u(t-a)f(t-a)\,dt\]
+
+\[=\int_a^\infty e^{-st} f(t-a)\,dt\]
+
+Change of variables: \[u=t-a\rightarrow u(a)=0\]
+
+\[=\int_0^\infty e^{-s(u+a)} f(u)\,du\]
+
+\[=e^{-sa}\int_0^\infty e^{-su} f(u)\,du\]
+
+\[=e^{-as}F(s)\] \[=e^{-as}\mathscr{L}\{f(t)\}\] \[\hspace{2in}\square\]
+\end{quote}
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Example 1}\label{example-1-2}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{u(t-a)\}=?\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\mathscr{L}\{u(t-a)\}=\mathscr{L}\{u(t-a)\cdot (t-a)^0\}\]
+\[=e^{-sa}\mathscr{L}\{t^0\}\] \[=e^{-sa}\frac{1}{s}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{Example 2}\label{example-2-3}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[\mathscr{L}\{u(t-a)t\}=?\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\[\mathscr{L}\{u(t-a)t\}=\mathscr{L}\{u(t-a)(t-a)\}+a\mathscr{L}\{u(t-a)\}\]
+
+\[=e^{-sa}\mathscr{L}\{t\}+ae^{-sa}\frac{1}{s}\]
+\[=e^{-sa}\frac{1}{s^2}+ae^{-sa}\frac{1}{s}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{Example 3}\label{example-3-2}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Solve: \[
+y'' + 4y = 
+\begin{cases}
+0, & 0 \le t < \pi \\
+\sin t, & t \ge \pi
+\end{cases}, \quad y(0) = 0, \quad y'(0) = 1
+\]
+
+\begin{quote}
+\textbf{Solution:}
+
+\textbf{Step 1:} Express the forcing function using the \textbf{unit
+step function}
+
+We rewrite the right-hand side as a single expression using the
+\textbf{Heaviside (unit step) function} \(u(t - \pi)\):
+
+\[
+y'' + 4y = \sin t \cdot u(t - \pi)
+\]
+
+\textbf{Step 2:} Take Laplace Transforms
+
+Let \(Y(s) = \mathcal{L}\{y(t)\}\). Then:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathcal{L}\{y''(t)\} = s^2 Y(s) - s y(0) - y'(0) = s^2 Y(s) - 1\)
+\item
+  \(\mathcal{L}\{4y(t)\} = 4Y(s)\)
+\end{itemize}
+
+So the left-hand side becomes:
+
+\[
+s^2 Y(s) - 1 + 4Y(s)
+\]
+
+Now for the right-hand side:
+
+\begin{itemize}
+\tightlist
+\item
+  \[\mathcal{L}\{\sin t \cdot u(t - \pi)\} = \mathcal{L}\{-\sin(t-\pi) \cdot u(t - \pi)\}\]
+\end{itemize}
+
+Then
+
+\[
+\mathcal{L}\{\sin t \cdot u(t - \pi)\} = -e^{-\pi s} \cdot \mathcal{L}\{\sin t\} = -e^{-\pi s} \cdot \frac{1}{s^2 + 1}
+\]
+
+\textbf{Step 3:} Laplace Equation
+
+Putting it all together:
+
+\[
+s^2 Y(s) - 1 + 4Y(s) = -\frac{e^{-\pi s}}{s^2 + 1}
+\]
+
+\[
+(s^2 + 4)Y(s) = 1 - \frac{e^{-\pi s}}{s^2 + 1}
+\]
+
+\[
+Y(s) = \frac{1}{s^2 + 4} - \frac{e^{-\pi s}}{(s^2 + 4)(s^2 + 1)}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Step 4:} Inverse Laplace Using Partial Fractions
+
+We already know:
+
+\[
+\mathcal{L}^{-1}\left\{\frac{1}{s^2 + 4}\right\} = \frac{1}{2} \sin(2t)
+\]
+
+Now consider:
+
+\[
+\frac{1}{(s^2 + 4)(s^2 + 1)} = \frac{As + B}{s^2 + 1} + \frac{Cs + D}{s^2 + 4}
+\]
+
+Multiply both sides by \((s^2 + 4)(s^2 + 1)\):
+
+\[
+1 = (As + B)(s^2 + 4) + (Cs + D)(s^2 + 1)
+\]
+
+Now expand both sides:
+
+\begin{itemize}
+\tightlist
+\item
+  \((As + B)(s^2 + 4) = As^3 + 4As + Bs^2 + 4B\)
+\item
+  \((Cs + D)(s^2 + 1) = Cs^3 + Cs + Ds^2 + D\)
+\end{itemize}
+
+Add everything:
+
+\[
+1 = (A + C)s^3 + (B + D)s^2 + (4A + C)s + (4B + D)
+\]
+
+Match coefficients:
+
+\[
+\begin{aligned}
+s^3 &: A + C = 0 \\
+s^2 &: B + D = 0 \\
+s^1 &: 4A + C = 0 \\
+s^0 &: 4B + D = 1
+\end{aligned}
+\]
+
+From \(A + C = 0 \Rightarrow C = -A\)
+
+Substitute into
+\(4A + C = 0 \Rightarrow 4A - A = 0 \Rightarrow A = 0 \Rightarrow C = 0\)
+
+Then from \(B + D = 0 \Rightarrow D = -B\)
+
+And
+\(4B + D = 1 \Rightarrow 4B - B = 1 \Rightarrow 3B = 1 \Rightarrow B = \frac{1}{3}, D = -\frac{1}{3}\)
+
+So:
+
+\[
+\frac{1}{(s^2 + 4)(s^2 + 1)} = \frac{1/3}{s^2 + 1} - \frac{1/3}{s^2 + 4}
+\]
+
+\textbf{Note:}
+
+Maxima can do this in one line of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(\%}\ConstantTok{i1}\NormalTok{) }\ConstantTok{eqn}\NormalTok{: }\DecValTok{1}\NormalTok{/((}\ConstantTok{s}\NormalTok{\^{}}\DecValTok{2+1}\NormalTok{)*(}\ConstantTok{s}\NormalTok{\^{}}\DecValTok{2+4}\NormalTok{))$}
+\NormalTok{(\%}\ConstantTok{i2}\NormalTok{) }\FunctionTok{partfrac}\NormalTok{(}\ConstantTok{eqn}\NormalTok{,}\ConstantTok{s}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(%o2) 1/(3*(s^2+1))-1/(3*(s^2+4))
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Now, going back to \(Y(s)\):
+
+\[
+Y(s) = \frac{1}{s^2 + 4} - e^{-\pi s} \left( \frac{1}{3(s^2 + 1)} - \frac{1}{3(s^2 + 4)} \right)
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Step 5:} Inverse Laplace Transform
+
+\[
+y(t) = \mathcal{L}^{-1}\left\{ \frac{1}{s^2 + 4} \right\} - \mathcal{L}^{-1}\left\{ e^{-\pi s} \left( \frac{1}{3(s^2 + 1)} - \frac{1}{3(s^2 + 4)} \right) \right\}
+\]
+
+Use the time-shifting property:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathcal{L}^{-1} \left\{ \frac{1}{s^2 + 1} \right\} = \sin t\)
+\item
+  \(\mathcal{L}^{-1} \left\{ \frac{1}{s^2 + 4} \right\} = \frac{1}{2} \sin 2t\)
+\end{itemize}
+
+\[
+\mathcal{L}^{-1} \left\{ e^{-\pi s} \cdot F(s) \right\} = u(t - \pi) \cdot f(t - \pi)
+\]
+
+So final solution:
+
+\[
+\boxed{
+y(t) = \frac{1}{2} \sin 2t - u(t - \pi) \left[ \frac{1}{3} \sin(t - \pi) - \frac{1}{6} \sin 2(t - \pi) \right]
+}
+\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references-7}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.4\%3A_The_Unit_Step_Function}{LibreTexts,
+  8.4: The Unit Step Function F.Trench.}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L26: Periodic forcing functions
+(8.5)}\label{l26-periodic-forcing-functions-8.5-1}
+
+\section{Definition of a Periodic
+function}\label{definition-of-a-periodic-function}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+A function \(f(t)\) defined for \(t\geq 0\) is periodic with period
+\(T>0\) if \[f(t+T)=f(t),\qquad \forall t \geq 0\]
+
+\begin{quote}
+\textbf{Example:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L26_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Theorem: Laplace of a periodic
+function}\label{theorem-laplace-of-a-periodic-function}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[]\protect\hypertarget{thm-pwc}{}\label{thm-pwc}
+
+Let \(f(t)\) be piecewise continuous, periodic T, and of exponential
+order for \(t\geq 0\), then
+
+\begin{equation}\phantomsection\label{eq-pwc}{\boxed{\mathscr{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^T e^{-st}f(t)\,dt}}\end{equation}
+
+\begin{quote}
+\textbf{Proof:}
+
+\[\mathscr{L}\{f(t)\}=\int_0^\infty e^{-st} f(t)\,dt\]
+
+\[=\int_0^T e^{-st} f(t)\,dt+\int_T^\infty e^{-st} f(t)\,dt\]
+
+Change of variables: \[v=t-T\rightarrow v(T)=0,\quad dv=dt\]
+
+\[=\int_0^T e^{-st} f(t)\,dt+\int_{v=0}^\infty e^{-s(v+T)} f(v+T)\,dv\]
+and because the period is \(T\), then \(f(v+T)=f(v)\)
+
+\[=\int_0^T e^{-st} f(t)\,dt+e^{-sT}\int_0^\infty e^{-sv} f(v)\,dv\]
+\[\mathscr{L}\{f(t)\}=\int_0^T e^{-st} f(t)\,dt+e^{-sT}\mathscr{L}\{f(t)\}\]
+\[\Rightarrow \mathscr{L}\{f(t)\}\left(1-e^{-sT}\right)=\int_0^T e^{-st} f(t)\,dt\]
+
+\[\Rightarrow \mathscr{L}\{f(t)\}=\frac{1}{\left(1-e^{-sT}\right)}\int_0^T e^{-st} f(t)\,dt\]
+
+\[\hspace{2in}\square\]
+\end{quote}
+
+\end{theorem}
+
+\end{tcolorbox}
+
+\subsection{Example 1}\label{example-1-3}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Let \(f(t+2)=f(t)\)
+
+and the periodic function defined by:
+
+\[
+f(t) = 
+\begin{cases} 
++1 & 0\leq t < 1 \\
+-1 & 1\leq t < 2
+\end{cases}
+\]
+
+Calculate \(\mathscr{L}\{f(t)\}\)
+
+\begin{quote}
+\textbf{Solution:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L26_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+\[\mathscr{L}\{f(t)\}=\frac{1}{\left(1-e^{-sT}\right)}\int_0^T e^{-st} f(t)\,dt\]
+
+\[=\frac{1}{\left(1-e^{-2s}\right)}\left(\int_0^1 e^{-st} (1)\,dt+\int_1^2 e^{-st} (-1)\,dt\right)\]
+\[=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{e^{-st}}{-s}\Big|_0^1-\frac{e^{-st}}{-s}\Big|_1^2\right)\]
+\[=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{-1}{s}\right)\left(e^{-s}-e^{0}-(e^{-2s}-e^{-s})\right)\]
+
+\[=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{-1}{s}\right)\left(2e^{-s}-1-e^{-2s}\right)\]
+
+\[=\frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)\]
+\end{quote}
+
+\end{tcolorbox}
+
+\subsection{Example 2}\label{example-2-4}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\[y''-3y'+2y= f(t),\qquad y(0)=y'(0)=0\] Where:
+
+\[
+f(t) = 
+\begin{cases} 
++1 & 0\leq t < 1 \\
+-1 & 1\leq t < 2
+\end{cases}
+\] \[f(t+2)=f(t)\]
+
+\begin{quote}
+\textbf{Solution:}
+
+Same periodic function of last example, therefore we know the Laplace
+Transformation of the RHS, for the LHS, we use properties:
+
+\[s^2Y-sy(0)-y'(0)-3(sY-y(0))+2Y= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)\]
+
+\[s^2Y-3sY+2Y= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)\]
+
+\[Y(s^2-3s+2)= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)\]
+
+\[Y(s-1)(s-2)= \frac{1}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\left(1+e^{-2s}-2e^{-s}\right)\]
+
+\[Y= \frac{\left(1-2e^{-s}+e^{-2s}\right)}{\left(1-e^{-2s}\right)}\left(\frac{1}{s}\right)\frac{1}{(s-1)(s-2)}\]
+\[Y= \frac{(1-e^{-s})(1-e^{-s})}{(1-e^{-s})(1+e^{-s})}\left(\frac{1}{s}\right)\frac{1}{(s-1)(s-2)}\]
+\[Y= \frac{(1-e^{-s})}{(1+e^{-s})}\left(\frac{1}{s(s-1)(s-2)}\right)\]
+
+Partial fractions for the right side factor!
+
+\[Y=\frac{A}{s}+\frac{B}{(s-1)}+\frac{C}{(s-2)}\]
+
+\[1=A(s-1)(s-2)+Bs(s-2)+Cs(s-1)\] \(\boxed{s=0}\Rightarrow\)
+
+\[1=A(-1)(-2)\rightarrow \boxed{A=\frac{1}{2}}\]
+\(\boxed{s=1}\Rightarrow\)
+
+\[1=B(1)(-1)\rightarrow \boxed{B=-1}\] \(\boxed{s=2}\Rightarrow\)
+
+\[1=C(2)(1)\rightarrow \boxed{C=\frac{1}{2}}\]
+\[Y=\frac{(1-e^{-s})}{(1+e^{-s})}\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)\]
+\[Y(1+e^{-s})=(1-e^{-s})\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)\]
+\[Y+Ye^{-s}=\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)-e^{-s}\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)\]
+
+We know that:
+
+\[\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}F(s)\]
+
+\[\Rightarrow\boxed{\mathscr{L}^{-1}\{e^{-as}F(s)\}=u(t-a)f(t-a)}\] Then
+applying ILT to:
+
+\[Y+e^{-s}Y=\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)-e^{-s}\left(\frac{1}{2s}-\frac{1}{s-1}+\frac{1}{2(s-2)}\right)\]
+
+we obtain:
+
+\[\boxed{y(t)+u(t-1)y(t-1)=\frac{1}{2} - e^{t}+\frac{1}{2}e^{2t}-\left(\frac{1}{2}u(t-1)-u(t-1)e^{t-1}+\frac{1}{2}u(t-1)e^{2(t-1)}\right)}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references-8}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.5\%3A_Constant_Coefficient_Equations_with_Piecewise_Continuous_Forcing_Functions}{LibreTexts,
+  8.5: Constant Coefficient Equations with Piecewise Continuous Forcing
+  Functions from F.Trench.}
+\item
+  \href{https://en.wikipedia.org/wiki/Inverse_Laplace_transform}{Wikipedia:
+  Inverse Laplace transform}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L27: Convolution Integral
+(8.6)}\label{l27-convolution-integral-8.6-1}
+
+When applying the Laplace transform to solve differential equations, it
+is common to encounter situations where the right-hand side of the
+equation consists of the product of functions. For each of these
+functions, we may already know the corresponding inverse Laplace
+transform. This familiarity might lead us to incorrectly assume that the
+inverse Laplace transform of the product of functions is simply the
+product of their individual inverse transforms. However, this assumption
+is incorrect. The Laplace transform of a product of functions does not
+generally equal the product of their individual Laplace transforms. This
+misconception underscores the importance of applying the correct
+properties and methods when working with Laplace transforms in
+differential equations.
+
+\section{Inverse of the Product?}\label{inverse-of-the-product}
+
+\[\boxed{\mathscr{L}^{-1}\{F(s)\,G(s)\}\neq \mathscr{L}^{-1}\{F(s)\}\mathscr{L}^{-1}\{G(s)\}}\]
+
+\section{Convolution Theorem}\label{convolution-theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+\begin{theorem}[]\protect\hypertarget{thm-iltprod}{}\label{thm-iltprod}
+
+Let \(f(t)\) and \(g(t)\) be continuous functions for \(t\geq 0\) and of
+exponential order
+
+Let \(F(s)=\mathscr{L}\{f(t)\}\) and \(G(s)=\mathscr{L}\{g(t)\}\)
+
+Then
+
+\[\mathscr{L}^{-1}\{F(s)\,G(s)\}=\int_0^t f(z)g(t-z)\,dz\] \[=(f*g)(t)\]
+
+\end{theorem}
+
+\begin{quote}
+\textbf{Proof}
+
+\[F(s)\,G(s)=\int_0^\infty e^{-sz} f(z)\,dz\int_0^\infty e^{-s\tau} g(\tau)\,d\tau\]
+
+\[=\int_0^\infty\left(\int_0^\infty e^{-s(\tau+z)} f(z)g(\tau)\,d\tau\right) dz\]
+Change of variables: \(t=\tau +z\rightarrow dt =d\tau\)
+
+\[=\int_0^\infty\left(\int_{t=z}^\infty e^{-st}f(z)g(t-z)dt\right) dz\]
+Domain of integration:
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L27_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+
+Changing order of integration for the same region:
+
+\begin{verbatim}
+Warning in arrows(x, 0, x, x, length = 0.1, angle = 15, col = "red"):
+zero-length arrow is of indeterminate angle and so skipped
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L27_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+\[=\int_0^\infty\left(\int_{z=0}^t e^{-st}f(z)g(t-z)dz \right)d\tau \]
+
+\[=\int_0^\infty e^{-st}\left(\int_0^t f(z)g(t-z)dz \right)d\tau \]
+
+\[=\mathscr{L}\left\{\int_0^t f(z)g(t-z)dz\right\}\]
+
+\[=\mathscr{L}\left\{(f*g)(t)\right\}\]
+
+\[\hspace{3in}\square\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Example 1, Instead of partial
+fractions}\label{example-1-instead-of-partial-fractions}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Calculate \[\mathscr{L}^{-1}\left\{\frac{1}{(s-2)(s-3)}\right\}\] w/o
+using partial fractions.
+
+\begin{quote}
+\textbf{Solution}
+
+\[\mathscr{L}^{-1}\left\{\frac{1}{(s-2)(s-3)}\right\}=\int_0^t f(z)g(t-z)\,dz\]
+\[=\int_0^t e^{2z}e^{3(t-z)}dz\]
+
+\[=e^{3t}\int_0^t e^{-z}dz\]
+
+\[=e^{3t} \left(\frac{e^{-z}}{-1}\Big|_0^t\right)\]
+
+\[=-e^{3t} \left(e^{-t}-e^0\right)\] \[=e^{3t} \left(1-e^{-t}\right)\]
+\[=e^{3t} -e^{2t}\] checking with maxima-cas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{partfrac}\NormalTok{(}\DecValTok{1}\NormalTok{/((}\ConstantTok{s}\DecValTok{{-}2}\NormalTok{)*(}\ConstantTok{s}\DecValTok{{-}3}\NormalTok{)),}\ConstantTok{s}\NormalTok{);}
+\FunctionTok{ilt}\NormalTok{(}\VariableTok{\%}\NormalTok{,}\ConstantTok{s}\NormalTok{,}\ConstantTok{t}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\[{{e}^{3 t}}\operatorname{-}{{e}^{2 t}}\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Convolution!}\label{convolution}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=6in,height=\textheight,keepaspectratio]{Unit3/Convolution.gif}
+
+}
+
+\caption{convolution is a mathematical operation on two functions (\(f\)
+and \(g\)) that produces a third function \((f*g)\) that expresses how
+the shape of one is modified by the other}
+
+\end{figure}%
+
+\section{Property of convolution
+function}\label{property-of-convolution-function}
+
+\[\mathscr{L}\{(f*g)(t)\}=\mathscr{L}\{f(t)\}\mathscr{L}\{g(t)\}\]
+
+\section{Example 1, solving IVP}\label{example-1-solving-ivp}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Suppose \(y=f(t)\) is the solution of the constant-coefficient
+homogeneous initial value problem
+\[y''+Py'+Qy=0,\qquad y(0)=0,\quad y'(0)=1\] Then the solution of the
+inhomogeneous initial value problem
+
+\[y''+Py'+Qy=g(t),\qquad y(0)=0,\quad y'(0)=0\]
+
+is \[y(t)=(f*g)(t)\]
+
+\begin{quote}
+\textbf{Solution}
+
+Taking the Laplace Transform of homogeneous eqn:
+
+\[s^2Y-1+PsY+QY=0\] \[Y=\frac{1}{s^2+Ps+Q}\]
+\[y=f(t)=\mathscr{L}^{-1}\left\{\frac{1}{s^2+Ps+Q}\right\}\] Taking
+Laplace transform of non-homogeneous case
+
+\[s^2Y+PsY+QY=G\] \[Y=\frac{G}{s^2+Ps+Q}\]
+\[y(t)=\mathscr{L}^{-1}\left\{\frac{G}{s^2+Ps+Q}\right\}\]
+\[=\mathscr{L}^{-1}\left\{G(s)F(s)\right\}\] \[=(f*g)(t)\]
+\[\hspace{3in}\square\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Volterra Integral Equation}\label{volterra-integral-equation}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+An equation of the form
+
+\[y(t)=f(t)+ \int_0^t k(t-\tau)y(\tau)\,d\tau\]
+
+is a Volterra integral equation. Here \(f\) and \(k\) are given
+functions and \(y\) is unknown. Since the integral on the right is a
+convolution integral, the convolution theorem provides a convenient
+formula for solving it. Laplace!
+
+\[Y = F + YK\] \[Y=\frac{F}{1-K}\]
+
+\end{tcolorbox}
+
+\section{Example 2}\label{example-2-5}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Solve
+
+\[y(t)=1+2\int_0^t e^{-2(t-\tau)} y(\tau)\,d\tau.\]
+
+\begin{quote}
+\textbf{Solution}
+
+\[Y = \frac{1}{s}+2 \left(\frac{1}{s-^-2}\right)Y\]
+\[Y\left(1-\frac{2}{s+2}\right)=\frac{1}{s}\]
+\[Y\left(\frac{s+2}{s+2}-\frac{2}{s+2}\right)=\frac{1}{s}\]
+
+\[Y=\frac{s+2}{s^2}\] \[Y=\frac{1}{s}+\frac{2}{s^2}\] \[\Rightarrow\]
+
+\[y(t)=1+ 2t\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{Example 3}\label{example-3-3}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+Solve \texttt{Integrodifferentiable\ equation}
+
+\[y'(t)=1+\int_0^t y(z)\,dz\qquad, y(0)=0\]
+
+\begin{quote}
+\textbf{Solution}
+
+Applying Laplace:
+\[sY=\frac{1}{s}+\mathscr{L}\left\{\int_0^t y(z)\,dz\right\}\]
+\[sY=\frac{1}{s}+\mathscr{L}\left\{\int_0^t (y(z)*1)\,dz\right\}\]
+
+\[sY=\frac{1}{s}+\mathscr{L}\left\{\int_0^t (y(z)*(t-z)^0)\,dz\right\}\]
+
+\[sY=\frac{1}{s}+\mathscr{L}\{y(t)\}\mathscr{L}\{t^0\}\]
+\[sY=\frac{1}{s}+Y\frac{1}{s}\] \[sY-Y\frac{1}{s}=\frac{1}{s}\]
+\[Y\left(\frac{s^2}{s}-\frac{1}{s}\right)=\frac{1}{s}\]
+\[Y=\frac{1}{s^2-1}\] \[\Rightarrow \boxed{y(t)=\sinh t}\,,\qquad t>1\]
+\end{quote}
+
+\end{tcolorbox}
+
+\section{References}\label{references-9}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.6\%3A_Convolution}{LibreTexts,
+  8.6: Convolution by F.Trench.}
+\item
+  \href{https://en.wikipedia.org/wiki/Convolution}{Wikipedia:
+  Convolution}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{L28: Impulse forcing functions
+(8.7)}\label{l28-impulse-forcing-functions-8.7-1}
+
+\section{Unit Impulse}\label{unit-impulse}
+
+Let
+\[\delta_\epsilon = \frac{1}{2\epsilon},\qquad -\epsilon<t<\epsilon\]
+\[=0,\qquad |t|\geq \epsilon \]
+
+\section{Unit Impulse plot}\label{unit-impulse-plot}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L28_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+
+\section{Area under the curve}\label{area-under-the-curve}
+
+\[\int_{-\infty}^{\infty} \delta_\epsilon (t) \,dt = \int_{-\epsilon}^\epsilon \frac{1}{2\epsilon}\, dt \]
+\[= \frac{t}{2\epsilon}\Big|_{-\epsilon}^\epsilon\]
+\[=\frac{1}{2}-\left(-\frac{1}{2}\right)\] \[=1\]
+
+\section{}\label{section-1}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definition}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, rightrule=.15mm, breakable, titlerule=0mm, colback=white, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, left=2mm, coltitle=black]
+
+The generalized function
+\[\delta(t)=\lim_{\epsilon \rightarrow 0} \delta_\epsilon (t)\] is
+called the \texttt{Dirac\ delta} function.
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{Properties of
+\(\delta(t)\)}{Properties of \textbackslash delta(t)}}\label{properties-of-deltat}
+
+\[1)\quad \int_{-\infty}^{\infty} \delta (t) \,dt = 1\]
+\[2)\quad\delta(t)=0,\qquad t\neq 0\] \[\qquad=\infty,\qquad t= 0\]
+\[3)\quad\delta(t-a)=0,\qquad t\neq a\] \[\qquad=\infty,\qquad t= a\]
+
+\section{}\label{section-2}
+
+\begin{theorem}[]\protect\hypertarget{thm-deltaa}{}\label{thm-deltaa}
+
+\[\boxed{\mathscr{L}\{\delta(t-a)\}=e^{-as}},\qquad a>0,\quad s>0\]
+
+\end{theorem}
+
+\textbf{Proof:}
+
+\[\mathscr{L}\{\delta(t-a)\}=\int_0^\infty e^{-st}\delta(t-a)\,dt\]
+\[=\lim_{\epsilon \rightarrow 0} \int_0^\infty \delta_\epsilon (t-a) e^{-st}\,dt\]
+
+Change of variables: \(u=t-a\rightarrow du=dt\)
+
+\[=\lim_{\epsilon \rightarrow 0} \int_{-a}^\infty \delta_\epsilon (u) e^{-s(u+a)}\,du\]
+
+\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \int_{-a}^\infty \frac{1}{2\epsilon} e^{-su}\,du\]
+
+\(a>\epsilon\), and by the definition of \(\delta_\epsilon\):
+
+\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \int_{-\epsilon}^\epsilon \frac{1}{2\epsilon} e^{-su}\,du\]
+
+\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \left[\left(\frac{e^{-su}}{-2s}\right)\Big|_{-\epsilon}^\epsilon\right]\]
+\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \left(\frac{1}{-2s}\right)\left[e^{-s\epsilon} - e^{s\epsilon}\right]\]
+
+\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \left(\left[\frac{e^{s\epsilon} - e^{-s\epsilon}}{2s}\right]\right)\]\footnote{\url{https://en.wikipedia.org/wiki/Hyperbolic_functions}}
+
+\[= e^{-sa}\lim_{\epsilon \rightarrow 0} \left(\frac{\sinh s\epsilon}{s\epsilon}\right)\]
+
+\[= e^{-sa}\lim_{\epsilon \rightarrow 0} (\cosh s\epsilon)\]
+\[=e^{-sa}\]
+
+\[\qquad\square\]
+
+\section{\texorpdfstring{Property 4 of
+\texttt{Delta\ de\ Dirac}}{Property 4 of Delta de Dirac}}\label{property-4-of-delta-de-dirac}
+
+\[\boxed{\int_{-\infty}^\infty\delta(t-a)f(t)\,dt=f(a)}\]
+
+\section{\texorpdfstring{Useful Laplace Transformations for
+\texttt{Delta\ de\ Dirac}.}{Useful Laplace Transformations for Delta de Dirac.}}\label{useful-laplace-transformations-for-delta-de-dirac.}
+
+For \(a>0,\quad s>0\):
+
+\[\boxed{\mathscr{L}\{\delta(t-a)\}=e^{-as}}\]
+
+\[\boxed{\mathscr{L}\{\delta(t-a)f(t)\}=e^{-as}f(a)}\]\footnote{you
+  could check this result by calculating it by laplace and \(\delta\)
+  definition.}
+
+\section{Other useful equations:}\label{other-useful-equations}
+
+\[\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}}\]
+\[\boxed{\mathscr{L}\{e^{at}\}=\frac{1}{s-a}}\]
+\[\boxed{\mathscr{L}\{\sinh {kt}\}=\frac{k}{s^2-k^2}}\]\footnote{\url{https://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine}}
+
+\section{Example}\label{example-43}
+
+\textbf{Solve:}
+
+\[y'+2y=\delta(t-1),\qquad y(0)=0\] \textbf{Solution:}
+
+\[sY+2Y=e^{-s}\] \[Y=\frac{e^{-s}}{(s+2)}\]
+\[\boxed{y(t) = u(t-1)e^{-2(t-1)}}\]
+
+\emph{Note:} \[\mathscr{L}\{u(t-a)f(t-a)\}=e^{-sa}\mathscr{L}\{f(t)\}\]
+Find which is the corresponding \(f(t)\) and then shift.
+
+\emph{also:} \[ \mathscr{L}\{e^{sa}\}=\frac{1}{s-a}\]
+
+\textbf{Plot of solution:}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Unit3/L28_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+
+\section{Example}\label{example-44}
+
+\textbf{Solve:}
+
+\[y''-4y=\delta(t-2)t,\qquad y(0)=0,\quad y'(0)=1\]
+
+\textbf{Solution:}
+
+\[\Rightarrow\]
+
+\[s^2Y-1-4Y=2e^{-2s}\]
+
+\[Y=\frac{2e^{-2s}+1}{s^2-4}\]
+\[Y(s)=\frac{2e^{-2s}}{s^2-2^2}+\frac{1}{s^2-2^2}\]
+
+Applying the inverse:
+
+\[y(t)=\mathscr{L}^{-1}\left\{\frac{2e^{-2s}}{s^2-2^2}\right\}+\frac{1}{2}\sinh 2t\]
+For the first term we can use:
+
+\[\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}}\] Then
+by inspection I identify \(a=2\), and
+\(f(t)=\sinh 2t\rightarrow f(t-a)= \sinh (2(t-2))\)
+
+Finally:
+
+\[\boxed{y(t)=u(t-2)\sinh(2(t-2))+\frac{1}{2}\sinh 2t}\]
+
+\section{References}\label{references-10}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8\%3A_Laplace_Transforms/8.7\%3A_Constant_Coefficient_Equations_with_Impulses}{LibreTexts,
+  8.7: Constant Coefficient Equations with Impulses by F.Trench.}
+\item
+  \href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{Wikipedia:
+  Hyperbolic functions}
+\item
+  \href{https://en.wikipedia.org/wiki/Dirac_delta_function}{Wikipedia:
+  Dirac delta function}
+\item
+  \href{https://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine}{proofwiki:
+  Laplace of Hyperbolic sine.}
+\end{enumerate}
+
+\section{Maxima-cas can}\label{maxima-cas-can}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(\%}\ConstantTok{i1}\NormalTok{) }\FunctionTok{laplace}\NormalTok{(}\FunctionTok{delta}\NormalTok{(}\ConstantTok{t}\DecValTok{{-}2}\NormalTok{)*}\ConstantTok{t}\NormalTok{, }\ConstantTok{t}\NormalTok{, }\ConstantTok{s}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(%o1) 2*%e^-(2*s)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(\%}\ConstantTok{i2}\NormalTok{) }\FunctionTok{ilt}\NormalTok{(}\DecValTok{2}\NormalTok{/(}\ConstantTok{s}\NormalTok{\^{}}\DecValTok{2{-}4}\NormalTok{),}\ConstantTok{s}\NormalTok{,}\ConstantTok{t}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(%o2) %e^(2*t)/2-%e^-(2*t)/2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(\%}\ConstantTok{i3}\NormalTok{) }\FunctionTok{expand}\NormalTok{(}\FunctionTok{trigrat}\NormalTok{(}\FunctionTok{sinh}\NormalTok{(}\DecValTok{2}\NormalTok{*}\ConstantTok{t}\NormalTok{)));}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(%o3) %e^(2*t)/2-%e^-(2*t)/2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(\%}\ConstantTok{i4}\NormalTok{) }\FunctionTok{partfrac}\NormalTok{(}\DecValTok{1}\NormalTok{/(}\ConstantTok{s}\NormalTok{\^{}}\DecValTok{2{-}4}\NormalTok{), }\ConstantTok{s}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(%o4) 1/(4*(s-2))-1/(4*(s+2))
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(\%}\ConstantTok{i5}\NormalTok{) }\FunctionTok{desolve}\NormalTok{([}\FunctionTok{diff}\NormalTok{(}\ConstantTok{y}\NormalTok{(}\ConstantTok{t}\NormalTok{),}\ConstantTok{t}\NormalTok{,}\DecValTok{3}\NormalTok{){-}}\FunctionTok{diff}\NormalTok{(}\ConstantTok{y}\NormalTok{(}\ConstantTok{t}\NormalTok{),}\ConstantTok{t}\NormalTok{,}\DecValTok{2}\NormalTok{)}\DecValTok{{-}4}\NormalTok{*}\FunctionTok{diff}\NormalTok{(}\ConstantTok{y}\NormalTok{(}\ConstantTok{t}\NormalTok{),}\ConstantTok{t}\NormalTok{,}\DecValTok{1}\NormalTok{)}\DecValTok{+4}\NormalTok{*}\ConstantTok{y}\NormalTok{(}\ConstantTok{t}\NormalTok{)=}\FunctionTok{exp}\NormalTok{(}\ConstantTok{t}\NormalTok{)],[}\ConstantTok{y}\NormalTok{(}\ConstantTok{t}\NormalTok{)]);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(%o5) y(t) = (%e^-(2*t)*(3*('at('diff(y(t),t,2),t = 0))
+\end{verbatim}
+
+\begin{verbatim}
+                        -9*('at('diff(y(t),t,1),t = 0))+6*y(0)-1))
+\end{verbatim}
+
+\begin{verbatim}
+           /36
+\end{verbatim}
+
+\begin{verbatim}
+           -(%e^t*(3*('at('diff(y(t),t,2),t = 0))-12*y(0)+2))/9
+\end{verbatim}
+
+\begin{verbatim}
+           +(%e^(2*t)*('at('diff(y(t),t,2),t = 0)+'at('diff(y(t),t,1),t = 0)
+\end{verbatim}
+
+\begin{verbatim}
+                                                 -2*y(0)+1))
+\end{verbatim}
+
+\begin{verbatim}
+            /4-(t*%e^t)/3
+\end{verbatim}
+
+
+
+
+\end{document}

@@ -1,0 +1,4 @@
+"0","#rm(mydata)"
+"0","mydata <- read.csv(""all data combined-09-20-2023 v6.csv"")"
+"0","#str(mydata)"
+"0","hist(mydata$semester)"

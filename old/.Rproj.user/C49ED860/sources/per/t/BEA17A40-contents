@@ -1,0 +1,301 @@
+# L25: Solving odes with piecewise continuous forcing functions (8.4)
+
+<!-- --- -->
+<!-- title: "8.4 Solving odes with piecewise continuous forcing functions" -->
+<!-- subtitle: "`MAT211`. Diffy Q. Lecture 25." -->
+<!-- author: "E. Valderrama-Araya, Ph.D.  |  <evalderrama@oru.edu>" -->
+<!-- format: -->
+<!--   revealjs: -->
+<!--     fig-width: 6 -->
+<!--     fig-height: 4 -->
+<!--   # pdf: -->
+<!--   #   fig-width: 4 -->
+<!--   #   fig-height: 3 -->
+<!-- # bibliography: references.bib -->
+<!-- --- -->
+
+
+```{r,echo=FALSE, include=FALSE}
+library(rim)
+```
+
+##  {.scrollable}
+
+::: callout-note
+
+## Definition
+
+The `unit step function` is defined to be
+
+$$u(t)= 0\qquad ,\quad t< 0 $$
+$$\qquad=1\qquad ,\quad  t\geq 0$$
+```{r,echo=FALSE}
+b <- 3
+a <- 0
+h <- 1
+plot(a,h,xlim = c(0,b),ylim = c(0,b),cex=2,pch = 16,col="blue", ylab="",xlab="",axes = FALSE,main=NULL)
+par(mar=c(3,3,0,2)+0.1)
+#text(-0.1,b,"u(t)")
+mtext(side=2,at=2*h,text="u(t)",line=-1)
+mtext(side=1,at=b*1.02,text="t",line=-3)#text(1.02*b,0,"t")
+mtext(side=1,at=a,text=paste(a),line=-2)
+#mtext(side=2,at=1,text="1")
+arrows(-1,0,b,0, angle = 15, length = 0.1, lwd=3)
+arrows(0,-1,0,b, angle = 15, length = 0.1, lwd=3)
+segments(x0 = a, x1 = b, y0 = h, y1 = h,lwd = 2,lty=1, col = "blue") 
+points(a,0, pch = 1, ylab="",xlab="", cex=1.9, bg="white", col="red",lwd=3, xaxt = "n", yaxt = "n")
+```
+:::
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+Sketch: $$u(t-2)$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+```{r,echo=FALSE}
+b <- 3
+a <- 2
+h <- 1
+plot(a,h,xlim = c(0,b),ylim = c(0,b),cex=2,pch = 16,col="blue", ylab="",xlab="",axes = FALSE,main=NULL)
+par(mar=c(3,3,0,2)+0.1)
+#text(-0.1,b,"u(t)")
+mtext(side=2,at=2*h,text="u(t)",line=-1)
+mtext(side=1,at=b*1.02,text="t",line=-3)#text(1.02*b,0,"t")
+mtext(side=1,at=a,text=paste(a),line=-2)
+#mtext(side=2,at=1,text="1")
+arrows(-1,0,b,0, angle = 15, length = 0.1, lwd=3)
+arrows(0,-1,0,b, angle = 15, length = 0.1, lwd=3)
+segments(x0 = a, x1 = b, y0 = h, y1 = h,lwd = 2,lty=1, col = "blue") 
+points(a,0, pch = 1, ylab="",xlab="", cex=1.9, bg="white", col="red",lwd=3, xaxt = "n", yaxt = "n")
+```
+
+:::
+:::
+
+
+### Example 2 {.scrollable}
+
+::: {.callout-tip}
+## Example 
+Sketch $$f(t)=t+u(t-2)(1-t)$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+```{r,echo=FALSE}
+b <- 3
+a <- 2
+h <- 1
+y1 <- function(t) t
+plot(a,h,xlim = c(0,b),ylim = c(0,b),cex=2,pch = 16,col="blue", ylab="",xlab="",axes = FALSE,main=NULL)
+par(mar=c(3,3,0,2)+0.1)
+curve(y1, from =-1, to =2, col="blue", lwd=2, n=10,xlim = c(0,b),ylim = c(0,b),add = TRUE)
+#text(-0.1,b,"u(t)")
+mtext(side=2,at=2*h,text="f(t)",line=-1)
+mtext(side=1,at=b*1.02,text="t",line=-3)#text(1.02*b,0,"t")
+mtext(side=1,at=a,text=paste(a),line=-2)
+#mtext(side=2,at=1,text="1")
+arrows(-1,0,b,0, angle = 15, length = 0.1, lwd=3)
+arrows(0,-1,0,b, angle = 15, length = 0.1, lwd=3)
+segments(x0 = a, x1 = b, y0 = h, y1 = h,lwd = 2,lty=1, col = "blue") 
+points(a,2, pch = 1, ylab="",xlab="", cex=1.9, bg="white", col="red",lwd=3, xaxt = "n", yaxt = "n")
+```
+:::
+:::
+
+### Example 3 {.scrollable}
+
+::: {.callout-tip}
+## Example 
+
+Sketch^[work by each interval] $$f(t)=(1-u(t-\pi))t+u(t-2\pi)\sin t$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+```{r,echo=FALSE}
+b <- 6*pi
+a <- pi
+h <- pi
+y1 <- function(t) {ifelse(t>2*pi,sin(t),ifelse(t>pi,0,t))}
+plot(a,0,xlim = c(0,b),ylim = c(0,2*h),cex=2,pch = 16,col="blue", ylab="",xlab="",axes = FALSE,main=NULL)
+par(mar=c(3,3,0,2)+0.1)
+arrows(-1,0,b,0, angle = 15, length = 0.1, lwd=3)
+arrows(0,-1,0,2*h, angle = 15, length = 0.1, lwd=3)
+curve(y1, from =-1, to =b, col="blue", lwd=2, n=1000,xlim = c(0,b),ylim = c(0,b),add = TRUE)
+#text(-0.1,b,"u(t)")
+mtext(side=2,at=2*h,text="f(t)",line=-1)
+mtext(side=1,at=b*1.02,text="t",line=-3)#text(1.02*b,0,"t")
+mtext(side=1,at=a,text=expression(pi),line=-2)
+mtext(side=1,at=2*a,text=expression(2*pi),line=-2)
+#mtext(side=2,at=1,text="1")
+segments(x0 = pi, x1 = pi, y0 = 0.2, y1 = pi,lwd = 3,lty=1, col = "white") 
+#segments(x0 = a, x1 = b, y0 = h, y1 = h,lwd = 2,lty=1, col = "blue") 
+points(a,pi, pch = 1, ylab="",xlab="", cex=1.9, bg="white", col="red",lwd=3, xaxt = "n", yaxt = "n")
+points(2*a,0, pch = 1, ylab="",xlab="", cex=1.2, bg="blue", col="blue",lwd=7, xaxt = "n", yaxt = "n")
+
+```
+
+:::
+:::
+
+## Theorem: Laplace of the product between displace unit function and a displaced function{.scrollable}
+::: callout-note
+## Theorem
+
+:::{#thm-Lpp}
+
+If $F(s)=\mathscr{L}\{f(t)\}$ exists for $s>C$ and if $a>0$, then
+
+$$\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}=e^{-as}F(s)},\qquad s>C$${#eq-utf}
+
+
+::: {.callout-caution collapse="true"}
+## Proof:
+
+$$\mathscr{L}\{u(t-a)f(t-a)\}=\int_0^\infty e^{-st} u(t-a)f(t-a)\,dt$$
+
+$$=\int_a^\infty e^{-st} f(t-a)\,dt$$
+
+Change of variables: $$u=t-a\rightarrow u(a)=0$$
+
+$$=\int_0^\infty e^{-s(u+a)} f(u)\,du$$
+
+$$=e^{-sa}\int_0^\infty e^{-su} f(u)\,du$$
+
+$$=e^{-as}F(s)$$
+$$=e^{-as}\mathscr{L}\{f(t)\}$$
+$$\hspace{2in}\square$$
+
+:::
+:::
+:::
+
+
+### Example 1 {.scrollable}
+
+::: {.callout-tip}
+## Example 
+
+$$\mathscr{L}\{u(t-a)\}=?$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+$$\mathscr{L}\{u(t-a)\}=\mathscr{L}\{u(t-a)\cdot (t-a)^0\}$$
+$$=e^{-sa}\mathscr{L}\{t^0\}$$
+$$=e^{-sa}\frac{1}{s}$$
+:::
+:::
+
+
+### Example 2 {.scrollable}
+
+::: {.callout-tip}
+## Example 
+
+$$\mathscr{L}\{u(t-a)t\}=?$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+$$\mathscr{L}\{u(t-a)t\}=\mathscr{L}\{u(t-a)(t-a)\}+a\mathscr{L}\{u(t-a)\}$$
+
+$$=e^{-sa}\mathscr{L}\{t\}+ae^{-sa}\frac{1}{s}$$
+$$=e^{-sa}\frac{1}{s^2}+ae^{-sa}\frac{1}{s}$$
+
+:::
+:::
+
+
+### Example 3 {.scrollable}
+
+::: {.callout-tip}
+## Example 
+
+Solve: 
+$$y''+4y= 0,\qquad 0\leq t< \pi$$
+$$y''+4y= \sin t,\qquad t\geq \pi$$
+
+$$y(0)=0, \quad y'(0)=1$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+$$y''+4y=u(t-\pi)\sin t$$
+
+$$s^2Y(s)-sy(0)-y'(0)+4Y(s)=\mathscr{L}\{u(t-\pi)\sin t\}$$
+We cant use yet @thm-Lpp on the RHS, because $\sin t$ need to be displaced in the same amount of the step function. However we know that $\sin t$ is a periodic function, therefore can be written as: $\sin t = - \sin (t-\pi)$
+
+$$s^2Y(s)-1+4Y(s)=\mathscr{L}\{u(t-\pi)\cdot(-\sin (t-\pi))\}$$
+$$s^2Y(s)-1+4Y(s)=-e^{-\pi s}\mathscr{L}\{\sin t\}$$
+
+$$s^2Y(s)-1+4Y(s)=-e^{-\pi s}\frac{1}{s^2+1}$$
+
+$$s^2Y(s)+4Y(s)=\frac{-e^{-\pi s}}{s^2+1}+1$$
+$$Y(s)=\frac{-e^{-\pi s}}{(s^2+1)(s^2+4)}+\frac{1}{s^2+4}$$
+
+$$Y(s)=\frac{-e^{-\pi s}+(1+s^2)}{(s^2+1)(s^2+4)}$$
+
+Partial Fractions!:
+
+```{maxima, echo=TRUE}
+eqn: (-%e^(-%pi*s)+1+s^2)/((s^2+1)*(s^2+4))$
+partfrac(eqn,s);
+```
+
+
+$$Y(s)=\frac{As+B}{s^2+4}+\frac{Cs+D}{s^2+1}$$
+
+$$s^2+(1-e^{-s\pi})=(As+B)(s^2+1)+(Cs+D)(s^2+4)$$
+$$s^2+(1-e^{-s\pi})=As^3+As+Bs^2+B+Cs^3+4Cs+Ds^2+4D$$
+
+System of equations from polynomial:
+
+$$0=A+C\rightarrow \boxed{A=-C}$$
+$$1=B+D\rightarrow \boxed{B=1-D}$$
+$$0=A+4C\rightarrow 3C=0\rightarrow \boxed{C=0,\quad A=0}$$
+$$1-e^{-s\pi}=B+4D=(1-D)+4D=1+3D\rightarrow \boxed{D=-\frac{e^{-s\pi}}{3}} $$
+$$\rightarrow \boxed{B=1+\frac{e^{-s\pi}}{3}}$$
+
+$$Y(s)=\left(1+\frac{e^{-s\pi}}{3}\right)\frac{1}{s^2+4}-\left(\frac{e^{-s\pi}}{3}\right)\frac{1}{s^2+1}$$
+$$Y(s)=\frac{1}{s^2+4}+\frac{e^{-s\pi}}{3}\left(\frac{1}{s^2+4}\right)-\left(\frac{e^{-s\pi}}{3}\right)\frac{1}{s^2+1}$$
+
+
+Now we can apply the inverse for three terms, first is easy:
+
+$$\mathscr{L}\{\sin(2t)\}=\frac{2}{s^2+4}\Rightarrow \mathscr{L}^{-1}\left\{\frac{1}{s^2+4}\right\}=\frac{1}{2}\sin(2t)$$
+
+and by @eq-utf:
+
+$$e^{-as}\mathscr{L}\{f(t)\}=\mathscr{L}\{u(t-a)f(t-a)\}$$, then 
+
+$$\Rightarrow$$
+
+$$\mathscr{L}^{-1}\left\{e^{-\pi s}\frac{1}{s^2+4}\right\}=u(t-\pi)\frac{1}{2}\sin(2(t-\pi))=u(t-\pi)\frac{1}{2}\sin(2t)$$
+
+
+In the same way:
+
+$$\mathscr{L}^{-1}\left\{\left(\frac{e^{-s\pi}}{3}\right)\frac{1}{s^2+1}\right\}=\frac{1}{3}u(t-\pi)\sin(t-\pi)=-\frac{1}{3}u(t-\pi)\sin t$$
+Putting all together: $$\mathscr{L}^{-1}\{Y(s)\}=\frac{1}{2}\sin(2t)+\frac{1}{6}u(t-\pi)\sin(2t)+\frac{1}{3}u(t-\pi)\sin t$$
+
+$$y(t)=\frac{1}{2}\sin(2t)+\frac{1}{6}u(t-\pi)\sin(2t)+\frac{1}{3}u(t-\pi)\sin t$$
+^[you can check in WA here:<https://tinyurl.com/mpzc9un5>]
+
+:::
+:::
+
+
+## References {.smaller}
+
+1.  [LibreTexts, 8.4: The Unit Step Function  F.Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms/8.4%3A_The_Unit_Step_Function)
+
+<!-- 5.  [Type Package, Title Inversion of Laplace-Transformed Functions](https://cran.r-project.org/web/packages/invLT/invLT.pdf) -->
+
+<!-- 6.  [invlap: Inverse Laplacian](https://www.rdocumentation.org/packages/pracma/versions/1.9.9/topics/invlap) -->

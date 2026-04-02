@@ -1,0 +1,197 @@
+# L24: Laplace Transform and the derivative (8.3)
+
+<!-- --- -->
+<!-- title: "8.3 Laplace Transform and the derivative" -->
+<!-- subtitle: "`MAT211`. Diffy Q. Lecture 24." -->
+<!-- author: "E. Valderrama-Araya, Ph.D.  |  <evalderrama@oru.edu>" -->
+<!-- format: -->
+<!--   revealjs  -->
+<!-- #,bibliography: references.bib -->
+<!-- --- -->
+
+```{r,echo=FALSE, include=FALSE}
+library(rim)
+```
+
+##  Theorem: Laplace of the derivative {.scrollable}
+
+::: callout-note
+## Theorem
+
+::: {#thm-LTD}
+## Laplace Transform of the derivative
+
+If $y(t)$ is `continuous` and of `exponential order` for $t\geq 0$ and if $y'(t)$ is `piecewise continuous` for $t\geq 0$, then
+
+$$\mathscr{L}\{y'(t)\}=sY(s)-y(0)$$ where $\mathscr{L}\{y(t)\}=Y(s)$
+:::
+
+::: {.callout-caution collapse="true"}
+## Proof:
+
+::: fragment
+$$\mathscr{L}\{y'(t)\}=\int_0^\infty e^{-st} y'(t)\,dt$$
+
+Integration by parts:[^1]
+
+$$u=e^{-st}\rightarrow du=-se^{-st}\,dt$$ $$dv=y'(t)dt\rightarrow v=y(t)$$
+
+$$\mathscr{L}\{y'(t)\}=\left[e^{-st}y(t)\right]\Big|_0^\infty-\int_0^\infty y(t)(-se^{-st})\,dt$$
+
+$$\mathscr{L}\{y'(t)\}=\left[e^{-st}y(t)\right]\Big|_0^\infty+s\int_0^\infty y(t)e^{-st}\,dt$$
+
+$$\mathscr{L}\{y'(t)\}=(0-y(0))+sY(s)$$ $$\mathscr{L}\{y'(t)\}=sY(s)-y(0)$$
+
+$$\hspace{2in}\square$$
+:::
+
+[^1]: un dia vi una vaca vestida de uniforme...
+
+
+:::
+:::
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+$$\mathscr{L}\left\{f''(t)\right\}=\mathscr{L}\{\frac{d}{dt}\left(f'(t)\right)\}=s\mathscr{L}\{f'(t)\}-f'(0)$$
+
+$$\mathscr{L}\{f''(t)\}=s(sF(s)-f(0))-f'(0)$$ $$\mathscr{L}\{f''(t)\}=s^2F(s)-sf(0)-f'(0)$$
+
+:::
+
+## General for $n^{th}$ derivative ($\equiv f^{(n)}$)
+
+::: callout-note
+## In general {.scrollable}
+
+$$\mathscr{L}\{f^{(n)}(t)\}=$$ $$= s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots- f^{(n-1)}(0)$$
+
+:::
+
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+Solve:
+
+$$y''' -y''-4y'+4y=e^{-t},\qquad y(0)=y'(0)=y''(0)=0$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+Applying Laplace to the equation:
+
+$$(s^3F(s)-s^2y(0)-s^1y'(0)-s^0y''(0))+\cdots$$ $$\cdots-(s^2F(s)-s^1y(0)-s^0y'(0))+\cdots$$ $$\cdots-4(sF(s)-s^0y(0))+4(F(s))=\frac{1}{s+1}$$
+
+$$\Rightarrow$$
+
+$$s^3F(s)-s^2F(s)-4sF(s)+4F(s)=\frac{1}{s+1}$$
+
+$$F(s)(s^3-s^2-4s+4)=\frac{1}{s+1}$$ The last constant term is 4, so possible factors for long division are: $(s-1),(s+1),(s-2),(s+2),(s-4),(s+4)$
+
+Let's try with the first $(s-1)$
+
+$$(s^3-s^2-4s+4):(s-1)=s^2+\cdots$$
+
+$$-4s+4:(s-1)=-4$$
+
+$$\therefore s^3-s^2-4s+4=(s-1)(s^2-4)$$
+
+$$=(s-1)(s+2)(s-2)$$ $$\Rightarrow Y(s)(s-1)(s+2)(s-2)=\frac{1}{s+1}$$
+
+$$\Rightarrow Y(s)=\frac{1}{(s+1)(s-1)(s+2)(s-2)}$$ Partial Fractions!
+
+$$\frac{1}{(s+1)(s-1)(s+2)(s-2)}=\frac{A}{s+1}+\frac{B}{s-1}+\frac{C}{s+2}+\frac{D}{s-2}$$
+
+$$1=A(s-1)(s+2)(s-2)+B(s+1)(s+2)(s-2)+C(s+1)(s-1)(s-2)+D(s+1)(s-1)(s+2)$$ {#eq-pf}
+
+We could expand and then set a system of equations by looking the coefficients of the polynomial equation, or evaluate the equation for convenient values of $s$:
+
+If $s=1$ @eq-pf becomes:
+
+$$1=0+B(1+1)(1+2)(1-2)+0+0$$ $$1=-6B\Rightarrow \boxed{B=-\frac{1}{6}}$$
+
+If $s=-2$ @eq-pf becomes:
+
+$$1=0+0+C(-2+1)(-2-1)(-2-2)$$ $$1=-12C\Rightarrow\boxed{C=-\frac{1}{12}}$$ If $s=2$ @eq-pf becomes:
+
+$$1=0+0+0+D(2+1)(2-1)(2+2)$$
+
+$$1=12D\Rightarrow\boxed{D=\frac{1}{12}}$$ If $s=-1$ @eq-pf becomes:
+
+$$1=A(-1-1)(-1+2)(-1-2)+0+0+0$$ $$1=6A\Rightarrow\boxed{A=\frac{1}{6}}$$ $$\therefore Y(s)=\frac{1}{6(s+1)}-\frac{1}{6(s-1)}-\frac{1}{12(s+2)}+\frac{1}{12(s-2)}$$
+
+Finally we can invert![^2]
+
+$$y(t)=\frac{1}{6}\cdot e^{-t}-\frac{1}{6}\cdot e^{t}-\frac{1}{12}\cdot e^{-2t}+\frac{1}{12}\cdot e^{2t}$$
+:::
+
+[^2]: $$\mathscr{L}\{e^{at}\}=\frac{1}{s-a}$$
+
+:::
+
+
+
+## The derivative of the Laplace Transform {.scrollable}
+::: callout-note
+## Definition
+
+If $f(t)$ is a `piecewise continuous` for $t\geq 0$ and `of exponential order` for some $C>0$, and if $F(s)=\mathscr{L}\{f(t)\}$ then
+
+$$\boxed{\frac{d}{ds}F(s)=-\mathscr{L}\{t\cdot f(t)\}},\qquad s>C$$
+
+::: fragment
+::: {.callout-caution collapse="true"}
+## Proof:
+
+$$\frac{d}{ds}F(s)=\frac{d}{ds}\int_0^\infty e^{-st}f(t)\,dt$$
+
+$$\hspace{1in}=\int_0^\infty \frac{d}{ds}e^{-st}f(t)\,dt$$
+
+$$\hspace{1.5in}=\int_0^\infty -te^{-st}f(t)\,dt$$
+
+$$\hspace{1.5in}=-\int_0^\infty e^{-st}(t\cdot f(t))\,dt$$ $$\hspace{2in}= -\mathscr{L}\{t\cdot f(t)\}$$ $$\hspace{3in}\square$$
+:::
+:::
+:::
+
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+
+$$\mathscr{L}\{t\cos kt\}=?$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+$$\mathscr{L}\{t\cos kt\}=-\frac{d}{ds}\mathscr{L}\{\cos kt\}$$ $$=-\frac{d}{ds}\left(\frac{s}{s^2+k^2}\right)$$
+
+$$=\frac{(s-k)(s+k)}{(s^2+k^2)^2}$$
+:::
+:::
+
+
+## In general
+
+::: callout-note
+## Definition
+
+$$\boxed{\mathscr{L}\{t^n f(t)\}=(-1)^n\frac{d^{(n)}}{ds^{(n)}}\mathscr{L}\{f(t)\}}=(-1)^nF^{(n)}(s)$$
+:::
+
+
+## References {.smaller}
+
+1.  [LibreTexts, 8.3: Laplace Transforms and Derivatives, by William F.Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms/8.3%3A_Solution_of_Initial_Value_Problems)
+
+<!-- 5.  [Type Package, Title Inversion of Laplace-Transformed Functions](https://cran.r-project.org/web/packages/invLT/invLT.pdf) -->
+
+<!-- 6.  [invlap: Inverse Laplacian](https://www.rdocumentation.org/packages/pracma/versions/1.9.9/topics/invlap) -->

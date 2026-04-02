@@ -1,0 +1,39 @@
+project:
+  type: book
+  pre-render: "_setup.R"  # runs once before the book renders
+  # post-render: "Rscript something_after.R"  # (optional)
+
+execute: 
+  setup: _setup.R
+book:
+  title: "Lectures Notes on Differential Equations (Unit 3)"
+  author: "E. Valderrama-Araya, Ph.D."
+  date: "3/4/2026"
+  chapters:
+    - index.qmd
+    - Unit3/L18.qmd
+    - Unit3/L19.qmd
+    - Unit3/L20.qmd
+    - Unit3/L21.qmd
+    - Unit3/L22.qmd
+    - Unit3/L23.qmd
+    - Unit3/L24.qmd
+    - Unit3/L25.qmd
+    - Unit3/L26.qmd
+    - Unit3/L27.qmd
+    - Unit3/L28.qmd
+    #- Unit2/L17.qmd
+    #- intro.qmd
+    #- summary.qmd
+    #- references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  # pdf:
+  #   documentclass: scrreprt
+
+
+

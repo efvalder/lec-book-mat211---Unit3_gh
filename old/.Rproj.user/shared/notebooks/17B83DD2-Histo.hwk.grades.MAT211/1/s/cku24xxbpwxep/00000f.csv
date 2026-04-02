@@ -1,0 +1,6 @@
+"0","df <- read.csv(""Detailed_Homework_Results.csv"")"
+"0","df_ <- df[-c(1:4,36:42),]"
+"0","names(df_)[1:4] <- c(""Lastname"", ""Firstname"",""Email"",""Log-in"")#,""Hwk.1.1""Hwk.1.2""  ""Hwk.1.3""  ""Hwk.2.1a"" ""Hwk.2.1b"" ""Hwk.2.4""  ""Hwk.2.5""  ""Hwk.3.1"" ""Hwk.3.2""  ""X.5"""
+"0","df_[, -c(1:5)] <- lapply(df_[, -c(1:5)], as.numeric)"
+"0","df_[is.na(df_)] <- 0 #if NA make it zero"
+"0","hist(df_$Hwk.1.1)"

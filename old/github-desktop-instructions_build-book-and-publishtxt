@@ -1,0 +1,28 @@
+in github desktop:
+- authenticate
+- if need, new repository, name for example: html_lec-book-mat211---Unit3
+- Commit, add a summary explanation
+- push to origin
+
+In rstudio:
+- open project
+- build
+- then go to folder where all html files have been created, "_book"
+- copy and paste on folder with name html_lec-book-mat211---Unit3
+
+In github web:
+- authenticate
+- go to repository for example: https://github.com/efvalder/lec-book-mat211---Unit3_
+- check if repository have all the files, should exist an index.html
+- go to settings
+- scroll down and check that visibility is set to private.
+- go to settings/page:
+  - In branch change from none to main
+  - shoud be set root
+  - save it
+  - wait 5 minutes
+  - refresh page, then copy link.
+
+In a web:
+- paste link, and check if everything looks ok
+

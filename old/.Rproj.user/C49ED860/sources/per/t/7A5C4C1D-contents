@@ -1,0 +1,204 @@
+# L22: Intro to Laplace Transform, part II (8.1)
+
+<!-- --- -->
+<!-- title: "8.1 Intro to Laplace Transform (part II)" -->
+<!-- subtitle: "`MAT211`. Diffy Q. Lecture 22." -->
+<!-- author: "E. Valderrama-Araya, Ph.D.  |  <evalderrama@oru.edu>" -->
+<!-- format: -->
+<!--   revealjs  -->
+<!-- --- -->
+
+
+```{r,echo=FALSE, include=FALSE}
+library(rim)
+```
+
+## Definition and basic Properties of LT
+
+::: callout-note
+## Definition
+
+$$\mathscr{L}\{f(t)\}=F(s)=\int_0^\infty e^{-st} f(t)\,dt$$
+:::
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+$$\mathscr{L}\{e^{at}\}=$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+
+$$\mathscr{L}\{e^{at}\}=\int_0^\infty e^{-st}e^{at}\,dt$$
+
+$$\mathscr{L}\{e^{at}\}=\int_0^\infty e^{(a-s)t}\,dt$$
+
+$$\mathscr{L}\{e^{at}\}=\left[\frac{e^{(a-s)t}}{(a-s)}\right]_0^\infty$$
+
+$$(\text{If }s>a)\Rightarrow \lim_{t\rightarrow \infty} e^{(a-s)t}= 0$$
+
+$$\Rightarrow\mathscr{L}\{e^{at}\}=\left[\frac{e^{(a-s)t}}{(a-s)}\right]_0^\infty=0-\frac{1}{(a-s)}=\frac{1}{s-a},\qquad s>a$$
+
+$$\therefore \boxed{\mathscr{L}\{e^{at}\}=\frac{1}{s-a},\qquad s>a}$$
+:::
+:::
+
+### Plots $f(t)\rightarrow F(s)$ 
+
+```{r, echo=TRUE}
+par(mfrow=c(1,2))
+t <- seq(0,3,length.out=100)
+s <- seq(0,3,length.out=100)
+plot(t,exp(2*t),type = "l",ylim = c(0,100), col="blue", lwd=2)
+plot(s,1/(s-2), type = "l",ylim = c(1,30), col="blue", lwd=2)+abline(v=2, lty =3, col="red", lwd=2)
+mtext("Laplace Transformation", side = 3, line = -3, outer = TRUE)
+```
+
+### Maxima do have laplace function: {.smaller}
+
+```maxima
+define(f(t),%e^(2*t));
+ys: laplace(f(t),t,s);
+plot2d(ys,[s,0,3],[y,0,50]);
+```
+
+## Brief table of Laplace Transforms {.scrollable .smaller}
+
+| $$f(t)$$||$$F(s)$$| |
+|------|---|------|-----|
+|$$1$$||$$\frac{1}{s}$$|$$s>0$$|
+|$$e^{at}$$||$$\frac{1}{s-a}$$|$$s>a$$|
+|$$t^n$$||$$\frac{n!}{s^{n+1}}$$|$$s>0,\quad n\in \mathbb{N}$$|
+|$$\sin kt$$||$$\frac{k}{s^2+k^2}$$|$$s>0$$|
+|$$\cos kt$$||$$\frac{s}{s^2+k^2}$$|$$s>0$$|
+|$$e^{at}t^n$$||$$\frac{n!}{(s-a)^{n+1}}$$|$$s>0,\quad n\in \mathbb{N}$$|
+|$$e^{at}\sin kt$$||$$\frac{k}{(s-a)^2+k^2}$$|$$s>a$$|
+|$$e^{at}\cos kt$$||$$\frac{s-a}{(s-a)^2+k^2}$$|$$s>a$$|
+
+
+## Theorem for Translation
+::: callout-note
+
+::: {#thm-transl}
+## Translation
+
+$$\boxed{\mathscr{L}\{e^{at}f(t)\}=F(s-a)}$$ where $F(s)=\mathscr{L}\{f(t)\}$
+:::
+
+## proof {.scrollable}
+
+$$\mathscr{L}\{e^{at}f(t)\}=\int_0^\infty e^{-st}e^{at}f(t)\,dt$$
+$$=\int_0^\infty e^{-(s-a)t}f(t)\,dt$$
+
+$$=F(s-a)$$
+
+$$\square$$
+:::
+
+### Example {.scrollable}
+
+::: {.callout-tip}
+## Example
+
+$$\mathscr{L}\{e^{-2t}t^3\}=$$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+
+$$\mathscr{L}\{e^{-2t}t^3\}=\mathscr{L}\{t^3\}\Big|_{s\rightarrow s-(-2)}$$
+Evaluate and then Shift:
+
+$$=\frac{3!}{s^4}\Big|_{s\rightarrow s+2}$$
+$$=\frac{3!}{(s+2)^4}$$
+
+:::
+:::
+
+## $f(t)$ be of exponential order. {.scrollable}
+
+:::{.callout-note}
+## Definition
+
+A function $f(t)$ is said to be `of exponential order` if $\exists M,C,T>0$ such that
+$$|f(t)|\leq Me^{ct},\qquad \forall t\geq T$$
+
+```{r, echo=FALSE}
+#t <- seq(-3,5,length.out=200)
+y <- function(t) {sin(t)+t^2.1*(sin(10*t))+5*sin(30*t)}
+yexp1 <- function(t) {exp(t/1.5)}
+yexp2 <- function(t) {-exp(t/1.5)}
+curve(y, from =-0, to =7, col="black", lwd=2, n=2000, ylab="",xlab="t")
+curve(yexp1, from =-0, to =7, col="blue", lwd=2, n=200, add = TRUE)
+curve(yexp2, from =-0, to =7, col="blue", lwd=2, n=200, add = TRUE)
+abline(v=4.4, col=2, lwd=3, lty=3)
+text(x = 4.15, y = -40, label = "t=T")
+text(x = 5.0, y = -39, label = expression(-Me^{ct}))
+text(x = 5.0, y = 39, label = expression(Me^{ct}))
+#mtext("of exponential order", side = 3, line = -3, outer = TRUE)
+#curve(t,,type = "l",ylim = c(-50,50), col="blue", lwd=2, add = TRUE)
+```
+:::
+
+## $f(t)$ be a piecewise continuous. {.scrollable}
+
+:::{.callout-note}
+## Definition
+
+A function $f(t)$ is a `piecewise continuous` for $t\geq 0$ if all of the following are true.
+
+1. There are a finite number of discontinuities at $0=t_0<t_1<\cdots<t_k$
+2. $f(t)$ is continuous on $\{(0,t_1),(t_1,t_2),\cdots,(t_k,\infty)\}$
+3. $|f(t)|<M\quad\forall t$ for some $M$.
+
+```{r,echo=FALSE}
+#t <- seq(-3,5,length.out=200)
+y1 <- function(t) {t*sin(t)+2}
+y2 <- function(t) {sin(2*t)+5}
+y3 <- function(t) {-(t-7)^2+2}
+y4 <- function(t) {10*exp(-(t-9)^2/9)+2}
+plot(c(0,3,6,8),c(2,4.8,1,11),xlim = c(0,15),ylim = c(0,13), pch = 16, ylab="f(t)",xlab="t", cex=1.5, col="blue",xaxt = "n", yaxt = "n", frame.plot = 1)
+curve(y1, from =0, to =3, col="black", lwd=2, n=2000, ylab="",xlab="", xlim = c(0,15),ylim = c(0,13),add = TRUE,xaxt = "n",xaxt = "n", yaxt = "n")
+#abline(v=3, col=2, lwd=1, lty=3, ylim=c(0,2), xaxt = "n", yaxt = "n")
+segments(x0 = 3, x1 = 3, y0 = -1, y1 = 2,lwd = 2,lty=3, col = "red") 
+curve(y2, from =3, to =6, col="black", lwd=2, n=2000, ylab="",xlab="", xlim = c(0,15),ylim = c(0,13), add = TRUE, xaxt = "n", yaxt = "n")
+curve(y3, from =6, to =8, col="black", lwd=2, n=2000, ylab="",xlab="", xlim = c(0,15),ylim = c(0,13), add = TRUE, xaxt = "n", yaxt = "n")
+curve(y4, from =8, to =15, col="black", lwd=2, n=2000, ylab="",xlab="", xlim = c(0,15),ylim = c(0,13), add = TRUE, xaxt = "n", yaxt = "n")
+#text(x = 2.8, y = 0, label = "M")
+text(x = 2.8, y = 0, label = expression(t[1]))
+#text(x = 5.0, y = -39, label = expression(-Me^{ct}))
+#text(x = 5.0, y = 39, label = expression(Me^{ct}))
+points(c(3,6,8),c(2.3,4.6,1),xlim = c(0,15),ylim = c(0,13), pch = 1, ylab="",xlab="", cex=1.5, bg="white", col="red",lwd=3, xaxt = "n", yaxt = "n")
+#mtext("of exponential order", side = 3, line = -3, outer = TRUE)
+#curve(t,,type = "l",ylim = c(-50,50), col="blue", lwd=2, add = TRUE)
+```
+
+:::
+
+## Theorem Existance of Laplace{}
+
+:::{#thm-ExistLaplace}
+## Existance of Laplace Transform
+
+If $f(t)$ is `piecewise continuous` for $t\geq 0$ and `of exponential order` for some positive constant $C$ and for $t\geq T$, then $$\mathscr{L}\{f(t)\}$$ exists for $s>C$.
+
+:::
+
+## References {.smaller}
+
+0.  [LibreTexts, 8: Laplace Transforms, by William F.Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms)
+
+1.  [LibreTexts, 8.1: Introduction to the Laplace Transform, by William F.Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms/8.1%3A_Introduction_to_the_Laplace_Transform)
+
+2.  [LibreTexts, 8.1.1: Introduction to the Laplace Transform (Exercises), by William F.Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms/8.1%3A_Introduction_to_the_Laplace_Transform/8.1.1%3A_Introduction_to_the_Laplace_Transform_(Exercises))
+
+3.  [Simple definition for Linear Operator](https://undergroundmathematics.org/glossary/linear-operator)
+
+4.  [Khan: Partial fractions](https://www.khanacademy.org/math/algebra-home/alg-rational-expr-eq-func/alg-partial-fraction/v/partial-fraction-expansion-1)
+
+<!-- 5.  [Type Package, Title Inversion of Laplace-Transformed Functions](https://cran.r-project.org/web/packages/invLT/invLT.pdf) -->
+
+<!-- 6.  [invlap: Inverse Laplacian](https://www.rdocumentation.org/packages/pracma/versions/1.9.9/topics/invlap) -->

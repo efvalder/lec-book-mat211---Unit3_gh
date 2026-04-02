@@ -1,0 +1,263 @@
+# L18: Power Series (7.1)
+
+## Power Series definition
+
+::: {.callout-note}
+## Definition
+
+An infinite series of the form $$\sum_{n=0}^\infty a_n(x-x_0)^n$$
+where $x_0,a_0,a_1,a_2,\cdots\in\mathbb{R}$ is a `power series`
+
+A power series `converges` $\Leftrightarrow$ $$\lim_{N\rightarrow \infty} \sum_{n=0}^N a_n(x-x_0)^n \quad\exists$$
+
+:::
+
+### Example 1. Converge this limit?
+::: {.callout-tip} 
+
+## Example {.scrollable}
+
+$$\lim_{n\rightarrow \infty}\left( 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\cdots+\frac{x^n}{n!}\right)=$$
+
+::: {.callout-caution collapse="true"}
+## Solution
+$$\sum_{n=0}^\infty \frac{x^n}{n!}=1+x+\frac{x^2}{2}+\frac{x^3}{6}+\cdots=e^x$$
+As $n$ goes to infinite the limit do exist, then we say that the infinite series do converge.
+
+::: {.callout-caution collapse="true"}
+## Note
+*Note:* Taylor Series^[Check Taylor series: <https://en.wikipedia.org/wiki/Taylor_series>]
+
+$f(x)$ around $a$ can be written as:
+
+$$f(x)\approx \sum_0^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+:::
+:::
+:::
+
+### Example 2. Some important power series
+::: {.callout-tip} 
+## Example
+
+$\cos x$, $e^x$, $\frac{1}{1-x}$, center at $x=0$
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+<!-- $$\cos(x)\approx +\frac{\cos(0)}{0!}(x-0)^0-\frac{\sin(0)}{1!}(x-0)^1-\frac{\cos(0)}{2!}(x-0)^2+\cdots$$ -->
+
+$$\cos x \approx 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots$$
+
+$$\sin x \approx x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots$$
+
+center $a=0$
+$$e^x \approx 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots$$
+
+$$\sum_{n=0}^\infty x^n = 1+x+x^2+x^3+\cdots=\frac{1}{1-x};\quad |x|<1$$
+:::
+:::
+
+## Proof geometric infinite sum{.scrollable}
+
+Easy peasy !
+
+$$\text{if }|x|<1 \Rightarrow \boxed{\frac{1}{1-x}=\sum_{n=0}^\infty x^n}$$
+
+::: {.callout-caution collapse="true"}
+## Proof:
+
+ $$\sum_{n=0}^\infty x^n = \lim_{N\rightarrow\infty} \sum_{n=0}^N x^n= \lim_{N\rightarrow\infty} S_N$$
+
+$$S_N=1+x+x^2+x^3+\cdots +x^N$$
+
+Let's multiply by $x$
+
+$$xS_N=x+x^2+x^3+\cdots +x^N+x^{N+1}$$
+
+Now this is similar to $S_N$, but is missing a one and have an extra $x^{N+1}$, then is we add one and subtract $x^{N+1}$ we obtain $S_N$
+
+$$S_N=1+xS_N-x^{N+1}$$
+
+Solving for $S_N$:
+
+$$S_N(1-x)=1-x^{N+1}$$
+
+$$S_N=\frac{1}{1-x}-\frac{x^{N+1}}{1-x}$$
+
+Now if $|x|<1$ the last fraction will go to zero when $N\rightarrow \infty$.
+
+$$\therefore \boxed{\sum_{n=0}^\infty x^n =\frac{1}{1-x};\quad |x|<1}$$
+:::
+
+## Theorem Power Series convergence
+
+::: {.callout-note}
+## Theorem
+
+::: {#thm-Pow}
+## Power Series convergence
+
+For any power series $$\sum_{n=0}^\infty a_n(x-x_0)^n$$ exactly `one` of these statements is true.
+
+(i) The power series converges only for $x=x_0$
+(ii) The power series converges $\forall x\in \mathbb{R}$
+(iii) $\exists R>0$ such that the power series converges for $|x-x_0|<R$ and diverges for $|x-x_0|>R$
+
+Such an `R` is called the `radius of convergence`
+:::
+:::
+
+## Radius of convergence 
+
+::: {.callout-note}
+## Theorem
+
+::: {#thm-radPow}
+## Radius of convergence 
+
+Suppose $a_n\neq 0$ $$\forall n\geq N\quad\text{ and}\quad \lim_{n\rightarrow\infty} \left|\frac{a_{n+1}}{a_n}\right|=L$$
+Then the radius of convergence of $\sum_{n=0}^\infty a_n(x-x_0)^n$ is $$R=\frac{1}{L}$$
+:::
+:::
+
+### Example 3. 
+::: {.callout-tip} 
+## Example
+$$\sum_{n=0}^\infty \frac{x^n}{n!}\Rightarrow \boxed{x_0=0,\quad a_n=\frac{1}{n!}}\Rightarrow$$
+Please observe that:
+$$(n+1)!=n!(n+1)$$
+
+$$ \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right|=\left|\frac{n!}{n!(n+1)}\right|=\left|\frac{1}{n+1}\right|$$
+
+which goes to zero as $n\rightarrow \infty$
+
+Then if L goes to zero, then R goes to infinity:
+
+$$\boxed{\Rightarrow R=\frac{1}{L}=\infty}$$
+:::
+
+### Example 4. 
+::: {.callout-tip} 
+## Example
+
+$$\sum_{n=0}^\infty x^n\Rightarrow \boxed{x_0=0,\quad a_n=1}\Rightarrow$$
+
+$$ \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{1}{1}\right|=1$$
+
+which goes to 1 as $n\rightarrow \infty$
+
+$$\boxed{\Rightarrow R=\frac{1}{1}=1}$$
+:::
+
+### Example 5. 
+::: {.callout-tip} 
+## Example
+
+$$\sum_{n=0}^\infty 2^nn^2(x-1)^n\Rightarrow \boxed{x_0=1,\quad a_n=2^n n^2}\Rightarrow$$
+
+$$ \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{2^{n+1} (n+1)^2}{2^n n^2}\right|=2$$
+
+which goes to 2 as $n\rightarrow \infty$
+
+$$\boxed{\Rightarrow R=\frac{1}{L}=\frac{1}{2}}$$
+:::
+
+## Taylor Series definition
+
+::: {.callout-note}
+## Definition
+
+The `Taylor Series` of $f$ about $x_0$ is: 
+
+$$\boxed{\sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}$$
+
+If $x_0=0$ (Maclaurin Series) $$f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n$$ if converges.
+
+:::
+
+## Radius of convergence for the derivative
+
+::: {.callout-note}
+## Theorem
+::: {#thm-RadConDiff}
+## Radius of convergence for the derivative
+
+ $$\text{If: }f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n$$ has a radius of convergence $R$.
+
+ $$\text{Then: }f'(x)=\sum_{n=0}^\infty na_n(x-x_0)^{n-1}$$ has a radius of convergence $R$.
+:::
+:::
+
+
+## Linear Combination of Power Series 
+
+::: {.callout-note}
+## Theorem
+
+::: {#thm-LinCombPow}
+## Linear Combination of Power Series
+
+$$\text{If: }f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n$$ with a radius of convergence $R_1$,
+$$\text{and }g(x)=\sum_{n=0}^\infty b_n(x-x_0)^n$$ with a radius of convergence $R_2$.
+
+Then 
+
+(i) $$cf(x)=\sum_{n=0}^\infty ca_n(x-x_0)^{n}$$ has a radius of convergence $R_1$.
+
+(ii) $$f(x)+g(x)=\sum_{n=0}^\infty (a_n+b_n)(x-x_0)^n$$ has a radius of convergence $R=min\{R_1,R_2\}$
+
+:::
+:::
+
+### Example 6. "diffeq as a power series"
+::: {.callout-tip} 
+## Example
+Suppose $y=\sum_{n=0}^\infty a_nx^n$. Express $$(2-x)y''+2y$$ as a power series.
+
+::: {.callout-caution collapse="true"}
+## Solution:
+
+I will provide detailed step, so none get behind
+
+$$y':$$
+$$y'=\sum_{n=1}^\infty na_nx^{n-1}$$
+(Shift)
+
+$$=\sum_{n=0}^\infty (n+1)a_{n+1}x^{n}$$
+$$y'':$$
+
+$$y''=\sum_{n=2}^\infty n(n-1)a_nx^{n-2}$$
+(Shift)
+
+$$y''=\sum_{n=0}^\infty (n+2)((n+2)-1)a_{n+2}x^{(n+2)-2}$$
+$$y''=\sum_{n=0}^\infty (n+2)(n+1)a_{n+2}x^{n}$$
+
+$$\Rightarrow \boxed{2y''=\sum_{n=0}^\infty 2(n+2)(n+1)a_{n+2}x^{n}}$$
+---
+
+(multiply by $x$ then shift)
+
+$$\Rightarrow xy''=x\sum_{n=2}^\infty n(n-1)a_nx^{n-2}$$
+$$=\sum_{n=2}^\infty n(n-1)a_nx^{n-1}$$
+(Now we shift only in 1, so we can have $x^n$ as common factor)
+
+$$=\sum_{n=1}^\infty (n+1)(n)a_{n+1}x^{n}$$
+Also I observe that I could start at $n=0$ because that will add only a zero.
+
+$$\Rightarrow \sum_{n=1}^\infty (n+1)(n)a_{n+1}x^{n}=\sum_{n=0}^\infty (n+1)(n)a_{n+1}x^{n}$$
+$$\Rightarrow \boxed{xy''=\sum_{n=0}^\infty (n+1)(n)a_{n+1}x^{n}}$$
+
+---
+
+Which is what I want, so everybody have $x^n$ as a factor.
+
+Putting everything together:
+
+$$(2-x)y''+2y=$$
+$$\sum_{n=0}^\infty\left[ 2(n+2)(n+1)a_{n+2}-(n+1)na_{n+1}+2a_n\right]x^n$$
+:::
+:::
+
+## References {.smaller}
+
+1.  [LibreTexts, 7.1: Review of Power Series, from William F. Trench.](https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/7%3A_Series_Solutions_of_Linear_Second_Order_Equations/7.1%3A_Review_of_Power_Series)

@@ -1,0 +1,7 @@
+*_files/
+*.html
+*.qmd
+_site/
+_book/
+_freeze/
+.quarto/

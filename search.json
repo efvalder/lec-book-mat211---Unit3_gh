@@ -1,0 +1,962 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "",
+    "text": "Preface to Unit 3:\nAdvanced Techniques in Solving Differential Equations (part II)\nUnit 3 of our differential equations course ventures into the exploration of advanced techniques crucial for solving differential equations that are not easily tackled by the methods discussed in previous units. This unit is designed to equip students with the mathematical tools needed to address complex problems in engineering, physics, and applied mathematics. Each lecture delves into a specific topic, gradually building the foundation necessary for understanding and applying these advanced methods.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l18-power-series-7.1",
+    "href": "index.html#l18-power-series-7.1",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L18: Power Series (7.1)",
+    "text": "L18: Power Series (7.1)\nThis lecture introduces the concept of power series and their role in solving differential equations. We will cover the basics of power series, including their definition, convergence, and how they can be used as a tool to find solutions to differential equations near a point where the solution is analytic.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l19-series-solutions-i-7.2",
+    "href": "index.html#l19-series-solutions-i-7.2",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L19: Series Solutions I (7.2)",
+    "text": "L19: Series Solutions I (7.2)\nIn the first part of series solutions, we focus on finding solutions to differential equations using power series methods. This lecture covers the technique of substituting a power series into a differential equation and determining the coefficients of the series to satisfy the equation.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l20-series-solutions-ii-7.3",
+    "href": "index.html#l20-series-solutions-ii-7.3",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L20: Series Solutions II (7.3)",
+    "text": "L20: Series Solutions II (7.3)\nContinuing from the previous lecture, we delve deeper into series solutions of differential equations. This session emphasizes solving more complex differential equations, including those with variable coefficients, using the power series approach.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l21-intro-to-laplace-transform-part-i-8.1",
+    "href": "index.html#l21-intro-to-laplace-transform-part-i-8.1",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L21: Intro to Laplace Transform, Part I (8.1)",
+    "text": "L21: Intro to Laplace Transform, Part I (8.1)\nThe first part of our introduction to the Laplace Transform begins with the basic definitions and properties. We explore how the Laplace Transform can be used to transform a differential equation into an algebraic equation, simplifying the process of finding solutions.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l22-intro-to-laplace-transform-part-ii-8.1",
+    "href": "index.html#l22-intro-to-laplace-transform-part-ii-8.1",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L22: Intro to Laplace Transform, Part II (8.1)",
+    "text": "L22: Intro to Laplace Transform, Part II (8.1)\nBuilding on the foundations laid in the previous lecture, we continue to explore the Laplace Transform, focusing on its application to initial value problems. This lecture provides further insight into how the transform can be utilized to solve differential equations more efficiently.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l23-inverse-laplace-transform-8.2",
+    "href": "index.html#l23-inverse-laplace-transform-8.2",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L23: Inverse Laplace Transform (8.2)",
+    "text": "L23: Inverse Laplace Transform (8.2)\nThis lecture introduces the concept of the Inverse Laplace Transform and its importance in solving differential equations. We discuss methods for finding the inverse transform and how it can be used to convert solutions back from the Laplace domain to the time domain.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l24-laplace-transform-and-the-derivative-8.3",
+    "href": "index.html#l24-laplace-transform-and-the-derivative-8.3",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L24: Laplace Transform and the Derivative (8.3)",
+    "text": "L24: Laplace Transform and the Derivative (8.3)\nWe explore the relationship between the Laplace Transform and derivatives, demonstrating how the transform simplifies the process of dealing with differential equations involving derivatives. This lecture shows how to apply the transform to solve higher-order differential equations.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l25-solving-odes-with-piecewise-continuous-forcing-functions-8.4",
+    "href": "index.html#l25-solving-odes-with-piecewise-continuous-forcing-functions-8.4",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L25: Solving ODEs with Piecewise Continuous Forcing Functions (8.4)",
+    "text": "L25: Solving ODEs with Piecewise Continuous Forcing Functions (8.4)\nThis session focuses on solving ordinary differential equations (ODEs) that are subjected to piecewise continuous forcing functions. We discuss the handling of discontinuities and how the Laplace Transform can be used to manage such cases effectively.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l26-periodic-forcing-functions-8.5",
+    "href": "index.html#l26-periodic-forcing-functions-8.5",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L26: Periodic Forcing Functions (8.5)",
+    "text": "L26: Periodic Forcing Functions (8.5)\nWe examine the application of the Laplace Transform in solving ODEs with periodic forcing functions. This lecture highlights the technique of using the Laplace Transform to simplify and solve differential equations driven by periodic inputs.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l27-convolution-integral-8.6",
+    "href": "index.html#l27-convolution-integral-8.6",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L27: Convolution Integral (8.6)",
+    "text": "L27: Convolution Integral (8.6)\nThe Convolution Integral is introduced as a powerful tool in the context of the Laplace Transform. This lecture explains the concept of convolution, its properties, and how it can be used to find the solution to linear systems with arbitrary inputs.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "index.html#l28-impulse-forcing-functions-8.7",
+    "href": "index.html#l28-impulse-forcing-functions-8.7",
+    "title": "Lectures Notes on Differential Equations (Unit 3)",
+    "section": "L28: Impulse Forcing Functions (8.7)",
+    "text": "L28: Impulse Forcing Functions (8.7)\nIn the final lecture of this unit, we focus on the response of systems to impulse forcing functions. We discuss the Dirac delta function and how it is used in conjunction with the Laplace Transform to solve differential equations that model physical systems subjected to sudden forces.\nEach lecture in this unit is designed to build upon the last, ensuring students develop a comprehensive understanding of advanced methods in solving differential equations. Through detailed explanations, examples, and exercises, students will gain the skills necessary to tackle complex problems using these sophisticated mathematical tools.",
+    "crumbs": [
+      "Preface to Unit 3:"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html",
+    "href": "Unit3/L18.html",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "",
+    "text": "1.1 Power Series definition",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#power-series-definition",
+    "href": "Unit3/L18.html#power-series-definition",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "",
+    "text": "NoteDefinition\n\n\n\nAn infinite series of the form \\[\\sum_{n=0}^\\infty a_n(x-x_0)^n\\] where \\(x_0,a_0,a_1,a_2,\\cdots\\in\\mathbb{R}\\) is a power series\nA power series converges \\(\\Leftrightarrow\\) \\[\\lim_{N\\rightarrow \\infty} \\sum_{n=0}^N a_n(x-x_0)^n \\quad\\exists\\]\n\n\n\n1.1.1 Example 1. Converge this limit?\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\lim_{n\\rightarrow \\infty}\\left( 1+x+\\frac{x^2}{2}+\\frac{x^3}{6}+\\cdots+\\frac{x^n}{n!}\\right)=\\]\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\n\\[\\sum_{n=0}^\\infty \\frac{x^n}{n!}=1+x+\\frac{x^2}{2}+\\frac{x^3}{6}+\\cdots=e^x\\] As \\(n\\) goes to infinite the limit do exist, then we say that the infinite series do converge.\n\n\n\n\n\n\nCautionNote\n\n\n\n\n\nNote: Taylor Series1\n\\(f(x)\\) around \\(a\\) can be written as:\n\\[f(x)\\approx \\sum_0^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n\\]\n\n\n\n\n\n\n\n\n\n\n1.1.2 Example 2. Some important power series\n\n\n\n\n\n\nTipExample\n\n\n\n\\(\\cos x\\), \\(e^x\\), \\(\\frac{1}{1-x}\\), center at \\(x=0\\)\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\n\\[\\cos x \\approx 1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots\\]\n\\[\\sin x \\approx x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots\\]\ncenter \\(a=0\\) \\[e^x \\approx 1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots\\]\n\\[\\sum_{n=0}^\\infty x^n = 1+x+x^2+x^3+\\cdots=\\frac{1}{1-x};\\quad |x|&lt;1\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#proof-geometric-infinite-sum",
+    "href": "Unit3/L18.html#proof-geometric-infinite-sum",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.2 Proof geometric infinite sum",
+    "text": "1.2 Proof geometric infinite sum\nEasy peasy !\n\\[\\text{if }|x|&lt;1 \\Rightarrow \\boxed{\\frac{1}{1-x}=\\sum_{n=0}^\\infty x^n}\\]\n\n\n\n\n\n\nCautionProof:\n\n\n\n\n\n\\[\\sum_{n=0}^\\infty x^n = \\lim_{N\\rightarrow\\infty} \\sum_{n=0}^N x^n= \\lim_{N\\rightarrow\\infty} S_N\\]\n\\[S_N=1+x+x^2+x^3+\\cdots +x^N\\]\nLet’s multiply by \\(x\\)\n\\[xS_N=x+x^2+x^3+\\cdots +x^N+x^{N+1}\\]\nNow this is similar to \\(S_N\\), but is missing a one and have an extra \\(x^{N+1}\\), then is we add one and subtract \\(x^{N+1}\\) we obtain \\(S_N\\)\n\\[S_N=1+xS_N-x^{N+1}\\]\nSolving for \\(S_N\\):\n\\[S_N(1-x)=1-x^{N+1}\\]\n\\[S_N=\\frac{1}{1-x}-\\frac{x^{N+1}}{1-x}\\]\nNow if \\(|x|&lt;1\\) the last fraction will go to zero when \\(N\\rightarrow \\infty\\).\n\\[\\therefore \\boxed{\\sum_{n=0}^\\infty x^n =\\frac{1}{1-x};\\quad |x|&lt;1}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#theorem-power-series-convergence",
+    "href": "Unit3/L18.html#theorem-power-series-convergence",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.3 Theorem Power Series convergence",
+    "text": "1.3 Theorem Power Series convergence\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 1.1 (Power Series convergence) For any power series \\[\\sum_{n=0}^\\infty a_n(x-x_0)^n\\] exactly one of these statements is true.\n\nThe power series converges only for \\(x=x_0\\)\nThe power series converges \\(\\forall x\\in \\mathbb{R}\\)\n\\(\\exists R&gt;0\\) such that the power series converges for \\(|x-x_0|&lt;R\\) and diverges for \\(|x-x_0|&gt;R\\)\n\nSuch an R is called the radius of convergence",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#radius-of-convergence",
+    "href": "Unit3/L18.html#radius-of-convergence",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.4 Radius of convergence",
+    "text": "1.4 Radius of convergence\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 1.2 (Radius of convergence) Suppose \\(a_n\\neq 0\\) \\[\\forall n\\geq N\\quad\\text{ and}\\quad \\lim_{n\\rightarrow\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right|=L\\] Then the radius of convergence of \\(\\sum_{n=0}^\\infty a_n(x-x_0)^n\\) is \\[R=\\frac{1}{L}\\]\n\n\n\n\n1.4.1 Example 3.\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\sum_{n=0}^\\infty \\frac{x^n}{n!}\\Rightarrow \\boxed{x_0=0,\\quad a_n=\\frac{1}{n!}}\\Rightarrow\\] Please observe that: \\[(n+1)!=n!(n+1)\\]\n\\[ \\left|\\frac{a_{n+1}}{a_n}\\right|=\\left|\\frac{\\frac{1}{(n+1)!}}{\\frac{1}{n!}}\\right|=\\left|\\frac{n!}{n!(n+1)}\\right|=\\left|\\frac{1}{n+1}\\right|\\]\nwhich goes to zero as \\(n\\rightarrow \\infty\\)\nThen if L goes to zero, then R goes to infinity:\n\\[\\boxed{\\Rightarrow R=\\frac{1}{L}=\\infty}\\]\n\n\n\n\n1.4.2 Example 4.\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\sum_{n=0}^\\infty x^n\\Rightarrow \\boxed{x_0=0,\\quad a_n=1}\\Rightarrow\\]\n\\[ \\left|\\frac{a_{n+1}}{a_n}\\right|=\\left|\\frac{1}{1}\\right|=1\\]\nwhich goes to 1 as \\(n\\rightarrow \\infty\\)\n\\[\\boxed{\\Rightarrow R=\\frac{1}{1}=1}\\]\n\n\n\n\n1.4.3 Example 5.\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\sum_{n=0}^\\infty 2^nn^2(x-1)^n\\Rightarrow \\boxed{x_0=1,\\quad a_n=2^n n^2}\\Rightarrow\\]\n\\[ \\left|\\frac{a_{n+1}}{a_n}\\right|=\\left|\\frac{2^{n+1} (n+1)^2}{2^n n^2}\\right|=2\\]\nwhich goes to 2 as \\(n\\rightarrow \\infty\\)\n\\[\\boxed{\\Rightarrow R=\\frac{1}{L}=\\frac{1}{2}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#taylor-series-definition",
+    "href": "Unit3/L18.html#taylor-series-definition",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.5 Taylor Series definition",
+    "text": "1.5 Taylor Series definition\n\n\n\n\n\n\nNoteDefinition\n\n\n\nThe Taylor Series of \\(f\\) about \\(x_0\\) is:\n\\[\\boxed{\\sum_{n=0}^\\infty \\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}\\]\nIf \\(x_0=0\\) (Maclaurin Series) \\[f(x)=\\sum_{n=0}^\\infty \\frac{f^{(n)}(0)}{n!}x^n\\] if converges.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#radius-of-convergence-for-the-derivative",
+    "href": "Unit3/L18.html#radius-of-convergence-for-the-derivative",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.6 Radius of convergence for the derivative",
+    "text": "1.6 Radius of convergence for the derivative\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 1.3 (Radius of convergence for the derivative) \\[\\text{If: }f(x)=\\sum_{n=0}^\\infty a_n(x-x_0)^n\\] has a radius of convergence \\(R\\).\n\\[\\text{Then: }f'(x)=\\sum_{n=1}^\\infty na_n(x-x_0)^{n-1}\\] has a radius of convergence \\(R\\).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#linear-combination-of-power-series",
+    "href": "Unit3/L18.html#linear-combination-of-power-series",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.7 Linear Combination of Power Series",
+    "text": "1.7 Linear Combination of Power Series\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 1.4 (Linear Combination of Power Series) \\[\\text{If: }f(x)=\\sum_{n=0}^\\infty a_n(x-x_0)^n\\] with a radius of convergence \\(R_1\\), \\[\\text{and }g(x)=\\sum_{n=0}^\\infty b_n(x-x_0)^n\\] with a radius of convergence \\(R_2\\).\nThen\n\n\\[cf(x)=\\sum_{n=0}^\\infty ca_n(x-x_0)^{n}\\] has a radius of convergence \\(R_1\\).\n\\[f(x)+g(x)=\\sum_{n=0}^\\infty (a_n+b_n)(x-x_0)^n\\] has a radius of convergence \\(R=min\\{R_1,R_2\\}\\)\n\n\n\n\n\n1.7.1 Example 6. “diffeq as a power series”\n\n\n\n\n\n\nTipExample\n\n\n\nSuppose \\(y=\\sum_{n=0}^\\infty a_nx^n\\). Express \\[(2-x)y''+2y\\] as a power series.\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\nI will provide detailed step, so none get behind\n\\[y':\\] \\[y'=\\sum_{n=1}^\\infty na_nx^{n-1}\\] (Shift)\n\\[=\\sum_{n=0}^\\infty (n+1)a_{n+1}x^{n}\\] \\[y'':\\]\n\\[y''=\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}\\] (Shift)\n\\[y''=\\sum_{n=0}^\\infty (n+2)((n+2)-1)a_{n+2}x^{(n+2)-2}\\] \\[y''=\\sum_{n=0}^\\infty (n+2)(n+1)a_{n+2}x^{n}\\]\n\\[\\Rightarrow \\boxed{2y''=\\sum_{n=0}^\\infty 2(n+2)(n+1)a_{n+2}x^{n}}\\]\n(multiply by \\(x\\) then shift)\n\\[\\Rightarrow xy''=x\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}\\] \\[=\\sum_{n=2}^\\infty n(n-1)a_nx^{n-1}\\] (Now we shift only in 1, so we can have \\(x^n\\) as common factor)\n\\[=\\sum_{n=1}^\\infty (n+1)(n)a_{n+1}x^{n}\\] Also I observe that I could start at \\(n=0\\) because that will add only a zero.\n\\[\\Rightarrow \\sum_{n=1}^\\infty (n+1)(n)a_{n+1}x^{n}=\\sum_{n=0}^\\infty (n+1)(n)a_{n+1}x^{n}\\] \\[\\Rightarrow \\boxed{xy''=\\sum_{n=0}^\\infty (n+1)(n)a_{n+1}x^{n}}\\]\nWhich is what I want, so everybody have \\(x^n\\) as a factor.\nPutting everything together:\n\\[(2-x)y''+2y=\\] \\[\\sum_{n=0}^\\infty\\left[ 2(n+2)(n+1)a_{n+2}-(n+1)na_{n+1}+2a_n\\right]x^n=\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#references",
+    "href": "Unit3/L18.html#references",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "1.8 References",
+    "text": "1.8 References\n\nLibreTexts, 7.1: Review of Power Series, from William F. Trench.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L18.html#footnotes",
+    "href": "Unit3/L18.html#footnotes",
+    "title": "1  L18: Power Series (7.1)",
+    "section": "",
+    "text": "Check Taylor series: https://en.wikipedia.org/wiki/Taylor_series↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>L18: Power Series (7.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L19.html",
+    "href": "Unit3/L19.html",
+    "title": "2  L19: Series Solutions I (7.2)",
+    "section": "",
+    "text": "2.1 Singular and Ordinary Points",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>L19: Series Solutions I (7.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L19.html#singular-and-ordinary-points",
+    "href": "Unit3/L19.html#singular-and-ordinary-points",
+    "title": "2  L19: Series Solutions I (7.2)",
+    "section": "",
+    "text": "NoteDefinition\n\n\n\nFor \\[P_0(x)y''+P_1(x)y'+P_2(x)y=0\\] where \\(P_0,P_1,P_2\\) are polynomial. The points \\(x_0\\) for which \\(P_0(x_0)=0\\) are called singular points and points \\(x_0\\) for which \\(P_0(x_0)\\neq 0\\) are called ordinary points.\n\n\n\n2.1.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\nLegendre’s Equation1 \\[(1-x^2)y''-2xy'+\\alpha(\\alpha+1)y=0\\]\nBesse’ls Equation2 \\[x^2y''+xy'+(x^2-v^2)y=0\\]\n\n\n\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\n\n\\(x_0=\\pm 1\\)\n\\(x_0=0\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>L19: Series Solutions I (7.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L19.html#theorem",
+    "href": "Unit3/L19.html#theorem",
+    "title": "2  L19: Series Solutions I (7.2)",
+    "section": "2.2 Theorem",
+    "text": "2.2 Theorem\n\n\n\n\n\n\nNote\n\n\n\n\nTheorem 2.1 (Unique Solution for not singular point.) Consider \\[P_0(x)y''+P_1(x)y'+P_2(x)y=0\\] \\[ y(x_0)=a_0,\\quad y'(x_0)=a_1\\] If \\(x_0\\) is not singular point, then the equation has a unique solution on the largest open interval that contains \\(x_0\\) but not singular points equals to \\[y=\\sum_{n=0}^\\infty a_n(x-x_0)^n\\]\n\n\n\n\n2.2.1 Example 1\n\n\n\n\n\n\nTipExample\n\n\n\nFind the power series solution for \\[L_y:=y''+y=0,\\quad\\text{in terms of}(x-x_0)\\]\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\n\n\\[y=\\sum_{n=0}^\\infty a_n(x-x_0)^n\\] \\[y'=\\sum_{n=1}^\\infty na_n(x-x_0)^{n-1}\\] \\[y''=\\sum_{n=2}^\\infty n(n-1)a_n(x-x_0)^{n-2}\\]\n\n\n\\[\\Rightarrow\\] \\[L_y:=\\sum_{n=2}^\\infty n(n-1)a_n(x-x_0)^{n-2}+\\sum_{n=0}^\\infty a_n(x-x_0)^n=0\\] Shifting index for \\(y''\\): \\[=\\sum_{n=2-2}^{\\infty-2} (n+2)(n+2-1)a_{n+2}(x-x_0)^{n+2-2}+\\sum_{n=0}^\\infty a_n(x-x_0)^n\\] \\[=0\\]\n\n\n\\[\\sum_{n=0}^\\infty \\left[(n+2)(n+1)a_{n+2}+a_n\\right](x-x_0)^n=0\\]\n\\[\\Leftrightarrow\\]\n\\[(n+2)(n+1)a_{n+2}+a_n=0,\\qquad \\forall n\\geq 0\\]\n\\[\\Leftrightarrow \\boxed{a_{n+2}=-\\frac{a_n}{(n+2)(n+1)}}\\] (2\\(^{nd}\\) order recurrence relation)3 \\[a_0,a_1,a_2,a_3,\\cdots\\] sequence depends upon both \\(a_0,a_1\\).\n\n\n\\(\\boxed{\\text{Case 1 (even index)}:}\\)\n\\[ a_2=-\\frac{a_0}{(0+2)(0+1)}=-\\frac{a_0}{2\\cdot 1}\\] \\[a_4=-\\frac{a_2}{(2+2)(2+1)}=-\\frac{a_2}{4\\cdot 3}=\\frac{a_0}{4\\cdot3\\cdot 2\\cdot 1}\\] \\[a_6=-\\frac{a_4}{(4+2)(4+1)}=-\\frac{a_4}{6\\cdot 5}=-\\frac{a_0}{6!}\\] Now instead of a recurrence relation, we can state an explicit equation for the even index:\n\\[\\boxed{a_{2m}=(-1)^m\\frac{a_0}{(2m)!},\\qquad m=0,1,2,3,\\cdots}\\]4\n\n\n\\(\\boxed{\\text{Case 2 (odd index)}:}\\)\n\\[a_3=-\\frac{a_1}{(1+2)(1+1)}=-\\frac{a_1}{3\\cdot 2}\\] \\[a_5=-\\frac{a_3}{(3+2)(3+1)}=\\frac{a_1}{5\\cdot 4\\cdot 3\\cdot 2}\\] \\[a_7=-\\frac{a_5}{(5+2)(5+1)}=-\\frac{a_1}{7!}\\]\n\\[\\boxed{a_{2m+1}=(-1)^m\\frac{a_1}{(2m+1)!},\\qquad m=0,1,2,3,\\cdots}\\]\n\n\nFinal Solution:\n\\[y=\\sum_{m=0}^\\infty (-1)^m a_0 \\frac{(x-x_0)^{2m}}{(2m)!}+\\sum_{m=0}^\\infty (-1)^m a_1 \\frac{(x-x_0)^{2m+1}}{(2m+1)!}\\] \\[y=a_0\\sum_{m=0}^\\infty (-1)^m  \\frac{(x-x_0)^{2m}}{(2m)!}+a_1\\sum_{m=0}^\\infty (-1)^m  \\frac{(x-x_0)^{2m+1}}{(2m+1)!}\\]\n\n\nExpanding cosine and sine function using taylor series:\n\\[\\boxed{y=a_0\\cos(x-x_0)+a_1\\sin(x-x_0)}\\]\nNote: Check the Taylor series for cosine and sine functions5\n\n\n\n\n\n\n\n\n2.2.2 Example 2\n\n\n\n\n\n\nTipExample\n\n\n\nFind the power series in \\(x\\) for the general solution of: \\[L_y:=(1+2x^2)y''+6xy'+2y=0\\]\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\n\\[y=\\sum_{n=0}^\\infty a_nx^n\\] \\[y'=\\sum_{n=1}^\\infty na_nx^{n-1}\\] \\[y''=\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}\\] \\[L_y=(1+2x^2)\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}+6x\\sum_{n=1}^\\infty na_nx^{n-1}+2\\sum_{n=0}^\\infty a_nx^n=0\\] \\[=\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}+\\sum_{n=0}^\\infty[2n(n-1)+6n+2]a_nx^n\\] \\[=\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}+2\\sum_{n=0}^\\infty(n+1)^2a_nx^n\\] \\[=\\sum_{n=0}^\\infty (n+2)(n+1)a_{n+2}x^{n}+2\\sum_{n=0}^\\infty(n+1)^2a_nx^n\\] \\[=\\sum_{n=0}^\\infty \\left[(n+2)(n+1)a_{n+2}+2(n+1)^2a_n\\right]x^n=0\\] \\[\\Leftrightarrow (n+2)(n+1)a_{n+2}+2(n+1)^2a_n=0,\\quad\\forall n\\geq 0\\]\n\\[\\Rightarrow \\boxed{a_{n+2}=-2\\left(\\frac{n+1}{n+2}\\right)a_n}\\] \\(\\boxed{\\text{Case 1: Even terms: }}\\)\n\\[a_2=-2\\frac{1}{2}a_0=-\\frac{1}{1}a_0\\] \\[a_4=-2\\frac{3}{4}a_2=\\frac{3\\cdot 1}{2\\cdot 1}a_0\\]\n\\[a_6=-2\\frac{5}{6}a_4=-\\frac{5\\cdot 3\\cdot 1}{3\\cdot 2\\cdot 1}a_0\\] \\[a_{2m}=(-1)^m\\frac{\\Pi_{j=1}^m (2j-1)}{m!}a_0\\]\n\\(\\boxed{\\text{Case 2: Odd terms: }}\\)\n\\[a_3=-2\\frac{(1+1)}{(1+2)}a_1=-\\frac{4}{3}a_1\\] \\[a_5=-2\\frac{(3+1)}{(3+2)}a_3=-2\\frac{4}{5}a_3=2\\frac{4}{5}\\frac{4}{3}a_1=4^2\\frac{2\\cdot 1}{5\\cdot 3}a_1\\]\n\\[a_7=-2\\frac{(5+1)}{(5+2)}a_5=-2\\frac{6}{7}a_5=-4^3\\frac{3\\cdot 2\\cdot 1}{7\\cdot 5\\cdot 3}a_1\\]\n\\[a_{2m+1}=\\frac{(-1)^m4^mm!}{\\Pi_{j=1}^m(2j+1)}a_1\\]\nSolution:\n\\[\\boxed{y=a_0\\sum_{m=0}^\\infty (-1)^m\\frac{\\Pi_{j=1}^m(2j-1)}{m!}x^{2m}+a_1\\sum_{m=0}^\\infty\\frac{(-1)^m4^mm!}{\\Pi_{j=1}^m(2j+1)}x^{2m+1}}\\]\nNote: Please observe that the solution is the addition of even and odd powers of \\(x\\), with different factors.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>L19: Series Solutions I (7.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L19.html#references",
+    "href": "Unit3/L19.html#references",
+    "title": "2  L19: Series Solutions I (7.2)",
+    "section": "2.3 References",
+    "text": "2.3 References\n\nLibreTexts, 7.2: Series Solutions Near an Ordinary Point I .\nLibreTexts, 7.2: Series Solutions Near an Ordinary Point I (Exercises)\nWiki: Legendre polynomials\nWiki: Bessel function\nWiki: Bessel polynomials\nLibreTexts, 10.2: Bessel’s Equation, Niels Walet\nYoutube: Cymatics: Chladni Plate - Sound, Vibration and Sand\nYoutube: I recreated the Rings of Power with a vibrating square\nHyperphysics: Legendre Polynomials, solutions of the Schrodinger equation in spherical polar coordinates",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>L19: Series Solutions I (7.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L19.html#footnotes",
+    "href": "Unit3/L19.html#footnotes",
+    "title": "2  L19: Series Solutions I (7.2)",
+    "section": "",
+    "text": "In physical settings, Legendre’s differential equation arises naturally whenever one solves Laplace’s equation (and related partial differential equations) by separation of variables in spherical coordinates.↩︎\nThe Bessel function is a generalization of the sine function. It can be interpreted as the vibration of a string with variable thickness, variable tension (or both conditions simultaneously); vibrations in a medium with variable properties; vibrations of the disc membrane, etc. Bessel’s equation arises when finding separable solutions to Laplace’s equation and the Helmholtz equation in cylindrical or spherical coordinates.↩︎\nsecond-order relation because depends of the previous previous term↩︎\nadding \\(m=0\\) it is possible, because only add a true statement, \\(a_0=a_0\\)↩︎\nhttps://en.wikipedia.org/wiki/Taylor_series↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>L19: Series Solutions I (7.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L20.html",
+    "href": "Unit3/L20.html",
+    "title": "3  L20: Series Solutions II (7.3)",
+    "section": "",
+    "text": "3.1 Theorem",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>L20: Series Solutions II (7.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L20.html#theorem",
+    "href": "Unit3/L20.html#theorem",
+    "title": "3  L20: Series Solutions II (7.3)",
+    "section": "",
+    "text": "Note\n\n\n\n\nTheorem 3.1 The coefficients \\(\\{a_n\\}\\) in any solution \\(y=\\sum_{n=0}^\\infty a_n(x-x_0)^n\\) of\n\\[(1+\\alpha(x-x_0)^2)y''+\\beta(x-x_0)y'+\\gamma y=0\\] Satisfy the recurrence relation \\[a_{n+2}=-\\frac{p(n)}{(n+2)(n+1)}a_n,\\qquad n\\geq 0\\]\nwhere \\[p(n)=\\alpha n(n-1)+\\beta n +\\gamma\\]\nMoreover, the coefficients of the even and odd powers of \\((x-x_0)\\) can be computed separately as\n\\[a_{2m+2}=-\\frac{p(2m)}{(2m+2)(2m+1)}a_{2m},\\qquad m\\geq 0\\] \\[a_{2m+3}=-\\frac{p(2m+1)}{(2m+3)(2m+2)}a_{2m+1},\\qquad m\\geq 0\\] where \\(a_0\\) and \\(a_1\\) are arbitrary.\nNote: After we observe first 3-5 coefficients, we may provide a conjecture of what is the explicit equation.\n\n\n\n\n3.1.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\nFind the power series in \\(x-1\\) for the general solution of: \\[(3x^2-6x+4)y''-12(x-1)y'-12y=0\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\nFirst we need to write \\(P_0(x)=3x^2-6x+4\\) in terms of \\((x-1)\\), to do this we set \\(x\\) as \\((x-1)+1\\), and observe the factorization1:\n\\[P_0(x)=3x^2-6x+4\\]\n\\[=3((x-1)+1)^2-6((x-1)+1)+4\\]\n\\[=3((x-1)^2+2(x-1)+1)-6(x-1)-6+4\\]\n\\[=3(x-1)^2+6(x-1)+3-6(x-1)-6+4\\]\n\\[=3(x-1)^2+1\\]\nTherefore the diffyq, can be written as:\n\\[(1+3(x-1)^2)y''-12(x-1)y'-12y=0\\]\nFrom the equation we read:\n\\[\\alpha = 3,\\quad \\beta= -12,\\quad \\gamma=-12\\]\nThen we can calculate \\(p(n)\\):\n\\[p(n)=\\alpha n(n-1)+\\beta n +\\gamma\\] \\[=3n(n-1)-12n -12\\] \\[=3n^2-15n-12\\]\nThen we can obtain the recurrence relation:\n\\[a_{n+2}=-\\frac{p(n)}{(n+2)(n+1)}a_n,\\qquad n\\geq 0\\] \\[\\boxed{a_{n+2}=-\\frac{3n^2-15n-12}{(n+2)(n+1)}a_n},\\qquad n\\geq 0\\]\n\\[\\cdots\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>L20: Series Solutions II (7.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L20.html#coefficients-given-initial-conditions",
+    "href": "Unit3/L20.html#coefficients-given-initial-conditions",
+    "title": "3  L20: Series Solutions II (7.3)",
+    "section": "3.2 Coefficients given initial conditions",
+    "text": "3.2 Coefficients given initial conditions\n\nConsider a differential equation which cant be obtain an explicit equation for \\(a_n\\) coefficient, that means for example, the diffeq doesn’t have the form of the previous theorem.\nIn this case we can calculate recursively each of the coefficients.\n\n\n3.2.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\nFind the coefficients \\(a_0,\\cdots,a_5\\) in the series solution \\(y=\\sum_{n=0}^\\infty a_n x^n\\) of \\[(1+x+2x^2)y''+(1+7x)y'+2y=0,\\qquad y(0)=-1,\\quad y'(0)=-2\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\boxed{y'=\\sum_{n=1}^\\infty na_nx^{n-1}}\\qquad \\boxed{y''=\\sum_{n=2}^\\infty n(n-1)a_nx^{n-2}}\\] \\[\\sum_{n=2}n(n-1)a_nx^{n-2}+\\sum_{n=2}n(n-1)a_nx^{n-1}+2\\sum_{n=2}n(n-1)a_nx^{n}+\\sum_{n=1} na_nx^{n-1}+7\\sum_{n=1} na_nx^{n}+2\\sum_{n=0}a_nx^n=0\\]\nShifting!:\n\\[\\sum_{n=0}(n+2)(n+1)a_{n+2}x^{n}+\\sum_{n=1}(n+1)(n)a_{n+1}x^{n}+2\\sum_{n=2}n(n-1)a_nx^{n}+\\sum_{n=0} (n+1)a_{n+1}x^{n}+7\\sum_{n=1} na_nx^{n}+2\\sum_{n=0}a_nx^n=0\\]\nAdding zeroes:\n\\[\\sum_{n=0}(n+2)(n+1)a_{n+2}x^{n}+\\sum_{n=0}(n+1)(n)a_{n+1}x^{n}+2\\sum_{n=0}n(n-1)a_nx^{n}+\\sum_{n=0} (n+1)a_{n+1}x^{n}+7\\sum_{n=0} na_nx^{n}+2\\sum_{n=0}a_nx^n=0\\] Big sum!:\n\\[\\sum_{n=0}^\\infty \\left((n+2)(n+1)a_{n+2} + [(n+1)(n)+(n+1)]a_{n+1}+[2n(n-1)+7n+2]a_n\\right)x^n=0\\]\n\\[(n+2)(n+1)a_{n+2} + (n+1)(n+1)a_{n+1}+[2n^2+5n+2]a_n=0\\]\n\\[(n+2)(n+1)a_{n+2} + (n+1)(n+1)a_{n+1}+(n+2)(2n+1)a_n=0\\] Finally:\n\\[\\boxed{a_{n+2}=-\\left(\\frac{n+1}{n+2}\\right)a_{n+1}-\\left(\\frac{2n+1}{n+1}\\right)a_{n}}\\]\n\\[a_0=y(0)=-1,\\qquad a_1=y'(0)=-2,\\qquad\\]\nUsing the recurrence relation:\n\\[a_{0+2}=-\\left(\\frac{0+1}{0+2}\\right)a_{0+1}-\\left(\\frac{0+1}{0+1}\\right)a_{0}\\] \\[a_{2}=-\\left(\\frac{1}{2}\\right)a_{1}-\\left(\\frac{1}{1}\\right)a_{0}\\]\n\\[a_{2}=-\\left(\\frac{1}{2}\\right)(-2)-\\left(\\frac{1}{1}\\right)(-1)\\]\n\\[\\therefore\\boxed{a_{2}=2}\\]\n\\[a_{1+2}=-\\left(\\frac{1+1}{1+2}\\right)a_{1+1}-\\left(\\frac{2\\cdot 1+1}{1+1}\\right)a_{1}\\]\n\\[a_{3}=-\\left(\\frac{2}{3}\\right)a_{2}-\\left(\\frac{3}{2}\\right)a_{1}\\]\n\\[a_{3}=-\\left(\\frac{2}{3}\\right)\\cdot 2-\\left(\\frac{3}{2}\\right)\\cdot (-2)\\]\n\\[a_{3}=-\\frac{4}{3}+3\\] \\[\\boxed{a_{3}=\\frac{5}{3}}\\]\n\\[a_{4}=-\\frac{3}{4}a_3-\\frac{5}{3}a_2\\] \\[a_4=-\\frac{3}{4}\\frac{5}{3}-\\frac{5}{3}2\\] \\[a_4=-\\frac{5}{3}\\left(\\frac{3}{4}+2\\right)\\]\n\\[\\boxed{a_4=-\\frac{55}{12}}\\] \\[\\cdots\\]\nFinally:\n\\[\\boxed{y=-1-2x+2x^2+\\frac{5}{3}x^3-\\frac{55}{12}x^4+\\cdots} \\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>L20: Series Solutions II (7.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L20.html#references",
+    "href": "Unit3/L20.html#references",
+    "title": "3  L20: Series Solutions II (7.3)",
+    "section": "3.3 References",
+    "text": "3.3 References\n\nLibreTexts, 7.3: Series Solutions Near an Ordinary Point II .\nLibreTexts, 7.3: Series Solutions Near an Ordinary Point II (Exercises)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>L20: Series Solutions II (7.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L20.html#footnotes",
+    "href": "Unit3/L20.html#footnotes",
+    "title": "3  L20: Series Solutions II (7.3)",
+    "section": "",
+    "text": "also we could attempt long division↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>L20: Series Solutions II (7.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html",
+    "href": "Unit3/L21.html",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "",
+    "text": "4.1 Intro to chapter 8\nLaplace Transform: \\(\\mathscr{L}\\)\nThis chapter explores the Laplace transform technique, a fundamental problem-solving approach in mathematics that simplifies complex problems into manageable ones. By converting initial value problems with constant coefficients into algebraic equations, the method provides a new solution pathway. While sometimes offering an alternative to traditional methods, Laplace transforms prove particularly efficient for physical problems involving discontinuous forcing functions, outperforming previous strategies.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#linearity",
+    "href": "Unit3/L21.html#linearity",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.2 Linearity",
+    "text": "4.2 Linearity\n\nRecall the derivative operator\n\n\\[\\begin{align}\n\\frac{d}{dx} f(x)&=f'(x)\\\\\n\\frac{d}{dx} (c_1f(x)+c_2g(x))&=c_1f'(x)+c_2g'(x)\\\\\n&=c_1\\frac{d}{dx}f(x)+c_2\\frac{d}{dx}g(x)\\\\\n\\end{align}\\] \\(\\frac{d}{dx}\\) is a linear operator1.\n\n\n\n\n\n\nCautionMore about Linear Operators:\n\n\n\n\n\nIn the context of differential equations and Laplace transforms, a linear operator is a mathematical tool that maps one function to another in a way that is consistent with two key properties of linearity: additivity and homogeneity. These properties allow for the simplification and solution of differential equations using the powerful techniques of linear algebra. When discussing Laplace transforms, linear operators play a crucial role.\n\nAdditivity: This property means that if you apply the linear operator to the sum of two functions, it’s the same as applying the operator to each function individually and then adding the results. Mathematically, for a linear operator \\(L\\), and any two functions \\(f\\) and \\(g\\), this is written as \\(L(f + g) = L(f) + L(g)\\).\nHomogeneity (or scalar multiplication): This property states that if you multiply a function by a scalar (a constant number) before applying the linear operator, it’s the same as applying the operator to the function first and then multiplying the result by the scalar. Formally, for any function \\(f\\) and any scalar \\(c\\), this is expressed as \\(L(c \\cdot f) = c \\cdot L(f)\\).\n\nThese properties are essential when working with differential equations in the Laplace domain because the Laplace transform itself is a linear operator. The Laplace transform converts differential equations, which can be difficult to solve in their original form, into algebraic equations, which are often much simpler to work with. This conversion leverages the linearity of the Laplace transform to simplify the process of solving complex differential equations, particularly those that describe systems in engineering and physics.\nFor example, consider a linear differential equation with constant coefficients. The application of the Laplace transform linearly maps this differential equation into an algebraic equation in the Laplace domain. The solution of this algebraic equation can then be found using techniques from linear algebra. Finally, applying the inverse Laplace transform (which is also a linear operator) to the solution in the Laplace domain converts it back to the original domain, giving the solution to the original differential equation.\nIn summary, linear operators, exemplified by the Laplace transform in this context, are foundational to solving differential equations by transforming them into a form where linear algebraic methods can be applied, thereby greatly simplifying the process of finding solutions.\n\n\n\n\nThe inverse operator to the derivative is the integral operator:\n\n\\(\\int dx\\quad\\), which is also a linear operator.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#definition",
+    "href": "Unit3/L21.html#definition",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.3 Definition",
+    "text": "4.3 Definition\n\n\n\n\n\n\nNoteDefinition\n\n\n\nThe Laplace Transform operator \\(\\mathscr{L}\\) is defined by:\n\\[\\mathscr{L}\\{f(t)\\}=F(s)\\]\nwhere \\[\\boxed{F(s)=\\int_0^\\infty e^{-st} f(t)\\,dt}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#properties",
+    "href": "Unit3/L21.html#properties",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.4 Properties",
+    "text": "4.4 Properties\n\n\n\n\n\n\nNoteLaplace Transform Properties\n\n\n\n\n\\(\\mathscr{L}\\{y(t)\\}=Y(s)\\)\n\\(\\mathscr{L}\\{c_1f(t)+c_2g(t)\\}=c_1\\mathscr{L}\\{f(t)\\}+c_2\\mathscr{L}\\{g(t)\\}=c_1F(s)+c_2G(s)\\)\n\\(\\mathscr{L}\\{y'(t)\\}=sY(s)-y(0)\\)\n\\(\\mathscr{L}\\{e^{at}\\}=\\frac{1}{s-a},\\qquad s&gt;a.\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#method",
+    "href": "Unit3/L21.html#method",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.5 Method",
+    "text": "4.5 Method\n\n\n\n\n\n\nNoteSolving an IVP using the Laplace Transform\n\n\n\n\nTake the Laplace Transform\nSolve for \\(Y(s)=\\mathscr{L}\\{y(t)\\}\\)\nTake the inverse Laplace Transform\n\n\\[\\mathscr{L}^{-1}\\{Y(s)\\}=\\mathscr{L}^{-1}\\mathscr{L}\\{y(t)\\}=y(t)\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#example",
+    "href": "Unit3/L21.html#example",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.6 Example",
+    "text": "4.6 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[y'-4y=e^{3t},\\qquad y(0)=1\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\n1. Laplace Transform:\n\\[\\mathscr{L}\\{y'-4y\\}=\\mathscr{L}\\{e^{3t}\\}\\] \\[\\mathscr{L}\\{y'\\}-4\\mathscr{L}\\{y\\}=\\mathscr{L}\\{e^{3t}\\}\\] \\[\\boxed{sY(s)-y(0)-4Y(s)=\\frac{1}{s-3}}\\]\n\n\n2. Solve for \\(Y(s)\\):\n\\[(s-4) Y(s)=\\frac{1}{s-3}+1\\] \\[Y(s)=\\frac{1}{(s-3)(s-4)}+\\frac{1}{(s-4)}\\] \\[\\text{Partial fractions}\\cdots\\] \\[\\boxed{Y(s)=\\frac{-1}{(s-3)}+\\frac{2}{(s-4)}}\\]\n\n\n3. Inverse Laplace Transform :\n\\[y(t)=\\mathscr{L}^{-1}\\{Y(s)\\}\\]\n\\[y(t)=\\mathscr{L}^{-1}\\left\\{\\frac{-1}{(s-3)}+\\frac{2}{(s-4)}\\right\\}\\]\n\n\n4.7 \\[\\boxed{\\boxed{y(t)=-e^{3t}+2e^{4t}}}\\]\n\nLet’s check:\n\\[y'-4y=e^{3t}\\]\n\\[\\mu(t)=e^{\\int -4\\,dt}=e^{-4t}\\]\n\\[y(t)=\\frac{1}{\\mu(t)}\\int \\mu(t)Q(t)\\,dt\\]\n\\[=e^{4t}\\int e^{-t}\\,dt\\]\n\\[y(t)=e^{4t}(-e^{-t}+C)\\]\n\\[y(0)=(-1+C)=1\\Rightarrow \\boxed{C=2}\\]\n\n\nWe get the same!\n\\[y(t)=e^{4t}(-e^{-t}+2)\\]\n\\[\\boxed{y(t)=-e^{3t}+2e^{4t}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#boxedboxedyt-e3t2e4t",
+    "href": "Unit3/L21.html#boxedboxedyt-e3t2e4t",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.7 \\[\\boxed{\\boxed{y(t)=-e^{3t}+2e^{4t}}}\\]",
+    "text": "4.7 \\[\\boxed{\\boxed{y(t)=-e^{3t}+2e^{4t}}}\\]\n\nLet’s check:\n\\[y'-4y=e^{3t}\\]\n\\[\\mu(t)=e^{\\int -4\\,dt}=e^{-4t}\\]\n\\[y(t)=\\frac{1}{\\mu(t)}\\int \\mu(t)Q(t)\\,dt\\]\n\\[=e^{4t}\\int e^{-t}\\,dt\\]\n\\[y(t)=e^{4t}(-e^{-t}+C)\\]\n\\[y(0)=(-1+C)=1\\Rightarrow \\boxed{C=2}\\]\n\n\nWe get the same!\n\\[y(t)=e^{4t}(-e^{-t}+2)\\]\n\\[\\boxed{y(t)=-e^{3t}+2e^{4t}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#references",
+    "href": "Unit3/L21.html#references",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "4.8 References",
+    "text": "4.8 References\n\nLibreTexts, 8: Laplace Transforms, by William F.Trench.\nLibreTexts, 8.1: Introduction to the Laplace Transform, by William F.Trench.\nLibreTexts, 8.1.1: Introduction to the Laplace Transform (Exercises), by William F.Trench.\nSimple definition for Linear Operator\nKhan: Partial fractions",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L21.html#footnotes",
+    "href": "Unit3/L21.html#footnotes",
+    "title": "4  L21: Intro to Laplace Transform, part I (8.1)",
+    "section": "",
+    "text": "A linear operator is a mathematical function that maps one function to another, adhering to the properties of additivity and homogeneity. \\(L(f + g) = L(f) + L(g)\\) and \\(L(c \\cdot f) = c \\cdot L(f)\\).↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>L21: Intro to Laplace Transform, part I (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html",
+    "href": "Unit3/L22.html",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "",
+    "text": "5.1 Definition and basic Properties of LT",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#definition-and-basic-properties-of-lt",
+    "href": "Unit3/L22.html#definition-and-basic-properties-of-lt",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "",
+    "text": "NoteDefinition\n\n\n\n\\[\\mathscr{L}\\{f(t)\\}=F(s)=\\int_0^\\infty e^{-st} f(t)\\,dt\\]\n\n\n\n5.1.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}\\{e^{at}\\}=\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\mathscr{L}\\{e^{at}\\}=\\int_0^\\infty e^{-st}e^{at}\\,dt\\]\n\\[\\mathscr{L}\\{e^{at}\\}=\\int_0^\\infty e^{(a-s)t}\\,dt\\]\n\\[\\mathscr{L}\\{e^{at}\\}=\\left[\\frac{e^{(a-s)t}}{(a-s)}\\right]_0^\\infty\\]\n\\[(\\text{If }s&gt;a)\\Rightarrow \\lim_{t\\rightarrow \\infty} e^{(a-s)t}= 0\\]\n\\[\\Rightarrow\\mathscr{L}\\{e^{at}\\}=\\left[\\frac{e^{(a-s)t}}{(a-s)}\\right]_0^\\infty=0-\\frac{1}{(a-s)}=\\frac{1}{s-a},\\qquad s&gt;a\\]\n\\[\\therefore \\boxed{\\mathscr{L}\\{e^{at}\\}=\\frac{1}{s-a},\\qquad s&gt;a}\\]\n\n\n\n\n\n\n\n5.1.2 Plots \\(f(t)\\rightarrow F(s)\\)\n\npar(mfrow=c(1,2))\nt &lt;- seq(0,3,length.out=100)\ns &lt;- seq(0,3,length.out=100)\nplot(t,exp(2*t),type = \"l\",ylim = c(0,100), col=\"blue\", lwd=2)\nplot(s,1/(s-2), type = \"l\",ylim = c(1,30), col=\"blue\", lwd=2)+abline(v=2, lty =3, col=\"red\", lwd=2)\n\ninteger(0)\n\nmtext(\"Laplace Transformation\", side = 3, line = -3, outer = TRUE)\n\n\n\n\n\n\n\n\n\n\n5.1.3 Maxima do have laplace function:\ndefine(f(t),%e^(2*t));\nys: laplace(f(t),t,s);\nplot2d(ys,[s,0,3],[y,0,50]);",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#brief-table-of-laplace-transforms",
+    "href": "Unit3/L22.html#brief-table-of-laplace-transforms",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.2 Brief table of Laplace Transforms",
+    "text": "5.2 Brief table of Laplace Transforms\n\n\n\n\n\n\n\n\n\n\\[f(t)\\]\n\n\\[F(s)\\]\n\n\n\n\n\n\\[1\\]\n\n\\[\\frac{1}{s}\\]\n\\[s&gt;0\\]\n\n\n\\[e^{at}\\]\n\n\\[\\frac{1}{s-a}\\]\n\\[s&gt;a\\]\n\n\n\\[t^n\\]\n\n\\[\\frac{n!}{s^{n+1}}\\]\n\\[s&gt;0,\\quad n\\in \\mathbb{N}\\]\n\n\n\\[\\sin kt\\]\n\n\\[\\frac{k}{s^2+k^2}\\]\n\\[s&gt;0\\]\n\n\n\\[\\cos kt\\]\n\n\\[\\frac{s}{s^2+k^2}\\]\n\\[s&gt;0\\]\n\n\n\\[e^{at}t^n\\]\n\n\\[\\frac{n!}{(s-a)^{n+1}}\\]\n\\[s&gt;0,\\quad n\\in \\mathbb{N}\\]\n\n\n\\[e^{at}\\sin kt\\]\n\n\\[\\frac{k}{(s-a)^2+k^2}\\]\n\\[s&gt;a\\]\n\n\n\\[e^{at}\\cos kt\\]\n\n\\[\\frac{s-a}{(s-a)^2+k^2}\\]\n\\[s&gt;a\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#theorem-for-translation",
+    "href": "Unit3/L22.html#theorem-for-translation",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.3 Theorem for Translation",
+    "text": "5.3 Theorem for Translation\n\n\n\n\n\n\nNote\n\n\n\n\nTheorem 5.1 (Translation) \\[\\boxed{\\mathscr{L}\\{e^{at}f(t)\\}=F(s-a)}\\] where \\(F(s)=\\mathscr{L}\\{f(t)\\}\\)\n\n\n5.4 proof\n\\[\\mathscr{L}\\{e^{at}f(t)\\}=\\int_0^\\infty e^{-st}e^{at}f(t)\\,dt\\] \\[=\\int_0^\\infty e^{-(s-a)t}f(t)\\,dt\\]\n\\[=F(s-a)\\]\n\\[\\square\\]\n\n\n\n\n5.4.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}\\{e^{-2t}t^3\\}=\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\mathscr{L}\\{e^{-2t}t^3\\}=\\mathscr{L}\\{t^3\\}\\Big|_{s\\rightarrow s-(-2)}\\] Evaluate and then Shift:\n\\[=\\frac{3!}{s^4}\\Big|_{s\\rightarrow s+2}\\] \\[=\\frac{3!}{(s+2)^4}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#proof",
+    "href": "Unit3/L22.html#proof",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.4 proof",
+    "text": "5.4 proof\n\\[\\mathscr{L}\\{e^{at}f(t)\\}=\\int_0^\\infty e^{-st}e^{at}f(t)\\,dt\\] \\[=\\int_0^\\infty e^{-(s-a)t}f(t)\\,dt\\]\n\\[=F(s-a)\\]\n\\[\\square\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#ft-be-of-exponential-order.",
+    "href": "Unit3/L22.html#ft-be-of-exponential-order.",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.5 \\(f(t)\\) be of exponential order.",
+    "text": "5.5 \\(f(t)\\) be of exponential order.\n\n\n\n\n\n\nNoteDefinition\n\n\n\nA function \\(f(t)\\) is said to be of exponential order if \\(\\exists M,C,T&gt;0\\) such that \\[|f(t)|\\leq Me^{ct},\\qquad \\forall t\\geq T\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#ft-be-a-piecewise-continuous.",
+    "href": "Unit3/L22.html#ft-be-a-piecewise-continuous.",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.6 \\(f(t)\\) be a piecewise continuous.",
+    "text": "5.6 \\(f(t)\\) be a piecewise continuous.\n\n\n\n\n\n\nNoteDefinition\n\n\n\nA function \\(f(t)\\) is a piecewise continuous for \\(t\\geq 0\\) if all of the following are true.\n\nThere are a finite number of discontinuities at \\(0=t_0&lt;t_1&lt;\\cdots&lt;t_k\\)\n\\(f(t)\\) is continuous on \\(\\{(0,t_1),(t_1,t_2),\\cdots,(t_k,\\infty)\\}\\)\n\\(|f(t)|&lt;M\\quad\\forall t\\) for some \\(M\\).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#theorem-existance-of-laplace",
+    "href": "Unit3/L22.html#theorem-existance-of-laplace",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.7 Theorem Existance of Laplace",
+    "text": "5.7 Theorem Existance of Laplace\n\nTheorem 5.2 (Existance of Laplace Transform) If \\(f(t)\\) is piecewise continuous for \\(t\\geq 0\\) and of exponential order for some positive constant \\(C\\) and for \\(t\\geq T\\), then \\[\\mathscr{L}\\{f(t)\\}\\] exists for \\(s&gt;C\\).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L22.html#references",
+    "href": "Unit3/L22.html#references",
+    "title": "5  L22: Intro to Laplace Transform, part II (8.1)",
+    "section": "5.8 References",
+    "text": "5.8 References\n\nLibreTexts, 8: Laplace Transforms, by William F.Trench.\nLibreTexts, 8.1: Introduction to the Laplace Transform, by William F.Trench.\nLibreTexts, 8.1.1: Introduction to the Laplace Transform (Exercises), by William F.Trench.\nSimple definition for Linear Operator\nKhan: Partial fractions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>L22: Intro to Laplace Transform, part II (8.1)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L23.html",
+    "href": "Unit3/L23.html",
+    "title": "6  L23: Inverse Laplace Transform (8.2)",
+    "section": "",
+    "text": "6.1 Definition for the inverse of Laplace",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>L23: Inverse Laplace Transform (8.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L23.html#definition-for-the-inverse-of-laplace",
+    "href": "Unit3/L23.html#definition-for-the-inverse-of-laplace",
+    "title": "6  L23: Inverse Laplace Transform (8.2)",
+    "section": "",
+    "text": "NoteDefinition\n\n\n\nIf \\(\\mathscr{L}\\{f(t)\\}=F(s)\\) then \\(f(t)\\) is the inverse Laplace transform of \\(F(s)\\)\n\\[\\mathscr{L}^{-1}\\{F(s)\\}=f(t)\\]\n\n\n\n\n\n\nCautionQuestion:\n\n\n\n\n\n\nQ: Is the inverse Laplace Transform unique?\nA: No, because the definition start with integration at \\(t=0\\), then doesn’t matter what happen before.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>L23: Inverse Laplace Transform (8.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L23.html#theorem",
+    "href": "Unit3/L23.html#theorem",
+    "title": "6  L23: Inverse Laplace Transform (8.2)",
+    "section": "6.2 Theorem",
+    "text": "6.2 Theorem\n\n\n\n\n\n\nNote\n\n\n\n\nTheorem 6.1 Suppose \\(f\\) and \\(g\\) are continuous functions of exponential order for \\(t\\geq 0\\)\n\\[\\boxed{\\text{If }F(s)=G(s)} \\Rightarrow \\boxed{f(t)\\equiv g(t)},  \\quad t\\geq 0\\]\n\n\n\n\n6.2.1 Proposition\n\n\n\n\n\n\nNote\n\n\n\n\nProposition:\nThe Inverse Laplace Transform is Linear:\n\\[\\mathscr{L}^{-1}\\{\\alpha F(s)+\\beta G(s)\\}=\\alpha\\mathscr{L}^{-1}\\{F(s)\\}+\\beta\\mathscr{L}^{-1}\\{G(s)\\}\\]\n\n\n\n\n\n\nCautionQuestion:\n\n\n\n\n\n\nQ: Give any \\(F(s)\\) does \\(f(t)=\\mathscr{L}^{-1}\\{F(s)\\}\\) exists?\nA: No!, for example there is not \\(f(t)\\) which produce \\(s\\)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>L23: Inverse Laplace Transform (8.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L23.html#theorem-when-do-not-exist",
+    "href": "Unit3/L23.html#theorem-when-do-not-exist",
+    "title": "6  L23: Inverse Laplace Transform (8.2)",
+    "section": "6.3 Theorem (when do not exist)",
+    "text": "6.3 Theorem (when do not exist)\n\n\n\n\n\n\nNote\n\n\n\n\nTheorem 6.2 \\[\\boxed{\\text{If }\\lim_{s\\rightarrow\\infty}F(s)\\neq 0} \\Rightarrow \\boxed{\\mathscr{L}^{-1}\\{F(s)\\}\\text{ does not exist}}\\]\n\n\n\n\nFor example:\n\\[\\lim_{s\\rightarrow\\infty} s \\neq 0\\]\n\\[\\Rightarrow \\mathscr{L}^{-1}\\{s\\}\\text{ does not exist. }\\] \\[\\square\\]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>L23: Inverse Laplace Transform (8.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L23.html#using-the-translation-thm-in-reverse",
+    "href": "Unit3/L23.html#using-the-translation-thm-in-reverse",
+    "title": "6  L23: Inverse Laplace Transform (8.2)",
+    "section": "6.4 Using the Translation Th\\(^m\\) in reverse",
+    "text": "6.4 Using the Translation Th\\(^m\\) in reverse\n\n\n\n\n\n\nNote\n\n\n\n\\[\\mathscr{L}\\{e^{at}f(t)\\}=F(s-a)\\] \\[\\mathscr{L}^{-1}\\{F(s-a)\\}=e^{at}\\mathscr{L}^{-1}\\{F(s)\\}\\]\n\n\n\n6.4.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}^{-1}\\left\\{\\frac{5}{(s-4)^4}\\right\\}=\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\mathscr{L}^{-1}\\left\\{\\frac{5}{(s-4)^4}\\right\\}=e^{4t}\\mathscr{L}^{-1}\\left\\{\\frac{5}{s^4}\\right\\}\\] If numerator is a \\(3!\\) we recognize it as the laplace of \\(t^3\\), therefore:\n\\[=e^{4t}\\frac{5}{3!}\\mathscr{L}^{-1}\\left\\{\\frac{3!}{s^4}\\right\\}\\] \\[=\\frac{5e^{4t}}{6}t^3\\]\n\n\n\n\n\n\n\n6.4.2 One more example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}^{-1}\\left\\{\\frac{s-1}{s^2+2s+2}\\right\\}=?\\]\n\nCompleting the square:\n\\[=\\mathscr{L}^{-1}\\left\\{\\frac{s-1}{(s+1)^2+1}\\right\\}\\] The denominator look displaced, but what to do with the numerator?\n\\[=\\mathscr{L}^{-1}\\left\\{\\frac{s+1-2}{(s+1)^2+1}\\right\\}\\] \\[=\\mathscr{L}^{-1}\\left\\{\\frac{(s+1)}{(s+1)^2+1}\\right\\}-\\mathscr{L}^{-1}\\left\\{\\frac{2}{(s+1)^2+1}\\right\\}\\] \\[=e^{-t}\\mathscr{L}^{-1}\\left\\{\\frac{s}{s^2+1}\\right\\}-2e^{-t}\\mathscr{L}^{-1}\\left\\{\\frac{1}{s^2+1}\\right\\}\\] \\[=e^{-t}\\left(\\cos t-2\\sin t\\right)\\]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>L23: Inverse Laplace Transform (8.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L23.html#references",
+    "href": "Unit3/L23.html#references",
+    "title": "6  L23: Inverse Laplace Transform (8.2)",
+    "section": "6.5 References",
+    "text": "6.5 References\n\nLibreTexts, 8.2: The Inverse Laplace Transform F.Trench.\nKhan academy: Inverse Laplace",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>L23: Inverse Laplace Transform (8.2)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html",
+    "href": "Unit3/L24.html",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "",
+    "text": "7.1 Theorem: Laplace of the derivative",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html#theorem-laplace-of-the-derivative",
+    "href": "Unit3/L24.html#theorem-laplace-of-the-derivative",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "",
+    "text": "NoteTheorem\n\n\n\n\nTheorem 7.1 (Laplace Transform of the derivative) If \\(y(t)\\) is continuous and of exponential order for \\(t\\geq 0\\) and if \\(y'(t)\\) is piecewise continuous for \\(t\\geq 0\\), then\n\\[\\mathscr{L}\\{y'(t)\\}=sY(s)-y(0)\\] where \\(\\mathscr{L}\\{y(t)\\}=Y(s)\\)\n\n\n\n\n\n\n\nCautionProof:\n\n\n\n\n\n\n\\[\\mathscr{L}\\{y'(t)\\}=\\int_0^\\infty e^{-st} y'(t)\\,dt\\]\nIntegration by parts:1\n\\[u=e^{-st}\\rightarrow du=-se^{-st}\\,dt\\] \\[dv=y'(t)dt\\rightarrow v=y(t)\\]\n\\[\\mathscr{L}\\{y'(t)\\}=\\left[e^{-st}y(t)\\right]\\Big|_0^\\infty-\\int_0^\\infty y(t)(-se^{-st})\\,dt\\]\n\\[\\mathscr{L}\\{y'(t)\\}=\\left[e^{-st}y(t)\\right]\\Big|_0^\\infty+s\\int_0^\\infty y(t)e^{-st}\\,dt\\]\n\\[\\mathscr{L}\\{y'(t)\\}=(0-y(0))+sY(s)\\] \\[\\mathscr{L}\\{y'(t)\\}=sY(s)-y(0)\\]\n\\[\\hspace{2in}\\square\\]\n\n\n\n\n\n\n\n7.1.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}\\left\\{f''(t)\\right\\}=\\mathscr{L}\\{\\frac{d}{dt}\\left(f'(t)\\right)\\}=s\\mathscr{L}\\{f'(t)\\}-f'(0)\\]\n\\[\\mathscr{L}\\{f''(t)\\}=s(sF(s)-f(0))-f'(0)\\] \\[\\mathscr{L}\\{f''(t)\\}=s^2F(s)-sf(0)-f'(0)\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html#general-for-nth-derivative-equiv-fn",
+    "href": "Unit3/L24.html#general-for-nth-derivative-equiv-fn",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "7.2 General for \\(n^{th}\\) derivative (\\(\\equiv f^{(n)}\\))",
+    "text": "7.2 General for \\(n^{th}\\) derivative (\\(\\equiv f^{(n)}\\))\n\n\n\n\n\n\nNoteIn general\n\n\n\n\\[\\mathscr{L}\\{f^{(n)}(t)\\}=\\] \\[= s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\\cdots- f^{(n-1)}(0)\\]\n\n\n\n7.2.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\nSolve:\n\\[y''' -y''-4y'+4y=e^{-t},\\qquad y(0)=y'(0)=y''(0)=0\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\nApplying Laplace to the equation:\n\\[(s^3F(s)-s^2y(0)-s^1y'(0)-s^0y''(0))+\\cdots\\] \\[\\cdots-(s^2F(s)-s^1y(0)-s^0y'(0))+\\cdots\\] \\[\\cdots-4(sF(s)-s^0y(0))+4(F(s))=\\frac{1}{s+1}\\]\n\\[\\Rightarrow\\]\n\\[s^3F(s)-s^2F(s)-4sF(s)+4F(s)=\\frac{1}{s+1}\\]\n\\[F(s)(s^3-s^2-4s+4)=\\frac{1}{s+1}\\] The last constant term is 4, so possible factors for long division are: \\((s-1),(s+1),(s-2),(s+2),(s-4),(s+4)\\)\nLet’s try with the first \\((s-1)\\)\n\\[(s^3-s^2-4s+4):(s-1)=s^2+\\cdots\\]\n\\[-4s+4:(s-1)=-4\\]\n\\[\\therefore s^3-s^2-4s+4=(s-1)(s^2-4)\\]\n\\[=(s-1)(s+2)(s-2)\\] \\[\\Rightarrow Y(s)(s-1)(s+2)(s-2)=\\frac{1}{s+1}\\]\n\\[\\Rightarrow Y(s)=\\frac{1}{(s+1)(s-1)(s+2)(s-2)}\\] Partial Fractions!\n\\[\\frac{1}{(s+1)(s-1)(s+2)(s-2)}=\\frac{A}{s+1}+\\frac{B}{s-1}+\\frac{C}{s+2}+\\frac{D}{s-2}\\]\n\\[1=A(s-1)(s+2)(s-2)+B(s+1)(s+2)(s-2)+C(s+1)(s-1)(s-2)+D(s+1)(s-1)(s+2) \\tag{7.1}\\]\nWe could expand and then set a system of equations by looking the coefficients of the polynomial equation, or evaluate the equation for convenient values of \\(s\\):\nIf \\(s=1\\) Equation 7.1 becomes:\n\\[1=0+B(1+1)(1+2)(1-2)+0+0\\] \\[1=-6B\\Rightarrow \\boxed{B=-\\frac{1}{6}}\\]\nIf \\(s=-2\\) Equation 7.1 becomes:\n\\[1=0+0+C(-2+1)(-2-1)(-2-2)\\] \\[1=-12C\\Rightarrow\\boxed{C=-\\frac{1}{12}}\\] If \\(s=2\\) Equation 7.1 becomes:\n\\[1=0+0+0+D(2+1)(2-1)(2+2)\\]\n\\[1=12D\\Rightarrow\\boxed{D=\\frac{1}{12}}\\] If \\(s=-1\\) Equation 7.1 becomes:\n\\[1=A(-1-1)(-1+2)(-1-2)+0+0+0\\] \\[1=6A\\Rightarrow\\boxed{A=\\frac{1}{6}}\\] \\[\\therefore Y(s)=\\frac{1}{6(s+1)}-\\frac{1}{6(s-1)}-\\frac{1}{12(s+2)}+\\frac{1}{12(s-2)}\\]\nFinally we can invert!2\n\\[y(t)=\\frac{1}{6}\\cdot e^{-t}-\\frac{1}{6}\\cdot e^{t}-\\frac{1}{12}\\cdot e^{-2t}+\\frac{1}{12}\\cdot e^{2t}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html#the-derivative-of-the-laplace-transform",
+    "href": "Unit3/L24.html#the-derivative-of-the-laplace-transform",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "7.3 The derivative of the Laplace Transform",
+    "text": "7.3 The derivative of the Laplace Transform\n\n\n\n\n\n\nNoteDefinition\n\n\n\nIf \\(f(t)\\) is a piecewise continuous for \\(t\\geq 0\\) and of exponential order for some \\(C&gt;0\\), and if \\(F(s)=\\mathscr{L}\\{f(t)\\}\\) then\n\\[\\boxed{\\frac{d}{ds}F(s)=-\\mathscr{L}\\{t\\cdot f(t)\\}},\\qquad s&gt;C\\]\n\n\n\n\n\n\n\nCautionProof:\n\n\n\n\n\n\\[\\frac{d}{ds}F(s)=\\frac{d}{ds}\\int_0^\\infty e^{-st}f(t)\\,dt\\]\n\\[\\hspace{1in}=\\int_0^\\infty \\frac{d}{ds}e^{-st}f(t)\\,dt\\]\n\\[\\hspace{1.5in}=\\int_0^\\infty -te^{-st}f(t)\\,dt\\]\n\\[\\hspace{1.5in}=-\\int_0^\\infty e^{-st}(t\\cdot f(t))\\,dt\\] \\[\\hspace{2in}= -\\mathscr{L}\\{t\\cdot f(t)\\}\\] \\[\\hspace{3in}\\square\\]\n\n\n\n\n\n\n\n7.3.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}\\{t\\cos kt\\}=?\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\mathscr{L}\\{t\\cos kt\\}=-\\frac{d}{ds}\\mathscr{L}\\{\\cos kt\\}\\] \\[=-\\frac{d}{ds}\\left(\\frac{s}{s^2+k^2}\\right)\\]\n\\[=\\frac{(s-k)(s+k)}{(s^2+k^2)^2}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html#in-general-1",
+    "href": "Unit3/L24.html#in-general-1",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "7.4 In general",
+    "text": "7.4 In general\n\n\n\n\n\n\nNoteDefinition\n\n\n\n\\[\\boxed{\\mathscr{L}\\{t^n f(t)\\}=(-1)^n\\frac{d^{(n)}}{ds^{(n)}}\\mathscr{L}\\{f(t)\\}}=(-1)^nF^{(n)}(s)\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html#references",
+    "href": "Unit3/L24.html#references",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "7.5 References",
+    "text": "7.5 References\n\nLibreTexts, 8.3: Laplace Transforms and Derivatives, by William F.Trench.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L24.html#footnotes",
+    "href": "Unit3/L24.html#footnotes",
+    "title": "7  L24: Laplace Transform and the derivative (8.3)",
+    "section": "",
+    "text": "un dia vi una vaca vestida de uniforme…↩︎\n\\[\\mathscr{L}\\{e^{at}\\}=\\frac{1}{s-a}\\]↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>L24: Laplace Transform and the derivative (8.3)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L25.html",
+    "href": "Unit3/L25.html",
+    "title": "8  L25: Solving odes with piecewise continuous forcing functions (8.4)",
+    "section": "",
+    "text": "8.1",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>L25: Solving odes with piecewise continuous forcing functions (8.4)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L25.html#section",
+    "href": "Unit3/L25.html#section",
+    "title": "8  L25: Solving odes with piecewise continuous forcing functions (8.4)",
+    "section": "",
+    "text": "NoteDefinition\n\n\n\nThe unit step function is defined to be\n\\[u(t)= 0\\qquad ,\\quad t&lt; 0 \\] \\[\\qquad=1\\qquad ,\\quad  t\\geq 0\\]\n\n\n\n\n\n\n\n\n\n\n\n\n8.1.1 Example\n\n\n\n\n\n\nTipExample\n\n\n\nSketch: \\[u(t-2)\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8.1.2 Example 2\n\n\n\n\n\n\nTipExample\n\n\n\nSketch \\[f(t)=t+u(t-2)(1-t)\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8.1.3 Example 3\n\n\n\n\n\n\nTipExample\n\n\n\nSketch1 \\[f(t)=(1-u(t-\\pi))t+u(t-2\\pi)\\sin t\\]\n\n\n\n\n\n\nCautionSolution:",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>L25: Solving odes with piecewise continuous forcing functions (8.4)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L25.html#theorem-laplace-of-the-product-between-displace-unit-function-and-a-displaced-function",
+    "href": "Unit3/L25.html#theorem-laplace-of-the-product-between-displace-unit-function-and-a-displaced-function",
+    "title": "8  L25: Solving odes with piecewise continuous forcing functions (8.4)",
+    "section": "8.2 Theorem: Laplace of the product between displace unit function and a displaced function",
+    "text": "8.2 Theorem: Laplace of the product between displace unit function and a displaced function\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 8.1 If \\(F(s)=\\mathscr{L}\\{f(t)\\}\\) exists for \\(s&gt;C\\) and if \\(a&gt;0\\), then\n\\[\\boxed{\\mathscr{L}\\{u(t-a)f(t-a)\\}=e^{-as}\\mathscr{L}\\{f(t)\\}=e^{-as}F(s)},\\qquad s&gt;C \\tag{8.1}\\]\n\n\n\n\n\n\nCautionProof:\n\n\n\n\n\n\\[\\mathscr{L}\\{u(t-a)f(t-a)\\}=\\int_0^\\infty e^{-st} u(t-a)f(t-a)\\,dt\\]\n\\[=\\int_a^\\infty e^{-st} f(t-a)\\,dt\\]\nChange of variables: \\[u=t-a\\rightarrow u(a)=0\\]\n\\[=\\int_0^\\infty e^{-s(u+a)} f(u)\\,du\\]\n\\[=e^{-sa}\\int_0^\\infty e^{-su} f(u)\\,du\\]\n\\[=e^{-as}F(s)\\] \\[=e^{-as}\\mathscr{L}\\{f(t)\\}\\] \\[\\hspace{2in}\\square\\]\n\n\n\n\n\n\n\n8.2.1 Example 1\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}\\{u(t-a)\\}=?\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\mathscr{L}\\{u(t-a)\\}=\\mathscr{L}\\{u(t-a)\\cdot (t-a)^0\\}\\] \\[=e^{-sa}\\mathscr{L}\\{t^0\\}\\] \\[=e^{-sa}\\frac{1}{s}\\]\n\n\n\n\n\n\n\n8.2.2 Example 2\n\n\n\n\n\n\nTipExample\n\n\n\n\\[\\mathscr{L}\\{u(t-a)t\\}=?\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\\[\\mathscr{L}\\{u(t-a)t\\}=\\mathscr{L}\\{u(t-a)(t-a)\\}+a\\mathscr{L}\\{u(t-a)\\}\\]\n\\[=e^{-sa}\\mathscr{L}\\{t\\}+ae^{-sa}\\frac{1}{s}\\] \\[=e^{-sa}\\frac{1}{s^2}+ae^{-sa}\\frac{1}{s}\\]\n\n\n\n\n\n\n\n8.2.3 Example 3\n\n\n\n\n\n\nTipExample\n\n\n\nSolve: \\[\ny'' + 4y =\n\\begin{cases}\n0, & 0 \\le t &lt; \\pi \\\\\n\\sin t, & t \\ge \\pi\n\\end{cases}, \\quad y(0) = 0, \\quad y'(0) = 1\n\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\nStep 1: Express the forcing function using the unit step function\nWe rewrite the right-hand side as a single expression using the Heaviside (unit step) function \\(u(t - \\pi)\\):\n\\[\ny'' + 4y = \\sin t \\cdot u(t - \\pi)\n\\]\nStep 2: Take Laplace Transforms\nLet \\(Y(s) = \\mathcal{L}\\{y(t)\\}\\). Then:\n\n\\(\\mathcal{L}\\{y''(t)\\} = s^2 Y(s) - s y(0) - y'(0) = s^2 Y(s) - 1\\)\n\\(\\mathcal{L}\\{4y(t)\\} = 4Y(s)\\)\n\nSo the left-hand side becomes:\n\\[\ns^2 Y(s) - 1 + 4Y(s)\n\\]\nNow for the right-hand side:\n\n\\[\\mathcal{L}\\{\\sin t \\cdot u(t - \\pi)\\} = \\mathcal{L}\\{-\\sin(t-\\pi) \\cdot u(t - \\pi)\\}\\]\n\nThen\n\\[\n\\mathcal{L}\\{\\sin t \\cdot u(t - \\pi)\\} = -e^{-\\pi s} \\cdot \\mathcal{L}\\{\\sin t\\} = -e^{-\\pi s} \\cdot \\frac{1}{s^2 + 1}\n\\]\nStep 3: Laplace Equation\nPutting it all together:\n\\[\ns^2 Y(s) - 1 + 4Y(s) = -\\frac{e^{-\\pi s}}{s^2 + 1}\n\\]\n\\[\n(s^2 + 4)Y(s) = 1 - \\frac{e^{-\\pi s}}{s^2 + 1}\n\\]\n\\[\nY(s) = \\frac{1}{s^2 + 4} - \\frac{e^{-\\pi s}}{(s^2 + 4)(s^2 + 1)}\n\\]\n\nStep 4: Inverse Laplace Using Partial Fractions\nWe already know:\n\\[\n\\mathcal{L}^{-1}\\left\\{\\frac{1}{s^2 + 4}\\right\\} = \\frac{1}{2} \\sin(2t)\n\\]\nNow consider:\n\\[\n\\frac{1}{(s^2 + 4)(s^2 + 1)} = \\frac{As + B}{s^2 + 1} + \\frac{Cs + D}{s^2 + 4}\n\\]\nMultiply both sides by \\((s^2 + 4)(s^2 + 1)\\):\n\\[\n1 = (As + B)(s^2 + 4) + (Cs + D)(s^2 + 1)\n\\]\nNow expand both sides:\n\n\\((As + B)(s^2 + 4) = As^3 + 4As + Bs^2 + 4B\\)\n\\((Cs + D)(s^2 + 1) = Cs^3 + Cs + Ds^2 + D\\)\n\nAdd everything:\n\\[\n1 = (A + C)s^3 + (B + D)s^2 + (4A + C)s + (4B + D)\n\\]\nMatch coefficients:\n\\[\n\\begin{aligned}\ns^3 &: A + C = 0 \\\\\ns^2 &: B + D = 0 \\\\\ns^1 &: 4A + C = 0 \\\\\ns^0 &: 4B + D = 1\n\\end{aligned}\n\\]\nFrom \\(A + C = 0 \\Rightarrow C = -A\\)\nSubstitute into \\(4A + C = 0 \\Rightarrow 4A - A = 0 \\Rightarrow A = 0 \\Rightarrow C = 0\\)\nThen from \\(B + D = 0 \\Rightarrow D = -B\\)\nAnd \\(4B + D = 1 \\Rightarrow 4B - B = 1 \\Rightarrow 3B = 1 \\Rightarrow B = \\frac{1}{3}, D = -\\frac{1}{3}\\)\nSo:\n\\[\n\\frac{1}{(s^2 + 4)(s^2 + 1)} = \\frac{1/3}{s^2 + 1} - \\frac{1/3}{s^2 + 4}\n\\]\nNote:\nMaxima can do this in one line of code:\n\n(%i1) eqn: 1/((s^2+1)*(s^2+4))$\n(%i2) partfrac(eqn,s);\n\n(%o2) 1/(3*(s^2+1))-1/(3*(s^2+4))\n\n\n\nNow, going back to \\(Y(s)\\):\n\\[\nY(s) = \\frac{1}{s^2 + 4} - e^{-\\pi s} \\left( \\frac{1}{3(s^2 + 1)} - \\frac{1}{3(s^2 + 4)} \\right)\n\\]\n\nStep 5: Inverse Laplace Transform\n\\[\ny(t) = \\mathcal{L}^{-1}\\left\\{ \\frac{1}{s^2 + 4} \\right\\} - \\mathcal{L}^{-1}\\left\\{ e^{-\\pi s} \\left( \\frac{1}{3(s^2 + 1)} - \\frac{1}{3(s^2 + 4)} \\right) \\right\\}\n\\]\nUse the time-shifting property:\n\n\\(\\mathcal{L}^{-1} \\left\\{ \\frac{1}{s^2 + 1} \\right\\} = \\sin t\\)\n\\(\\mathcal{L}^{-1} \\left\\{ \\frac{1}{s^2 + 4} \\right\\} = \\frac{1}{2} \\sin 2t\\)\n\n\\[\n\\mathcal{L}^{-1} \\left\\{ e^{-\\pi s} \\cdot F(s) \\right\\} = u(t - \\pi) \\cdot f(t - \\pi)\n\\]\nSo final solution:\n\\[\n\\boxed{\ny(t) = \\frac{1}{2} \\sin 2t - u(t - \\pi) \\left[ \\frac{1}{3} \\sin(t - \\pi) - \\frac{1}{6} \\sin 2(t - \\pi) \\right]\n}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>L25: Solving odes with piecewise continuous forcing functions (8.4)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L25.html#references",
+    "href": "Unit3/L25.html#references",
+    "title": "8  L25: Solving odes with piecewise continuous forcing functions (8.4)",
+    "section": "8.3 References",
+    "text": "8.3 References\n\nLibreTexts, 8.4: The Unit Step Function F.Trench.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>L25: Solving odes with piecewise continuous forcing functions (8.4)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L25.html#footnotes",
+    "href": "Unit3/L25.html#footnotes",
+    "title": "8  L25: Solving odes with piecewise continuous forcing functions (8.4)",
+    "section": "",
+    "text": "work by each interval↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>L25: Solving odes with piecewise continuous forcing functions (8.4)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L26.html",
+    "href": "Unit3/L26.html",
+    "title": "9  L26: Periodic forcing functions (8.5)",
+    "section": "",
+    "text": "9.1 Definition of a Periodic function",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>L26: Periodic forcing functions (8.5)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L26.html#definition-of-a-periodic-function",
+    "href": "Unit3/L26.html#definition-of-a-periodic-function",
+    "title": "9  L26: Periodic forcing functions (8.5)",
+    "section": "",
+    "text": "NoteDefinition\n\n\n\nA function \\(f(t)\\) defined for \\(t\\geq 0\\) is periodic with period \\(T&gt;0\\) if \\[f(t+T)=f(t),\\qquad \\forall t \\geq 0\\]\n\n\n\n\n\n\nCautionExample:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>L26: Periodic forcing functions (8.5)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L26.html#theorem-laplace-of-a-periodic-function",
+    "href": "Unit3/L26.html#theorem-laplace-of-a-periodic-function",
+    "title": "9  L26: Periodic forcing functions (8.5)",
+    "section": "9.2 Theorem: Laplace of a periodic function",
+    "text": "9.2 Theorem: Laplace of a periodic function\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 9.1 Let \\(f(t)\\) be piecewise continuous, periodic T, and of exponential order for \\(t\\geq 0\\), then\n\\[\\boxed{\\mathscr{L}\\{f(t)\\}=\\frac{1}{1-e^{-sT}}\\int_0^T e^{-st}f(t)\\,dt} \\tag{9.1}\\]\n\n\n\n\n\n\nCautionProof:\n\n\n\n\n\n\\[\\mathscr{L}\\{f(t)\\}=\\int_0^\\infty e^{-st} f(t)\\,dt\\]\n\\[=\\int_0^T e^{-st} f(t)\\,dt+\\int_T^\\infty e^{-st} f(t)\\,dt\\]\nChange of variables: \\[v=t-T\\rightarrow v(T)=0,\\quad dv=dt\\]\n\\[=\\int_0^T e^{-st} f(t)\\,dt+\\int_{v=0}^\\infty e^{-s(v+T)} f(v+T)\\,dv\\] and because the period is \\(T\\), then \\(f(v+T)=f(v)\\)\n\\[=\\int_0^T e^{-st} f(t)\\,dt+e^{-sT}\\int_0^\\infty e^{-sv} f(v)\\,dv\\] \\[\\mathscr{L}\\{f(t)\\}=\\int_0^T e^{-st} f(t)\\,dt+e^{-sT}\\mathscr{L}\\{f(t)\\}\\] \\[\\Rightarrow \\mathscr{L}\\{f(t)\\}\\left(1-e^{-sT}\\right)=\\int_0^T e^{-st} f(t)\\,dt\\]\n\\[\\Rightarrow \\mathscr{L}\\{f(t)\\}=\\frac{1}{\\left(1-e^{-sT}\\right)}\\int_0^T e^{-st} f(t)\\,dt\\]\n\\[\\hspace{2in}\\square\\]\n\n\n\n\n\n\n\n9.2.1 Example 1\n\n\n\n\n\n\nTipExample\n\n\n\nLet \\(f(t+2)=f(t)\\)\nand the periodic function defined by:\n\n\\[\nf(t) =\n\\begin{cases}\n+1 & 0\\leq t &lt; 1 \\\\\n-1 & 1\\leq t &lt; 2\n\\end{cases}\n\\]\nCalculate \\(\\mathscr{L}\\{f(t)\\}\\)\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\\mathscr{L}\\{f(t)\\}=\\frac{1}{\\left(1-e^{-sT}\\right)}\\int_0^T e^{-st} f(t)\\,dt\\]\n\\[=\\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\int_0^1 e^{-st} (1)\\,dt+\\int_1^2 e^{-st} (-1)\\,dt\\right)\\] \\[=\\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{e^{-st}}{-s}\\Big|_0^1-\\frac{e^{-st}}{-s}\\Big|_1^2\\right)\\] \\[=\\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{-1}{s}\\right)\\left(e^{-s}-e^{0}-(e^{-2s}-e^{-s})\\right)\\]\n\\[=\\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{-1}{s}\\right)\\left(2e^{-s}-1-e^{-2s}\\right)\\]\n\\[=\\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{1}{s}\\right)\\left(1+e^{-2s}-2e^{-s}\\right)\\]\n\n\n\n\n\n\n\n9.2.2 Example 2\n\n\n\n\n\n\nTipExample\n\n\n\n\\[y''-3y'+2y= f(t),\\qquad y(0)=y'(0)=0\\] Where:\n\\[\nf(t) =\n\\begin{cases}\n+1 & 0\\leq t &lt; 1 \\\\\n-1 & 1\\leq t &lt; 2\n\\end{cases}\n\\] \\[f(t+2)=f(t)\\]\n\n\n\n\n\n\nCautionSolution:\n\n\n\n\n\nSame periodic function of last example, therefore we know the Laplace Transformation of the RHS, for the LHS, we use properties:\n\\[s^2Y-sy(0)-y'(0)-3(sY-y(0))+2Y= \\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{1}{s}\\right)\\left(1+e^{-2s}-2e^{-s}\\right)\\]\n\\[s^2Y-3sY+2Y= \\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{1}{s}\\right)\\left(1+e^{-2s}-2e^{-s}\\right)\\]\n\\[Y(s^2-3s+2)= \\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{1}{s}\\right)\\left(1+e^{-2s}-2e^{-s}\\right)\\]\n\\[Y(s-1)(s-2)= \\frac{1}{\\left(1-e^{-2s}\\right)}\\left(\\frac{1}{s}\\right)\\left(1+e^{-2s}-2e^{-s}\\right)\\]\n\\[Y= \\frac{\\left(1-2e^{-s}+e^{-2s}\\right)}{\\left(1-e^{-2s}\\right)}\\left(\\frac{1}{s}\\right)\\frac{1}{(s-1)(s-2)}\\] \\[Y= \\frac{(1-e^{-s})(1-e^{-s})}{(1-e^{-s})(1+e^{-s})}\\left(\\frac{1}{s}\\right)\\frac{1}{(s-1)(s-2)}\\] \\[Y= \\frac{(1-e^{-s})}{(1+e^{-s})}\\left(\\frac{1}{s(s-1)(s-2)}\\right)\\]\nPartial fractions for the right side factor!\n\\[\\left(\\frac{1}{s(s-1)(s-2)}\\right)=\\frac{A}{s}+\\frac{B}{(s-1)}+\\frac{C}{(s-2)}\\]\n\\[1=A(s-1)(s-2)+Bs(s-2)+Cs(s-1)\\] \\(\\boxed{s=0}\\Rightarrow\\)\n\\[1=A(-1)(-2)\\rightarrow \\boxed{A=\\frac{1}{2}}\\] \\(\\boxed{s=1}\\Rightarrow\\)\n\\[1=B(1)(-1)\\rightarrow \\boxed{B=-1}\\] \\(\\boxed{s=2}\\Rightarrow\\)\n\\[1=C(2)(1)\\rightarrow \\boxed{C=\\frac{1}{2}}\\]\nTherefore:\n\\[Y=\\frac{(1-e^{-s})}{(1+e^{-s})}\\left(\\frac{1}{2s}-\\frac{1}{s-1}+\\frac{1}{2(s-2)}\\right)\\] \\[Y(1+e^{-s})=(1-e^{-s})\\left(\\frac{1}{2s}-\\frac{1}{s-1}+\\frac{1}{2(s-2)}\\right)\\] \\[Y+Ye^{-s}=\\left(\\frac{1}{2s}-\\frac{1}{s-1}+\\frac{1}{2(s-2)}\\right)-e^{-s}\\left(\\frac{1}{2s}-\\frac{1}{s-1}+\\frac{1}{2(s-2)}\\right)\\]\nWe know that:\n\\[\\mathscr{L}\\{u(t-a)f(t-a)\\}=e^{-as}F(s)\\]\n\\[\\Rightarrow\\boxed{\\mathscr{L}^{-1}\\{e^{-as}F(s)\\}=u(t-a)f(t-a)}\\] Then applying ILT to:\n\\[Y+e^{-s}Y=\\left(\\frac{1}{2s}-\\frac{1}{s-1}+\\frac{1}{2(s-2)}\\right)-e^{-s}\\left(\\frac{1}{2s}-\\frac{1}{s-1}+\\frac{1}{2(s-2)}\\right)\\]\nwe obtain:\n\\[\\boxed{y(t)+u(t-1)y(t-1)=\\frac{1}{2} - e^{t}+\\frac{1}{2}e^{2t}-\\left(\\frac{1}{2}u(t-1)-u(t-1)e^{t-1}+\\frac{1}{2}u(t-1)e^{2(t-1)}\\right)}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>L26: Periodic forcing functions (8.5)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L26.html#references",
+    "href": "Unit3/L26.html#references",
+    "title": "9  L26: Periodic forcing functions (8.5)",
+    "section": "9.3 References",
+    "text": "9.3 References\n\nLibreTexts, 8.5: Constant Coefficient Equations with Piecewise Continuous Forcing Functions from F.Trench.\nWikipedia: Inverse Laplace transform",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>L26: Periodic forcing functions (8.5)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html",
+    "href": "Unit3/L27.html",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "",
+    "text": "10.1 Inverse of the Product?\nWhen applying the Laplace transform to solve differential equations, it is common to encounter situations where the right-hand side of the equation consists of the product of functions. For each of these functions, we may already know the corresponding inverse Laplace transform. This familiarity might lead us to incorrectly assume that the inverse Laplace transform of the product of functions is simply the product of their individual inverse transforms. However, this assumption is incorrect. The Laplace transform of a product of functions does not generally equal the product of their individual Laplace transforms. This misconception underscores the importance of applying the correct properties and methods when working with Laplace transforms in differential equations.\n\\[\\boxed{\\mathscr{L}^{-1}\\{F(s)\\,G(s)\\}\\neq \\mathscr{L}^{-1}\\{F(s)\\}\\mathscr{L}^{-1}\\{G(s)\\}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#convolution-theorem",
+    "href": "Unit3/L27.html#convolution-theorem",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.2 Convolution Theorem",
+    "text": "10.2 Convolution Theorem\n\n\n\n\n\n\nNoteTheorem\n\n\n\n\nTheorem 10.1 Let \\(f(t)\\) and \\(g(t)\\) be continuous functions for \\(t\\geq 0\\) and of exponential order\nLet \\(F(s)=\\mathscr{L}\\{f(t)\\}\\) and \\(G(s)=\\mathscr{L}\\{g(t)\\}\\)\nThen\n\\[\\mathscr{L}^{-1}\\{F(s)\\,G(s)\\}=\\int_0^t f(z)g(t-z)\\,dz\\] \\[=(f*g)(t)\\]\n\n\n\n\n\n\n\nCautionProof\n\n\n\n\n\n\\[F(s)\\,G(s)=\\int_0^\\infty e^{-sz} f(z)\\,dz\\int_0^\\infty e^{-s\\tau} g(\\tau)\\,d\\tau\\]\n\\[=\\int_0^\\infty\\left(\\int_0^\\infty e^{-s(\\tau+z)} f(z)g(\\tau)\\,d\\tau\\right) dz\\] Change of variables: \\(t=\\tau +z\\rightarrow dt =d\\tau\\)\n\\[=\\int_0^\\infty\\left(\\int_{t=z}^\\infty e^{-st}f(z)g(t-z)dt\\right) dz\\] Domain of integration:\n\n\n\n\n\n\n\n\n\n\nChanging order of integration for the same region:\n\n\nWarning in arrows(x, 0, x, x, length = 0.1, angle = 15, col = \"red\"):\nzero-length arrow is of indeterminate angle and so skipped\n\n\n\n\n\n\n\n\n\n\\[=\\int_0^\\infty\\left(\\int_{z=0}^t e^{-st}f(z)g(t-z)dz \\right)d\\tau \\]\n\\[=\\int_0^\\infty e^{-st}\\left(\\int_0^t f(z)g(t-z)dz \\right)d\\tau \\]\n\\[=\\mathscr{L}\\left\\{\\int_0^t f(z)g(t-z)dz\\right\\}\\]\n\\[=\\mathscr{L}\\left\\{(f*g)(t)\\right\\}\\]\n\\[\\hspace{3in}\\square\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#example-1-instead-of-partial-fractions",
+    "href": "Unit3/L27.html#example-1-instead-of-partial-fractions",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.3 Example 1, Instead of partial fractions",
+    "text": "10.3 Example 1, Instead of partial fractions\n\n\n\n\n\n\nTipExample\n\n\n\nCalculate \\[\\mathscr{L}^{-1}\\left\\{\\frac{1}{(s-2)(s-3)}\\right\\}\\] w/o using partial fractions.\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\n\\[\\mathscr{L}^{-1}\\left\\{\\frac{1}{(s-2)(s-3)}\\right\\}=\\int_0^t f(z)g(t-z)\\,dz\\] \\[=\\int_0^t e^{2z}e^{3(t-z)}dz\\]\n\\[=e^{3t}\\int_0^t e^{-z}dz\\]\n\\[=e^{3t} \\left(\\frac{e^{-z}}{-1}\\Big|_0^t\\right)\\]\n\\[=-e^{3t} \\left(e^{-t}-e^0\\right)\\] \\[=e^{3t} \\left(1-e^{-t}\\right)\\] \\[=e^{3t} -e^{2t}\\] checking with maxima-cas:\npartfrac(1/((s-2)*(s-3)),s);\nilt(%,s,t);\n\\[{{e}^{3 t}}\\operatorname{-}{{e}^{2 t}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#convolution",
+    "href": "Unit3/L27.html#convolution",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.4 Convolution!",
+    "text": "10.4 Convolution!\n\n\n\nconvolution is a mathematical operation on two functions (\\(f\\) and \\(g\\)) that produces a third function \\((f*g)\\) that expresses how the shape of one is modified by the other",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#property-of-convolution-function",
+    "href": "Unit3/L27.html#property-of-convolution-function",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.5 Property of convolution function",
+    "text": "10.5 Property of convolution function\n\\[\\mathscr{L}\\{(f*g)(t)\\}=\\mathscr{L}\\{f(t)\\}\\mathscr{L}\\{g(t)\\}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#example-1-solving-ivp",
+    "href": "Unit3/L27.html#example-1-solving-ivp",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.6 Example 1, solving IVP",
+    "text": "10.6 Example 1, solving IVP\n\n\n\n\n\n\nTipExample\n\n\n\nSuppose \\(y=f(t)\\) is the solution of the constant-coefficient homogeneous initial value problem \\[y''+Py'+Qy=0,\\qquad y(0)=0,\\quad y'(0)=1\\] Then the solution of the inhomogeneous initial value problem\n\\[y''+Py'+Qy=g(t),\\qquad y(0)=0,\\quad y'(0)=0\\]\nis \\[y(t)=(f*g)(t)\\]\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\nTaking the Laplace Transform of homogeneous eqn:\n\\[s^2Y-1+PsY+QY=0\\] \\[Y=\\frac{1}{s^2+Ps+Q}\\] \\[y=f(t)=\\mathscr{L}^{-1}\\left\\{\\frac{1}{s^2+Ps+Q}\\right\\}\\] Taking Laplace transform of non-homogeneous case\n\\[s^2Y+PsY+QY=G\\] \\[Y=\\frac{G}{s^2+Ps+Q}\\] \\[y(t)=\\mathscr{L}^{-1}\\left\\{\\frac{G}{s^2+Ps+Q}\\right\\}\\] \\[=\\mathscr{L}^{-1}\\left\\{G(s)F(s)\\right\\}\\] \\[=(f*g)(t)\\] \\[\\hspace{3in}\\square\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#volterra-integral-equation",
+    "href": "Unit3/L27.html#volterra-integral-equation",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.7 Volterra Integral Equation",
+    "text": "10.7 Volterra Integral Equation\n\n\n\n\n\n\nNoteDefinition\n\n\n\nAn equation of the form\n\\[y(t)=f(t)+ \\int_0^t k(t-\\tau)y(\\tau)\\,d\\tau\\]\nis a Volterra integral equation. Here \\(f\\) and \\(k\\) are given functions and \\(y\\) is unknown. Since the integral on the right is a convolution integral, the convolution theorem provides a convenient formula for solving it. Laplace!\n\\[Y = F + YK\\] \\[Y=\\frac{F}{1-K}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#example-2",
+    "href": "Unit3/L27.html#example-2",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.8 Example 2",
+    "text": "10.8 Example 2\n\n\n\n\n\n\nTipExample\n\n\n\nSolve\n\\[y(t)=1+2\\int_0^t e^{-2(t-\\tau)} y(\\tau)\\,d\\tau.\\]\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\n\\[Y = \\frac{1}{s}+2 \\left(\\frac{1}{s-^-2}\\right)Y\\] \\[Y\\left(1-\\frac{2}{s+2}\\right)=\\frac{1}{s}\\] \\[Y\\left(\\frac{s+2}{s+2}-\\frac{2}{s+2}\\right)=\\frac{1}{s}\\]\n\\[Y=\\frac{s+2}{s^2}\\] \\[Y=\\frac{1}{s}+\\frac{2}{s^2}\\] \\[\\Rightarrow\\]\n\\[y(t)=1+ 2t\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#example-3-1",
+    "href": "Unit3/L27.html#example-3-1",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.9 Example 3",
+    "text": "10.9 Example 3\n\n\n\n\n\n\nTipExample\n\n\n\nSolve Integrodifferentiable equation\n\\[y'(t)=1+\\int_0^t y(z)\\,dz\\qquad, y(0)=0\\]\n\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\nApplying Laplace: \\[sY=\\frac{1}{s}+\\mathscr{L}\\left\\{\\int_0^t y(z)\\,dz\\right\\}\\] \\[sY=\\frac{1}{s}+\\mathscr{L}\\left\\{\\int_0^t (y(z)*1)\\,dz\\right\\}\\]\n\\[sY=\\frac{1}{s}+\\mathscr{L}\\left\\{\\int_0^t (y(z)*(t-z)^0)\\,dz\\right\\}\\]\n\\[sY=\\frac{1}{s}+\\mathscr{L}\\{y(t)\\}\\mathscr{L}\\{t^0\\}\\] \\[sY=\\frac{1}{s}+Y\\frac{1}{s}\\] \\[sY-Y\\frac{1}{s}=\\frac{1}{s}\\] \\[Y\\left(\\frac{s^2}{s}-\\frac{1}{s}\\right)=\\frac{1}{s}\\] \\[Y=\\frac{1}{s^2-1}\\] \\[\\Rightarrow \\boxed{y(t)=\\sinh t}\\,,\\qquad t&gt;1\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L27.html#references",
+    "href": "Unit3/L27.html#references",
+    "title": "10  L27: Convolution Integral (8.6)",
+    "section": "10.10 References",
+    "text": "10.10 References\n\nLibreTexts, 8.6: Convolution by F.Trench.\nWikipedia: Convolution",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>L27: Convolution Integral (8.6)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html",
+    "href": "Unit3/L28.html",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "",
+    "text": "11.1 Unit Impulse\nLet \\[\\delta_\\epsilon = \\frac{1}{2\\epsilon},\\qquad -\\epsilon&lt;t&lt;\\epsilon\\] \\[=0,\\qquad |t|\\geq \\epsilon \\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#unit-impulse-plot",
+    "href": "Unit3/L28.html#unit-impulse-plot",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.2 Unit Impulse plot",
+    "text": "11.2 Unit Impulse plot",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#area-under-the-curve",
+    "href": "Unit3/L28.html#area-under-the-curve",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.3 Area under the curve",
+    "text": "11.3 Area under the curve\n\\[\\int_{-\\infty}^{\\infty} \\delta_\\epsilon (t) \\,dt = \\int_{-\\epsilon}^\\epsilon \\frac{1}{2\\epsilon}\\, dt \\] \\[= \\frac{t}{2\\epsilon}\\Big|_{-\\epsilon}^\\epsilon\\] \\[=\\frac{1}{2}-\\left(-\\frac{1}{2}\\right)\\] \\[=1\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#section",
+    "href": "Unit3/L28.html#section",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.4 ",
+    "text": "11.4 \n\n\n\n\n\n\nNoteDefinition\n\n\n\nThe generalized function \\[\\delta(t)=\\lim_{\\epsilon \\rightarrow 0} \\delta_\\epsilon (t)\\] is called the Dirac delta function.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#properties-of-deltat",
+    "href": "Unit3/L28.html#properties-of-deltat",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.5 Properties of \\(\\delta(t)\\)",
+    "text": "11.5 Properties of \\(\\delta(t)\\)\n\\[1)\\quad \\int_{-\\infty}^{\\infty} \\delta (t) \\,dt = 1\\] \\[2)\\quad\\delta(t)=0,\\qquad t\\neq 0\\] \\[\\qquad=\\infty,\\qquad t= 0\\] \\[3)\\quad\\delta(t-a)=0,\\qquad t\\neq a\\] \\[\\qquad=\\infty,\\qquad t= a\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#section-1",
+    "href": "Unit3/L28.html#section-1",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.6 ",
+    "text": "11.6 \n\nTheorem 11.1 \\[\\boxed{\\mathscr{L}\\{\\delta(t-a)\\}=e^{-as}},\\qquad a&gt;0,\\quad s&gt;0\\]\n\nProof:\n\n\\[\\mathscr{L}\\{\\delta(t-a)\\}=\\int_0^\\infty e^{-st}\\delta(t-a)\\,dt\\] \\[=\\lim_{\\epsilon \\rightarrow 0} \\int_0^\\infty \\delta_\\epsilon (t-a) e^{-st}\\,dt\\]\nChange of variables: \\(u=t-a\\rightarrow du=dt\\)\n\\[=\\lim_{\\epsilon \\rightarrow 0} \\int_{-a}^\\infty \\delta_\\epsilon (u) e^{-s(u+a)}\\,du\\]\n\\[=e^{-sa}\\lim_{\\epsilon \\rightarrow 0} \\int_{-a}^\\infty \\frac{1}{2\\epsilon} e^{-su}\\,du\\]\n\\(a&gt;\\epsilon\\), and by the definition of \\(\\delta_\\epsilon\\):\n\\[=e^{-sa}\\lim_{\\epsilon \\rightarrow 0} \\int_{-\\epsilon}^\\epsilon \\frac{1}{2\\epsilon} e^{-su}\\,du\\]\n\\[=e^{-sa}\\lim_{\\epsilon \\rightarrow 0} \\left[\\left(\\frac{e^{-su}}{-2s}\\right)\\Big|_{-\\epsilon}^\\epsilon\\right]\\] \\[=e^{-sa}\\lim_{\\epsilon \\rightarrow 0} \\left(\\frac{1}{-2s}\\right)\\left[e^{-s\\epsilon} - e^{s\\epsilon}\\right]\\]\n\\[=e^{-sa}\\lim_{\\epsilon \\rightarrow 0} \\left(\\left[\\frac{e^{s\\epsilon} - e^{-s\\epsilon}}{2s}\\right]\\right)\\]1\n\\[= e^{-sa}\\lim_{\\epsilon \\rightarrow 0} \\left(\\frac{\\sinh s\\epsilon}{s\\epsilon}\\right)\\]\n\\[= e^{-sa}\\lim_{\\epsilon \\rightarrow 0} (\\cosh s\\epsilon)\\] \\[=e^{-sa}\\]\n\\[\\qquad\\square\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#property-4-of-delta-de-dirac",
+    "href": "Unit3/L28.html#property-4-of-delta-de-dirac",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.7 Property 4 of Delta de Dirac",
+    "text": "11.7 Property 4 of Delta de Dirac\n\\[\\boxed{\\int_{-\\infty}^\\infty\\delta(t-a)f(t)\\,dt=f(a)}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#useful-laplace-transformations-for-delta-de-dirac.",
+    "href": "Unit3/L28.html#useful-laplace-transformations-for-delta-de-dirac.",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.8 Useful Laplace Transformations for Delta de Dirac.",
+    "text": "11.8 Useful Laplace Transformations for Delta de Dirac.\nFor \\(a&gt;0,\\quad s&gt;0\\):\n\\[\\boxed{\\mathscr{L}\\{\\delta(t-a)\\}=e^{-as}}\\]\n\\[\\boxed{\\mathscr{L}\\{\\delta(t-a)f(t)\\}=e^{-as}f(a)}\\]2",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#other-useful-equations",
+    "href": "Unit3/L28.html#other-useful-equations",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.9 Other useful equations:",
+    "text": "11.9 Other useful equations:\n\\[\\boxed{\\mathscr{L}\\{u(t-a)f(t-a)\\}=e^{-as}\\mathscr{L}\\{f(t)\\}}\\] \\[\\boxed{\\mathscr{L}\\{e^{at}\\}=\\frac{1}{s-a}}\\] \\[\\boxed{\\mathscr{L}\\{\\sinh {kt}\\}=\\frac{k}{s^2-k^2}}\\]3",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#example",
+    "href": "Unit3/L28.html#example",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.10 Example",
+    "text": "11.10 Example\nSolve:\n\\[y'+2y=\\delta(t-1),\\qquad y(0)=0\\] Solution:\n\n\\[sY+2Y=e^{-s}\\] \\[Y=\\frac{e^{-s}}{(s+2)}\\] \\[\\boxed{y(t) = u(t-1)e^{-2(t-1)}}\\]\nNote: \\[\\mathscr{L}\\{u(t-a)f(t-a)\\}=e^{-sa}\\mathscr{L}\\{f(t)\\}\\] Find which is the corresponding \\(f(t)\\) and then shift.\nalso: \\[ \\mathscr{L}\\{e^{sa}\\}=\\frac{1}{s-a}\\]\nPlot of solution:",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#example-1",
+    "href": "Unit3/L28.html#example-1",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.11 Example",
+    "text": "11.11 Example\nSolve:\n\\[y''-4y=\\delta(t-2)t,\\qquad y(0)=0,\\quad y'(0)=1\\]\nSolution:\n\n\\[\\Rightarrow\\]\n\\[s^2Y-1-4Y=2e^{-2s}\\]\n\\[Y=\\frac{2e^{-2s}+1}{s^2-4}\\] \\[Y(s)=\\frac{2e^{-2s}}{s^2-2^2}+\\frac{1}{s^2-2^2}\\]\nApplying the inverse:\n\\[y(t)=\\mathscr{L}^{-1}\\left\\{\\frac{2e^{-2s}}{s^2-2^2}\\right\\}+\\frac{1}{2}\\sinh 2t\\] For the first term we can use:\n\\[\\boxed{\\mathscr{L}\\{u(t-a)f(t-a)\\}=e^{-as}\\mathscr{L}\\{f(t)\\}}\\] Then by inspection I identify \\(a=2\\), and \\(f(t)=\\sinh 2t\\rightarrow f(t-a)= \\sinh (2(t-2))\\)\nFinally:\n\\[\\boxed{y(t)=u(t-2)\\sinh(2(t-2))+\\frac{1}{2}\\sinh 2t}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#references",
+    "href": "Unit3/L28.html#references",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.12 References",
+    "text": "11.12 References\n\nLibreTexts, 8.7: Constant Coefficient Equations with Impulses by F.Trench.\nWikipedia: Hyperbolic functions\nWikipedia: Dirac delta function\nproofwiki: Laplace of Hyperbolic sine.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#maxima-cas-can",
+    "href": "Unit3/L28.html#maxima-cas-can",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "11.13 Maxima-cas can",
+    "text": "11.13 Maxima-cas can\n\n(%i1) laplace(delta(t-2)*t, t, s);\n\n(%o1) 2*%e^-(2*s)\n\n(%i2) ilt(2/(s^2-4),s,t);\n\n(%o2) %e^(2*t)/2-%e^-(2*t)/2\n\n(%i3) expand(trigrat(sinh(2*t)));\n\n(%o3) %e^(2*t)/2-%e^-(2*t)/2\n\n(%i4) partfrac(1/(s^2-4), s);\n\n(%o4) 1/(4*(s-2))-1/(4*(s+2))\n\n(%i5) desolve([diff(y(t),t,3)-diff(y(t),t,2)-4*diff(y(t),t,1)+4*y(t)=exp(t)],[y(t)]);\n\n(%o5) y(t) = (%e^-(2*t)*(3*('at('diff(y(t),t,2),t = 0))\n\n\n                        -9*('at('diff(y(t),t,1),t = 0))+6*y(0)-1))\n\n\n           /36\n\n\n           -(%e^t*(3*('at('diff(y(t),t,2),t = 0))-12*y(0)+2))/9\n\n\n           +(%e^(2*t)*('at('diff(y(t),t,2),t = 0)+'at('diff(y(t),t,1),t = 0)\n\n\n                                                 -2*y(0)+1))\n\n\n            /4-(t*%e^t)/3",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  },
+  {
+    "objectID": "Unit3/L28.html#footnotes",
+    "href": "Unit3/L28.html#footnotes",
+    "title": "11  L28: Impulse forcing functions (8.7)",
+    "section": "",
+    "text": "https://en.wikipedia.org/wiki/Hyperbolic_functions↩︎\nyou could check this result by calculating it by laplace and \\(\\delta\\) definition.↩︎\nhttps://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>L28: Impulse forcing functions (8.7)</span>"
+    ]
+  }
+]

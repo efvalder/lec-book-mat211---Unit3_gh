@@ -5,3 +5,9 @@ _site/
 _book/
 _freeze/
 .quarto/
+Unit1/
+Unit2/
+Unit3/
+.Rproj.user/
+.RData
+.Rhistory

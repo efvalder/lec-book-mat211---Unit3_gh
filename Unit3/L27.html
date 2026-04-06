@@ -438,9 +438,7 @@ zero-length arrow is of indeterminate angle and so skipped</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose <span class="math inline">\(y=f(t)\)</span> is the solution of the constant-coefficient homogeneous initial value problem <span class="math display">\[y''+Py'+Qy=0,\qquad y(0)=0,\quad y'(0)=1\]</span> Then the solution of the inhomogeneous initial value problem</p>
-<p><span class="math display">\[y''+Py'+Qy=g(t),\qquad y(0)=0,\quad y'(0)=0\]</span></p>
-<p>is <span class="math display">\[y(t)=(f*g)(t)\]</span></p>
+<p>Suppose <span class="math inline">\(f(t)\)</span> is the solution of the constant-coefficient homogeneous initial value problem <span class="math display">\[y''+Py'+Qy=0,\qquad y(0)=0,\quad y'(0)=1.\]</span> Then the solution of the inhomogeneous initial value problem <span class="math display">\[y''+Py'+Qy=g(t),\qquad y(0)=0,\quad y'(0)=0\]</span> is <span class="math display">\[y(t)=(f*g)(t).\]</span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -453,9 +451,8 @@ zero-length arrow is of indeterminate angle and so skipped</code></pre>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Taking the Laplace Transform of homogeneous eqn:</p>
-<p><span class="math display">\[s^2Y-1+PsY+QY=0\]</span> <span class="math display">\[Y=\frac{1}{s^2+Ps+Q}\]</span> <span class="math display">\[y=f(t)=\mathscr{L}^{-1}\left\{\frac{1}{s^2+Ps+Q}\right\}\]</span> Taking Laplace transform of non-homogeneous case</p>
-<p><span class="math display">\[s^2Y+PsY+QY=G\]</span> <span class="math display">\[Y=\frac{G}{s^2+Ps+Q}\]</span> <span class="math display">\[y(t)=\mathscr{L}^{-1}\left\{\frac{G}{s^2+Ps+Q}\right\}\]</span> <span class="math display">\[=\mathscr{L}^{-1}\left\{G(s)F(s)\right\}\]</span> <span class="math display">\[=(f*g)(t)\]</span> <span class="math display">\[\hspace{3in}\square\]</span></p>
+<p>Let <span class="math inline">\(F(s)=\mathscr{L}\{f(t)\}\)</span>. Taking the Laplace transform of the homogeneous equation gives <span class="math display">\[\mathscr{L}\{y''\}+P\mathscr{L}\{y'\}+Q\mathscr{L}\{y\}=0,\]</span> so <span class="math display">\[\left(s^2F-sf(0)-f'(0)\right)+P\left(sF-f(0)\right)+QF=0.\]</span> Using <span class="math inline">\(f(0)=0\)</span> and <span class="math inline">\(f'(0)=1\)</span>, this becomes <span class="math display">\[s^2F-1+PsF+QF=0,\]</span> hence <span class="math display">\[F(s)=\frac{1}{s^2+Ps+Q}.\]</span></p>
+<p>Now let <span class="math inline">\(Y(s)=\mathscr{L}\{y(t)\}\)</span> for the inhomogeneous problem. Taking the Laplace transform gives <span class="math display">\[\left(s^2Y-sy(0)-y'(0)\right)+P\left(sY-y(0)\right)+QY=G(s).\]</span> Using <span class="math inline">\(y(0)=0\)</span> and <span class="math inline">\(y'(0)=0\)</span>, we get <span class="math display">\[s^2Y+PsY+QY=G(s),\]</span> so <span class="math display">\[Y(s)=\frac{G(s)}{s^2+Ps+Q}=G(s)F(s).\]</span> Therefore, <span class="math display">\[y(t)=\mathscr{L}^{-1}\{G(s)F(s)\}=(f*g)(t).\]</span> <span class="math display">\[\hspace{3in}\square\]</span></p>
 </div>
 </div>
 </div>
@@ -552,6 +549,10 @@ zero-length arrow is of indeterminate angle and so skipped</code></pre>
 </div>
 </div>
 </div>
+<p><strong>Note:</strong></p>
+<p><span class="math display">\[\sinh t=\frac{e^t-e^{-t}}{2}\]</span></p>
+<p>Suggested problem to solve:</p>
+<p><span class="math display">\[y''=y,\qquad y(0)=0,\quad y'(0)=1\]</span></p>
 </section>
 <section id="references" class="level2 smaller" data-number="10.10">
 <h2 class="smaller anchored" data-number="10.10" data-anchor-id="references"><span class="header-section-number">10.10</span> References</h2>

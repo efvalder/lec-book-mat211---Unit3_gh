@@ -348,14 +348,32 @@ window.Quarto = {
 <p><span class="math display">\[\mathscr{L}\{\delta(t-a)\}=\int_0^\infty e^{-st}\delta(t-a)\,dt\]</span> <span class="math display">\[=\lim_{\epsilon \rightarrow 0} \int_0^\infty \delta_\epsilon (t-a) e^{-st}\,dt\]</span></p>
 <p>Change of variables: <span class="math inline">\(u=t-a\rightarrow du=dt\)</span></p>
 <p><span class="math display">\[=\lim_{\epsilon \rightarrow 0} \int_{-a}^\infty \delta_\epsilon (u) e^{-s(u+a)}\,du\]</span></p>
-<p><span class="math display">\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \int_{-a}^\infty \frac{1}{2\epsilon} e^{-su}\,du\]</span></p>
+<p><span class="math display">\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \int_{-a}^\infty \delta_\epsilon (u) e^{-su}\,du\]</span></p>
 <p><span class="math inline">\(a&gt;\epsilon\)</span>, and by the definition of <span class="math inline">\(\delta_\epsilon\)</span>:</p>
-<p><span class="math display">\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \int_{-\epsilon}^\epsilon \frac{1}{2\epsilon} e^{-su}\,du\]</span></p>
-<p><span class="math display">\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \left[\left(\frac{e^{-su}}{-2s}\right)\Big|_{-\epsilon}^\epsilon\right]\]</span> <span class="math display">\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \left(\frac{1}{-2s}\right)\left[e^{-s\epsilon} - e^{s\epsilon}\right]\]</span></p>
-<p><span class="math display">\[=e^{-sa}\lim_{\epsilon \rightarrow 0} \left(\left[\frac{e^{s\epsilon} - e^{-s\epsilon}}{2s}\right]\right)\]</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p><span class="math display">\[= e^{-sa}\lim_{\epsilon \rightarrow 0} \left(\frac{\sinh s\epsilon}{s\epsilon}\right)\]</span></p>
-<p><span class="math display">\[= e^{-sa}\lim_{\epsilon \rightarrow 0} (\cosh s\epsilon)\]</span> <span class="math display">\[=e^{-sa}\]</span></p>
-<p><span class="math display">\[\qquad\square\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}\lim_{\epsilon \to 0}\int_{-\epsilon}^{\epsilon}\frac{1}{2\epsilon}e^{-su}\,du
+\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}\lim_{\epsilon \to 0}\frac{1}{2\epsilon}\int_{-\epsilon}^{\epsilon}e^{-su}\,du
+\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}\lim_{\epsilon \to 0}\frac{1}{2\epsilon}\left[\frac{e^{-su}}{-s}\right]_{-\epsilon}^{\epsilon}
+\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}\lim_{\epsilon \to 0}\frac{1}{2\epsilon}\left(\frac{e^{-s\epsilon}-e^{s\epsilon}}{-s}\right)
+\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}\lim_{\epsilon \to 0}\frac{e^{s\epsilon}-e^{-s\epsilon}}{2s\epsilon}
+\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}\lim_{\epsilon \to 0}\frac{\sinh(s\epsilon)}{s\epsilon}
+\]</span></p>
+<p><span class="math display">\[
+= e^{-sa}
+\]</span></p>
+<p><span class="math display">\[
+\qquad \square
+\]</span></p>
 </div>
 </section>
 <section id="property-4-of-delta-de-dirac" class="level2" data-number="11.5">
@@ -366,11 +384,11 @@ window.Quarto = {
 <h2 data-number="11.6" class="anchored" data-anchor-id="useful-laplace-transformations-for-delta-de-dirac."><span class="header-section-number">11.6</span> Useful Laplace Transformations for <code>Delta de Dirac</code>.</h2>
 <p>For <span class="math inline">\(a&gt;0,\quad s&gt;0\)</span>:</p>
 <p><span class="math display">\[\boxed{\mathscr{L}\{\delta(t-a)\}=e^{-as}}\]</span></p>
-<p><span class="math display">\[\boxed{\mathscr{L}\{\delta(t-a)f(t)\}=e^{-as}f(a)}\]</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="math display">\[\boxed{\mathscr{L}\{\delta(t-a)f(t)\}=e^{-as}f(a)}\]</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
 <section id="other-useful-equations" class="level2" data-number="11.7">
 <h2 data-number="11.7" class="anchored" data-anchor-id="other-useful-equations"><span class="header-section-number">11.7</span> Other useful equations:</h2>
-<p><span class="math display">\[\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}}\]</span> <span class="math display">\[\boxed{\mathscr{L}\{e^{at}\}=\frac{1}{s-a}}\]</span> <span class="math display">\[\boxed{\mathscr{L}\{\sinh {kt}\}=\frac{k}{s^2-k^2}}\]</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><span class="math display">\[\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}}\]</span> <span class="math display">\[\boxed{\mathscr{L}\{e^{at}\}=\frac{1}{s-a}}\]</span> <span class="math display">\[\boxed{\mathscr{L}\{\sinh {kt}\}=\frac{k}{s^2-k^2}}\]</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <section id="example" class="level3 scrollable" data-number="11.7.1">
 <h3 class="scrollable anchored" data-number="11.7.1" data-anchor-id="example"><span class="header-section-number">11.7.1</span> Example</h3>
 <p><strong>Solve:</strong></p>
@@ -502,9 +520,8 @@ window.Quarto = {
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Hyperbolic_functions" class="uri">https://en.wikipedia.org/wiki/Hyperbolic_functions</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>you could check this result by calculating it by laplace and <span class="math inline">\(\delta\)</span> definition.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine" class="uri">https://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>you could check this result by calculating it by laplace and <span class="math inline">\(\delta\)</span> definition.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine" class="uri">https://proofwiki.org/wiki/Laplace_Transform_of_Hyperbolic_Sine</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

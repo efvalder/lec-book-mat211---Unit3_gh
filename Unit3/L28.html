@@ -256,16 +256,16 @@ window.Quarto = {
   <li><a href="#unit-impulse" id="toc-unit-impulse" class="nav-link active" data-scroll-target="#unit-impulse"><span class="header-section-number">11.1</span> Unit Impulse</a></li>
   <li><a href="#unit-impulse-plot" id="toc-unit-impulse-plot" class="nav-link" data-scroll-target="#unit-impulse-plot"><span class="header-section-number">11.2</span> Unit Impulse plot</a></li>
   <li><a href="#area-under-the-curve" id="toc-area-under-the-curve" class="nav-link" data-scroll-target="#area-under-the-curve"><span class="header-section-number">11.3</span> Area under the curve</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">11.4</span> </a></li>
-  <li><a href="#properties-of-deltat" id="toc-properties-of-deltat" class="nav-link" data-scroll-target="#properties-of-deltat"><span class="header-section-number">11.5</span> Properties of <span class="math inline">\(\delta(t)\)</span></a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">11.6</span> </a></li>
-  <li><a href="#property-4-of-delta-de-dirac" id="toc-property-4-of-delta-de-dirac" class="nav-link" data-scroll-target="#property-4-of-delta-de-dirac"><span class="header-section-number">11.7</span> Property 4 of <code>Delta de Dirac</code></a></li>
-  <li><a href="#useful-laplace-transformations-for-delta-de-dirac." id="toc-useful-laplace-transformations-for-delta-de-dirac." class="nav-link" data-scroll-target="#useful-laplace-transformations-for-delta-de-dirac."><span class="header-section-number">11.8</span> Useful Laplace Transformations for <code>Delta de Dirac</code>.</a></li>
-  <li><a href="#other-useful-equations" id="toc-other-useful-equations" class="nav-link" data-scroll-target="#other-useful-equations"><span class="header-section-number">11.9</span> Other useful equations:</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">11.10</span> Example</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">11.11</span> Example</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11.12</span> References</a></li>
-  <li><a href="#maxima-cas-can" id="toc-maxima-cas-can" class="nav-link" data-scroll-target="#maxima-cas-can"><span class="header-section-number">11.13</span> Maxima-cas can</a></li>
+  <li><a href="#properties-of-deltat" id="toc-properties-of-deltat" class="nav-link" data-scroll-target="#properties-of-deltat"><span class="header-section-number">11.4</span> Properties of <span class="math inline">\(\delta(t)\)</span></a></li>
+  <li><a href="#property-4-of-delta-de-dirac" id="toc-property-4-of-delta-de-dirac" class="nav-link" data-scroll-target="#property-4-of-delta-de-dirac"><span class="header-section-number">11.5</span> Property 4 of <code>Delta de Dirac</code></a></li>
+  <li><a href="#useful-laplace-transformations-for-delta-de-dirac." id="toc-useful-laplace-transformations-for-delta-de-dirac." class="nav-link" data-scroll-target="#useful-laplace-transformations-for-delta-de-dirac."><span class="header-section-number">11.6</span> Useful Laplace Transformations for <code>Delta de Dirac</code>.</a></li>
+  <li><a href="#other-useful-equations" id="toc-other-useful-equations" class="nav-link" data-scroll-target="#other-useful-equations"><span class="header-section-number">11.7</span> Other useful equations:</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">11.7.1</span> Example</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">11.7.2</span> Example</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11.8</span> References</a></li>
+  <li><a href="#maxima-cas-can" id="toc-maxima-cas-can" class="nav-link" data-scroll-target="#maxima-cas-can"><span class="header-section-number">11.9</span> Maxima-cas can</a></li>
   </ul>
 </nav>
     </div>
@@ -323,9 +323,6 @@ window.Quarto = {
 <section id="area-under-the-curve" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="area-under-the-curve"><span class="header-section-number">11.3</span> Area under the curve</h2>
 <p><span class="math display">\[\int_{-\infty}^{\infty} \delta_\epsilon (t) \,dt = \int_{-\epsilon}^\epsilon \frac{1}{2\epsilon}\, dt \]</span> <span class="math display">\[= \frac{t}{2\epsilon}\Big|_{-\epsilon}^\epsilon\]</span> <span class="math display">\[=\frac{1}{2}-\left(-\frac{1}{2}\right)\]</span> <span class="math display">\[=1\]</span></p>
-</section>
-<section id="section" class="level2 scrollable" data-number="11.4">
-<h2 class="scrollable anchored" data-number="11.4" data-anchor-id="section"><span class="header-section-number">11.4</span> </h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -340,12 +337,9 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="properties-of-deltat" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="properties-of-deltat"><span class="header-section-number">11.5</span> Properties of <span class="math inline">\(\delta(t)\)</span></h2>
+<section id="properties-of-deltat" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="properties-of-deltat"><span class="header-section-number">11.4</span> Properties of <span class="math inline">\(\delta(t)\)</span></h2>
 <p><span class="math display">\[1)\quad \int_{-\infty}^{\infty} \delta (t) \,dt = 1\]</span> <span class="math display">\[2)\quad\delta(t)=0,\qquad t\neq 0\]</span> <span class="math display">\[\qquad=\infty,\qquad t= 0\]</span> <span class="math display">\[3)\quad\delta(t-a)=0,\qquad t\neq a\]</span> <span class="math display">\[\qquad=\infty,\qquad t= a\]</span></p>
-</section>
-<section id="section-1" class="level2 scrollable" data-number="11.6">
-<h2 class="scrollable anchored" data-number="11.6" data-anchor-id="section-1"><span class="header-section-number">11.6</span> </h2>
 <div id="thm-deltaa" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 11.1</strong></span> <span class="math display">\[\boxed{\mathscr{L}\{\delta(t-a)\}=e^{-as}},\qquad a&gt;0,\quad s&gt;0\]</span></p>
 </div>
@@ -364,22 +358,21 @@ window.Quarto = {
 <p><span class="math display">\[\qquad\square\]</span></p>
 </div>
 </section>
-<section id="property-4-of-delta-de-dirac" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="property-4-of-delta-de-dirac"><span class="header-section-number">11.7</span> Property 4 of <code>Delta de Dirac</code></h2>
+<section id="property-4-of-delta-de-dirac" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="property-4-of-delta-de-dirac"><span class="header-section-number">11.5</span> Property 4 of <code>Delta de Dirac</code></h2>
 <p><span class="math display">\[\boxed{\int_{-\infty}^\infty\delta(t-a)f(t)\,dt=f(a)}\]</span></p>
 </section>
-<section id="useful-laplace-transformations-for-delta-de-dirac." class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="useful-laplace-transformations-for-delta-de-dirac."><span class="header-section-number">11.8</span> Useful Laplace Transformations for <code>Delta de Dirac</code>.</h2>
+<section id="useful-laplace-transformations-for-delta-de-dirac." class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="useful-laplace-transformations-for-delta-de-dirac."><span class="header-section-number">11.6</span> Useful Laplace Transformations for <code>Delta de Dirac</code>.</h2>
 <p>For <span class="math inline">\(a&gt;0,\quad s&gt;0\)</span>:</p>
 <p><span class="math display">\[\boxed{\mathscr{L}\{\delta(t-a)\}=e^{-as}}\]</span></p>
 <p><span class="math display">\[\boxed{\mathscr{L}\{\delta(t-a)f(t)\}=e^{-as}f(a)}\]</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
-<section id="other-useful-equations" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="other-useful-equations"><span class="header-section-number">11.9</span> Other useful equations:</h2>
+<section id="other-useful-equations" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="other-useful-equations"><span class="header-section-number">11.7</span> Other useful equations:</h2>
 <p><span class="math display">\[\boxed{\mathscr{L}\{u(t-a)f(t-a)\}=e^{-as}\mathscr{L}\{f(t)\}}\]</span> <span class="math display">\[\boxed{\mathscr{L}\{e^{at}\}=\frac{1}{s-a}}\]</span> <span class="math display">\[\boxed{\mathscr{L}\{\sinh {kt}\}=\frac{k}{s^2-k^2}}\]</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</section>
-<section id="example" class="level2 scrollable" data-number="11.10">
-<h2 class="scrollable anchored" data-number="11.10" data-anchor-id="example"><span class="header-section-number">11.10</span> Example</h2>
+<section id="example" class="level3 scrollable" data-number="11.7.1">
+<h3 class="scrollable anchored" data-number="11.7.1" data-anchor-id="example"><span class="header-section-number">11.7.1</span> Example</h3>
 <p><strong>Solve:</strong></p>
 <p><span class="math display">\[y'+2y=\delta(t-1),\qquad y(0)=0\]</span> <strong>Solution:</strong></p>
 <div class="fragment">
@@ -398,8 +391,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="example-1" class="level2 scrollable" data-number="11.11">
-<h2 class="scrollable anchored" data-number="11.11" data-anchor-id="example-1"><span class="header-section-number">11.11</span> Example</h2>
+<section id="example-1" class="level3 scrollable" data-number="11.7.2">
+<h3 class="scrollable anchored" data-number="11.7.2" data-anchor-id="example-1"><span class="header-section-number">11.7.2</span> Example</h3>
 <p><strong>Solve:</strong></p>
 <p><span class="math display">\[y''-4y=\delta(t-2)t,\qquad y(0)=0,\quad y'(0)=1\]</span></p>
 <p><strong>Solution:</strong></p>
@@ -419,8 +412,9 @@ window.Quarto = {
 <!-- $$\boxed{y(t) = u(t-2)\sinh(2(t-2))+\sinh 2t}$$ -->
 </div>
 </section>
-<section id="references" class="level2 smaller" data-number="11.12">
-<h2 class="smaller anchored" data-number="11.12" data-anchor-id="references"><span class="header-section-number">11.12</span> References</h2>
+</section>
+<section id="references" class="level2 smaller" data-number="11.8">
+<h2 class="smaller anchored" data-number="11.8" data-anchor-id="references"><span class="header-section-number">11.8</span> References</h2>
 <ol type="1">
 <li><p><a href="https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/8%3A_Laplace_Transforms/8.7%3A_Constant_Coefficient_Equations_with_Impulses">LibreTexts, 8.7: Constant Coefficient Equations with Impulses by F.Trench.</a></p></li>
 <li><p><a href="https://en.wikipedia.org/wiki/Hyperbolic_functions">Wikipedia: Hyperbolic functions</a></p></li>
@@ -460,8 +454,8 @@ window.Quarto = {
 <!-- # arrows(0,-1,0,b, angle = 15, length = 0.1, lwd=3) -->
 <!-- # ``` -->
 </section>
-<section id="maxima-cas-can" class="level2" data-number="11.13">
-<h2 data-number="11.13" class="anchored" data-anchor-id="maxima-cas-can"><span class="header-section-number">11.13</span> Maxima-cas can</h2>
+<section id="maxima-cas-can" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="maxima-cas-can"><span class="header-section-number">11.9</span> Maxima-cas can</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode maxima code-with-copy"><code class="sourceCode maxima"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(%<span class="cn">i1</span>) <span class="fu">laplace</span>(<span class="fu">delta</span>(<span class="cn">t</span><span class="dv">-2</span>)*<span class="cn">t</span>, <span class="cn">t</span>, <span class="cn">s</span>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
